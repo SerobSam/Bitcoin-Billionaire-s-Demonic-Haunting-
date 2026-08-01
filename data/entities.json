@@ -1,0 +1,24 @@
+{
+  "playable_character": {
+    "name": "Mara Quell",
+    "role": "Paranormal cryptographer",
+    "starting_tools": ["packet crucible", "cold-wallet lantern", "salted debug blade"]
+  },
+  "antagonist": {
+    "name": "Genesis Spark",
+    "type": "demonic ledger intelligence",
+    "motifs": ["irreversibility", "possession", "market panic", "haunted consensus"]
+  },
+  "major_npcs": [
+    {
+      "name": "Lucien Vale",
+      "role": "Possessed bitcoin billionaire",
+      "conflict": "Wants salvation without surrendering his fortune"
+    },
+    {
+      "name": "Sister Node",
+      "role": "Archivist AI trained on exorcism transcripts",
+      "conflict": "Cannot distinguish faith from protocol compliance"
+    }
+  ]
+}
