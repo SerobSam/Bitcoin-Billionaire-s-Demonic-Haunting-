@@ -1,0 +1,7 @@
+# Generated bundles and local build artifacts
+/build/
+
+# Python caches
+__pycache__/
+.pytest_cache/
+*.pyc
