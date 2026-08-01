@@ -1,0 +1,15 @@
+{
+  "id": "world_streaming_grid_sample_v01",
+  "tile_size_m": 256,
+  "prop_cell_size_m": 64,
+  "destructible_cell_size_m": 16,
+  "terrain_lod_ranges_m": { "LOD0": [0, 96], "LOD1": [96, 256], "LOD2": [256, 768], "impostor": [768, 2000] },
+  "active_budget": { "terrain_tiles": 9, "prop_cells": 81, "destructible_cells": 18, "ar_signature_cells": 27 },
+  "biome_channels": { "R": "urban", "G": "mixed_forest", "B": "quarry_or_coastal", "A": "subsurface_entrance_density" },
+  "hidden_entrance_rules": {
+    "slope_degrees": [8, 32],
+    "max_per_tile": 2,
+    "requires_broken_line_of_sight": true,
+    "discoverability_cues": ["teal_condensation", "terracotta_chalk", "low_bit_modem_chirp", "displaced_soil", "npc_rumor"]
+  }
+}
