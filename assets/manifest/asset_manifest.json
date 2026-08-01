@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Genesis Protocol: Demonic Haunting",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "export_settings": {
+    "meshes": { "formats": ["FBX ASCII", "GLTF 2.0"], "units": "meters", "up_axis": "Y", "embed_media": false },
+    "textures": { "base_color": "PNG 16-bit sRGB", "normal": "TGA 16-bit", "roughness_metalness": "EXR packed", "height": "EXR", "ao": "EXR" },
+    "icons": { "source": "SVG", "png_export": "512x512", "atlas": true },
+    "style_guide": { "format": "PDF", "dpi": 300, "page_size": "A4" }
+  },
+  "palette": [
+    { "name": "Deep Ledger", "hex": "#171A1C", "usage": "primary neutral background, caves, UI panels, silhouettes" },
+    { "name": "Ash Concrete", "hex": "#6E6A61", "usage": "secondary neutral, masonry, disabled UI, fogged distance" },
+    { "name": "Terracotta Signal", "hex": "#B65A3C", "usage": "primary accent, hero cloth, damage, route marks, interact highlights" },
+    { "name": "Muted Teal", "hex": "#3D7F7A", "usage": "secondary accent, AR scans, safe tech, shields, forest shadows" },
+    { "name": "Phosphor Gold", "hex": "#D6B15E", "usage": "rare loot, warnings, boss weak points" },
+    { "name": "Cold Bone", "hex": "#E7DFC9", "usage": "readable text, snow, lore parchment, high-contrast strokes" }
+  ],
+  "assets": [
+    {
+      "id": "world_topography_master_8k_EXR_v01",
+      "name": "Master Topography Heightmap",
+      "category": "world",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": ["EXR", "JSON"],
+      "size_bytes": 0,
+      "polycount": 0,
+      "texture_resolutions": ["8192x8192"],
+      "dependencies": [],
+      "readme_path": "01_world/readme.md"
+    },
+    {
+      "id": "char_hero_analogexorcist_LOD0_v01",
+      "name": "Hero Analog Exorcist",
+      "category": "character",
+      "variant": "analogexorcist",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": ["FBX", "GLTF", "PNG", "TGA", "EXR"],
+      "size_bytes": 0,
+      "polycount": 55000,
+      "texture_resolutions": ["4096x4096", "2048x2048"],
+      "dependencies": ["rig_humanoid_64bone_v01"],
+      "readme_path": "03_characters/hero/readme.md"
+    },
+    {
+      "id": "prop_wooddoor_locked_LOD0_v01",
+      "name": "Locked Wood Door Destructible",
+      "category": "prop",
+      "variant": "locked",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": ["FBX", "GLTF", "PNG", "TGA", "EXR", "JSON"],
+      "size_bytes": 0,
+      "polycount": 3200,
+      "texture_resolutions": ["2048x2048"],
+      "dependencies": ["destructible_state_machine_v01", "fracture_wood_grain_v01"],
+      "readme_path": "04_props/destructibles/wooddoor/readme.md"
+    },
+    {
+      "id": "tool_scaffolddeployer_standard_LOD0_v01",
+      "name": "Scaffold Deployer",
+      "category": "tool",
+      "variant": "standard",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": ["FBX", "GLTF", "SVG", "PNG", "JSON"],
+      "size_bytes": 0,
+      "polycount": 7800,
+      "texture_resolutions": ["2048x2048"],
+      "dependencies": ["vfx_teal_hardlight_scaffold_v01"],
+      "readme_path": "05_tools/scaffold_deployer/readme.md"
+    },
+    {
+      "id": "ui_icon_destructible_indicator_atlas_v01",
+      "name": "Destructible Indicator Icon Atlas",
+      "category": "ui",
+      "variant": "atlas",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": ["SVG", "PNG", "JSON"],
+      "size_bytes": 0,
+      "polycount": 0,
+      "texture_resolutions": ["4096x4096", "512x512"],
+      "dependencies": [],
+      "readme_path": "06_ui/icons/readme.md"
+    }
+  ]
+}
