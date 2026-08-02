@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Genesis Protocol: Demonic Haunting",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "export_settings": {
+    "meshes": {
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0"
+      ],
+      "units": "meters",
+      "up_axis": "Y",
+      "embed_media": false
+    },
+    "textures": {
+      "base_color": "PNG 16-bit sRGB",
+      "normal": "TGA 16-bit",
+      "roughness_metalness": "EXR packed",
+      "height": "EXR",
+      "ao": "EXR"
+    },
+    "icons": {
+      "source": "SVG",
+      "png_export": "512x512",
+      "atlas": true
+    },
+    "style_guide": {
+      "format": "PDF",
+      "dpi": 300,
+      "page_size": "A4"
+    }
+  },
+  "palette": [
+    {
+      "name": "Deep Ledger",
+      "hex": "#171A1C",
+      "usage": "primary neutral background"
+    },
+    {
+      "name": "Ash Concrete",
+      "hex": "#6E6A61",
+      "usage": "secondary neutral masonry"
+    },
+    {
+      "name": "Terracotta Signal",
+      "hex": "#B65A3C",
+      "usage": "hero cloth and hazard marks"
+    },
+    {
+      "name": "Muted Teal",
+      "hex": "#3D7F7A",
+      "usage": "safe tech and forest shadows"
+    },
+    {
+      "name": "Phosphor Gold",
+      "hex": "#D6B15E",
+      "usage": "rare loot and boss weak points"
+    },
+    {
+      "name": "Cold Bone",
+      "hex": "#E7DFC9",
+      "usage": "readable text and lore parchment"
+    }
+  ],
+  "assets": [
+    {
+      "id": "world_topography_master_LOD0_v01",
+      "name": "Master Topography Heightmap",
+      "category": "world",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "EXR",
+        "JSON"
+      ],
+      "size_bytes": 268435456,
+      "polycount": 0,
+      "texture_resolutions": [
+        "8192x8192"
+      ],
+      "dependencies": [],
+      "readme_path": "01_world/topography/readme.md"
+    },
+    {
+      "id": "world_biomask_master_LOD0_v01",
+      "name": "Biome Mask Atlas",
+      "category": "world",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "PNG",
+        "JSON"
+      ],
+      "size_bytes": 67108864,
+      "polycount": 0,
+      "texture_resolutions": [
+        "8192x8192"
+      ],
+      "dependencies": [],
+      "readme_path": "01_world/biome_masks/readme.md"
+    },
+    {
+      "id": "world_streaming_grid_sample_LOD0_v01",
+      "name": "Streaming Grid Sample",
+      "category": "world",
+      "variant": "sample",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON"
+      ],
+      "size_bytes": 4096,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [],
+      "readme_path": "01_world/streaming/readme.md"
+    },
+    {
+      "id": "biome_urban_master_LOD0_v01",
+      "name": "Urban Biome Concept Set",
+      "category": "biome",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON",
+        "GLTF"
+      ],
+      "size_bytes": 5242880,
+      "polycount": 18000,
+      "texture_resolutions": [
+        "4096x4096"
+      ],
+      "dependencies": [],
+      "readme_path": "02_biomes/urban/readme.md"
+    },
+    {
+      "id": "biome_forest_master_LOD0_v01",
+      "name": "Forest Biome Concept Set",
+      "category": "biome",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON",
+        "GLTF"
+      ],
+      "size_bytes": 5242880,
+      "polycount": 19000,
+      "texture_resolutions": [
+        "4096x4096"
+      ],
+      "dependencies": [],
+      "readme_path": "02_biomes/forest/readme.md"
+    },
+    {
+      "id": "biome_quarry_master_LOD0_v01",
+      "name": "Quarry Biome Concept Set",
+      "category": "biome",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON",
+        "GLTF"
+      ],
+      "size_bytes": 5242880,
+      "polycount": 22000,
+      "texture_resolutions": [
+        "4096x4096"
+      ],
+      "dependencies": [],
+      "readme_path": "02_biomes/quarry/readme.md"
+    },
+    {
+      "id": "biome_coastal_master_LOD0_v01",
+      "name": "Coastal Biome Concept Set",
+      "category": "biome",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON",
+        "GLTF"
+      ],
+      "size_bytes": 5242880,
+      "polycount": 16000,
+      "texture_resolutions": [
+        "4096x4096"
+      ],
+      "dependencies": [],
+      "readme_path": "02_biomes/coastal/readme.md"
+    },
+    {
+      "id": "biome_cavern_master_LOD0_v01",
+      "name": "Cavern Biome Concept Set",
+      "category": "biome",
+      "variant": "master",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON",
+        "GLTF"
+      ],
+      "size_bytes": 5242880,
+      "polycount": 21000,
+      "texture_resolutions": [
+        "4096x4096"
+      ],
+      "dependencies": [],
+      "readme_path": "02_biomes/cavern/readme.md"
+    },
+    {
+      "id": "character_hero_analogexorcist_LOD0_v01",
+      "name": "Hero Analog Exorcist",
+      "category": "character",
+      "variant": "analogexorcist",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 94371840,
+      "polycount": 55000,
+      "texture_resolutions": [
+        "2048x2048"
+      ],
+      "dependencies": [],
+      "readme_path": "03_characters/hero/readme.md"
+    },
+    {
+      "id": "prop_wood_destructible_LOD0_v01",
+      "name": "Wood Destructible Set",
+      "category": "prop",
+      "variant": "destructible",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 12582912,
+      "polycount": 3200,
+      "texture_resolutions": [
+        "2048x2048"
+      ],
+      "dependencies": [
+        "destructible_state_machine_v01"
+      ],
+      "readme_path": "04_props/destructibles/wood/readme.md"
+    },
+    {
+      "id": "tool_scaffolddeployer_standard_LOD0_v01",
+      "name": "Scaffold Deployer Toolset",
+      "category": "tool",
+      "variant": "standard",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 18874368,
+      "polycount": 7800,
+      "texture_resolutions": [
+        "2048x2048"
+      ],
+      "dependencies": [],
+      "readme_path": "05_tools/scaffold_deployer/readme.md"
+    },
+    {
+      "id": "ui_icons_atlas_LOD0_v01",
+      "name": "Icon Atlas Bundle",
+      "category": "ui",
+      "variant": "atlas",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "SVG",
+        "PNG",
+        "JSON"
+      ],
+      "size_bytes": 8388608,
+      "polycount": 0,
+      "texture_resolutions": [
+        "512x512"
+      ],
+      "dependencies": [],
+      "readme_path": "06_ui/icons/readme.md"
+    },
+    {
+      "id": "vfx_digitalstatic_loop_LOD0_v01",
+      "name": "Digital Static VFX",
+      "category": "vfx",
+      "variant": "loop",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 1048576,
+      "polycount": 0,
+      "texture_resolutions": [
+        "1024x1024"
+      ],
+      "dependencies": [],
+      "readme_path": "07_vfx/digital_static/readme.md"
+    },
+    {
+      "id": "audio_atmosphere_loop_LOD0_v01",
+      "name": "Atmosphere Audio Ref",
+      "category": "audio",
+      "variant": "loop",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 262144,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [],
+      "readme_path": "08_audio_refs/atmosphere/readme.md"
+    },
+    {
+      "id": "scene_urban_sample_LOD0_v01",
+      "name": "Urban Sample Scene",
+      "category": "scene",
+      "variant": "sample",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 524288,
+      "polycount": 1500,
+      "texture_resolutions": [
+        "2048x2048"
+      ],
+      "dependencies": [],
+      "readme_path": "09_scenes/urban_sample/readme.md"
+    }
+  ]
+}
