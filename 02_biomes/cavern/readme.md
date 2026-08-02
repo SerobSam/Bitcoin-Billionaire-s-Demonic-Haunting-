@@ -1,3 +1,3 @@
-# Cavern Biome
+# 02_biomes/cavern
 
-The cavern biome supports subterranean ritual chambers and hidden data vaults.
+This asset package contains the curated content scaffold for 02_biomes/cavern.

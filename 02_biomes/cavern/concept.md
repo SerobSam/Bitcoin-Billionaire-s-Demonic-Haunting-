@@ -1,7 +1,8 @@
-# Concept
+# Genesis Cavern
 
-This placeholder asset package captures the intended content for 02_biomes/cavern/concept.md.
+An underground sanctum beneath the genesis node where the first block pulses like a diseased heart.
 
-- Category: 02_biomes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+## Gameplay Notes
+- Threats: spectral drones, ritualized drones, and collapsing infrastructure.
+- Environment motifs: vault-echo, static rain, and mirrored water.
+- Palette anchors: Deep Ledger, Phosphor Gold.

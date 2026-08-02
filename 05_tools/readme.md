@@ -1,3 +1,3 @@
-# Tools
+# 05_tools
 
-Tool assets support combat, traversal, sabotage, and crafting loops.
+Tool specs for player tools and environmental utility devices.

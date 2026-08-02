@@ -102,10 +102,10 @@
       "readme_path": "01_world/biome_masks/readme.md"
     },
     {
-      "id": "world_streaming_grid_sample_LOD0_v01",
+      "id": "world_streaming_grid_LOD0_v01",
       "name": "Streaming Grid Sample",
       "category": "world",
-      "variant": "sample",
+      "variant": "grid",
       "LOD": "LOD0",
       "version": "v01",
       "formats": [
@@ -350,6 +350,25 @@
       ],
       "dependencies": [],
       "readme_path": "09_scenes/urban_sample/readme.md"
+    },
+    {
+      "id": "scene_destruction_lab_LOD0_v01",
+      "name": "Destruction Lab Scene",
+      "category": "scene",
+      "variant": "lab",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "MD",
+        "JSON"
+      ],
+      "size_bytes": 1048576,
+      "polycount": 2200,
+      "texture_resolutions": [
+        "2048x2048"
+      ],
+      "dependencies": [],
+      "readme_path": "09_scenes/destruction_lab/readme.md"
     }
   ]
 }

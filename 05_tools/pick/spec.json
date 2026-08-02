@@ -1,0 +1,13 @@
+{
+  "name": "pick",
+  "category": "tool",
+  "damage": 12,
+  "utility": [
+    "break",
+    "pry"
+  ],
+  "tags": [
+    "melee",
+    "utility"
+  ]
+}

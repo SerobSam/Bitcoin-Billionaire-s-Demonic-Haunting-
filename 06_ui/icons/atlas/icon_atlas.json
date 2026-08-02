@@ -1,4 +1,19 @@
 {
-  "placeholder": true,
-  "asset": "06_ui/icons/atlas/icon_atlas.json"
+  "atlas": "icon_set",
+  "icons": [
+    {
+      "id": "sigil",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 32
+    },
+    {
+      "id": "wallet",
+      "x": 32,
+      "y": 0,
+      "w": 32,
+      "h": 32
+    }
+  ]
 }

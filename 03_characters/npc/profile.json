@@ -1,0 +1,14 @@
+{
+  "name": "Sister Node",
+  "role": "Archivist AI",
+  "abilities": [
+    "data triage",
+    "exorcism transcripts",
+    "forensic routing"
+  ],
+  "starting_loadout": [
+    "terminal key",
+    "archive prism"
+  ],
+  "theme": "muted teal and ash"
+}

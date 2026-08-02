@@ -1,4 +1,25 @@
 {
-  "placeholder": true,
-  "asset": "02_biomes/forest/materials.json"
+  "biome": "forest",
+  "materials": [
+    {
+      "name": "stone_shell",
+      "usage": "foundations and ruins",
+      "color_token": "Ash Concrete"
+    },
+    {
+      "name": "wet_metal",
+      "usage": "rails, pipes, and hazard panels",
+      "color_token": "Terracotta Signal"
+    },
+    {
+      "name": "resin_glow",
+      "usage": "ritual surfaces and enemy weak points",
+      "color_token": "Phosphor Gold"
+    }
+  ],
+  "atmosphere": [
+    "fog",
+    "electrical hum",
+    "distant choir"
+  ]
 }

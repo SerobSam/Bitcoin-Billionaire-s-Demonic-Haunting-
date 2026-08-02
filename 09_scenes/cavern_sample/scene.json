@@ -1,0 +1,15 @@
+{
+  "name": "Cavern Sample",
+  "description": "A descent into the genesis vault with pulsing crystal glyphs.",
+  "mood": "tense",
+  "entities": [
+    "hero",
+    "enemy",
+    "prop"
+  ],
+  "interactive_points": [
+    "console",
+    "door",
+    "loot_pile"
+  ]
+}

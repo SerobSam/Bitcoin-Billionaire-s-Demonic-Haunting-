@@ -1,7 +1,8 @@
-# Concept
+# Blackwood Forest
 
-This placeholder asset package captures the intended content for 02_biomes/forest/concept.md.
+A haunted forest of dead pines, fungal circuits, and ritual cairns that flicker in infrared.
 
-- Category: 02_biomes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+## Gameplay Notes
+- Threats: spectral drones, ritualized drones, and collapsing infrastructure.
+- Environment motifs: root-veil, static rain, and mirrored water.
+- Palette anchors: Muted Teal, Cold Bone.

@@ -1,3 +1,3 @@
-# Coastal Biome
+# 02_biomes/coastal
 
-The coastal biome mixes flooded infrastructure, salt weathering, and data tides.
+This asset package contains the curated content scaffold for 02_biomes/coastal.

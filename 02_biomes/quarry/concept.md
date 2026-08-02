@@ -1,7 +1,8 @@
-# Concept
+# Abyssal Quarry
 
-This placeholder asset package captures the intended content for 02_biomes/quarry/concept.md.
+A mining district carved into the planet’s crust where the demon mines memory as if it were ore.
 
-- Category: 02_biomes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+## Gameplay Notes
+- Threats: spectral drones, ritualized drones, and collapsing infrastructure.
+- Environment motifs: fracture-core, static rain, and mirrored water.
+- Palette anchors: Ash Concrete, Terracotta Signal.

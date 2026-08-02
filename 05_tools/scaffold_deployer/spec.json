@@ -1,0 +1,12 @@
+{
+  "name": "scaffold deployer",
+  "category": "tool",
+  "damage": 12,
+  "utility": [
+    "open",
+    "cut"
+  ],
+  "tags": [
+    "special"
+  ]
+}

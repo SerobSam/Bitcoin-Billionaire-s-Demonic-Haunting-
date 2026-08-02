@@ -1,7 +1,3 @@
-# Readme
+# 08_audio_refs/lore
 
-This placeholder asset package captures the intended content for 08_audio_refs/lore/readme.md.
-
-- Category: 08_audio_refs
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+This asset package contains the curated content scaffold for 08_audio_refs/lore.

@@ -1,0 +1,15 @@
+{
+  "name": "Urban Sample",
+  "description": "A rooftop infiltration sequence with data storms and billboard hauntings.",
+  "mood": "tense",
+  "entities": [
+    "hero",
+    "enemy",
+    "prop"
+  ],
+  "interactive_points": [
+    "console",
+    "door",
+    "loot_pile"
+  ]
+}

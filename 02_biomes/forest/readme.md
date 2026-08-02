@@ -1,3 +1,3 @@
-# Forest Biome
+# 02_biomes/forest
 
-The forest biome balances wet roots, fungal lit pathways, and oppressive fog.
+This asset package contains the curated content scaffold for 02_biomes/forest.

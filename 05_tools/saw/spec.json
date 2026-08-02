@@ -1,0 +1,13 @@
+{
+  "name": "saw",
+  "category": "tool",
+  "damage": 12,
+  "utility": [
+    "open",
+    "cut"
+  ],
+  "tags": [
+    "melee",
+    "utility"
+  ]
+}

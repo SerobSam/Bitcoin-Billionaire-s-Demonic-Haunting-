@@ -1,7 +1,3 @@
-# Readme
+# 07_vfx/shards
 
-This placeholder asset package captures the intended content for 07_vfx/shards/readme.md.
-
-- Category: 07_vfx
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+This asset package contains the curated content scaffold for 07_vfx/shards.

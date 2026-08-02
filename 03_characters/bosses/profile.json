@@ -1,0 +1,14 @@
+{
+  "name": "Genesis Spark",
+  "role": "Final boss",
+  "abilities": [
+    "consensus storm",
+    "possession pulse",
+    "market panic"
+  ],
+  "starting_loadout": [
+    "ledger crown",
+    "world node"
+  ],
+  "theme": "ember and bone"
+}

@@ -1,7 +1,8 @@
-# Concept
+# Tideglass Coast
 
-This placeholder asset package captures the intended content for 02_biomes/coastal/concept.md.
+Salt-washed ruins and storm drains filled with static where the sea keeps repeating half-finished prayers.
 
-- Category: 02_biomes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+## Gameplay Notes
+- Threats: spectral drones, ritualized drones, and collapsing infrastructure.
+- Environment motifs: tide-script, static rain, and mirrored water.
+- Palette anchors: Muted Teal, Cold Bone.

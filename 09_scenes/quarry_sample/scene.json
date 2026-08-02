@@ -1,0 +1,15 @@
+{
+  "name": "Quarry Sample",
+  "description": "An excavator chase through fractured mine shafts.",
+  "mood": "tense",
+  "entities": [
+    "hero",
+    "enemy",
+    "prop"
+  ],
+  "interactive_points": [
+    "console",
+    "door",
+    "loot_pile"
+  ]
+}

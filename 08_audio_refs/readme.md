@@ -1,3 +1,3 @@
-# Audio References
+# 08_audio_refs
 
-Audio references package atmosphere, combat, boss, and lore cues for implementation.
+Audio cue references for atmosphere, boss encounters, combat, and lore moments.

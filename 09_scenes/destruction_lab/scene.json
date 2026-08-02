@@ -1,0 +1,15 @@
+{
+  "name": "Destruction Lab",
+  "description": "A sandbox for testing destructible props and state changes.",
+  "mood": "tense",
+  "entities": [
+    "hero",
+    "enemy",
+    "prop"
+  ],
+  "interactive_points": [
+    "console",
+    "door",
+    "loot_pile"
+  ]
+}

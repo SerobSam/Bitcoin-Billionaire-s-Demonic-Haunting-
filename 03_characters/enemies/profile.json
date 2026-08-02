@@ -1,0 +1,13 @@
+{
+  "name": "Static Hounds",
+  "role": "Glitch mobs",
+  "abilities": [
+    "sprint",
+    "electro-bite",
+    "spawn static"
+  ],
+  "starting_loadout": [
+    "corrupted code"
+  ],
+  "theme": "phosphor gold"
+}

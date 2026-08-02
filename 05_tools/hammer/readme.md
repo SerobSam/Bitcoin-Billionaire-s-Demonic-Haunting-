@@ -1,7 +1,3 @@
-# Readme
+# 05_tools/hammer
 
-This placeholder asset package captures the intended content for 05_tools/hammer/readme.md.
-
-- Category: 05_tools
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+This asset package contains the curated content scaffold for 05_tools/hammer.

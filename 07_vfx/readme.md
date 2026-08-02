@@ -1,3 +1,3 @@
-# VFX
+# 07_vfx
 
-VFX references cover static, sparks, dust, shards, and phosphor code motifs.
+Effect definitions for digital static, phosphor code, sparks, dust, and shards.

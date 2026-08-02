@@ -1,7 +1,3 @@
-# Readme
+# 09_scenes/cavern_sample
 
-This placeholder asset package captures the intended content for 09_scenes/cavern_sample/readme.md.
-
-- Category: 09_scenes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+This asset package contains the curated content scaffold for 09_scenes/cavern_sample.

@@ -1,0 +1,14 @@
+{
+  "material": "soil",
+  "damage_states": [
+    "intact",
+    "fractured",
+    "collapsed"
+  ],
+  "impact_response": "debris and dust",
+  "sound_profile": "soil-impact",
+  "loot": [
+    "scrap",
+    "salvage"
+  ]
+}

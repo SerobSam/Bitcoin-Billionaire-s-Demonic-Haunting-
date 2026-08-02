@@ -1,0 +1,14 @@
+{
+  "material": "foliage",
+  "damage_states": [
+    "intact",
+    "fractured",
+    "collapsed"
+  ],
+  "impact_response": "debris and dust",
+  "sound_profile": "foliage-impact",
+  "loot": [
+    "scrap",
+    "salvage"
+  ]
+}

@@ -1,3 +1,3 @@
-# UI Icons
+# 06_ui/icons
 
-This set collects SVG source art, PNG exports, and atlas metadata for HUD and inventory surfaces.
+This asset package contains the curated content scaffold for 06_ui/icons.

@@ -1,3 +1,3 @@
-# Quarry Biome
+# 02_biomes/quarry
 
-The quarry biome emphasizes carved stone, drill scars, and exposed circuitry.
+This asset package contains the curated content scaffold for 02_biomes/quarry.

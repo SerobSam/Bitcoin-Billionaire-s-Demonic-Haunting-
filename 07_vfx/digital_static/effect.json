@@ -1,0 +1,10 @@
+{
+  "name": "digital static",
+  "duration_ms": 900,
+  "colors": [
+    "#3D7F7A",
+    "#D6B15E"
+  ],
+  "loop": true,
+  "notes": "Used for enemy hits, console glitches, and teleportation events."
+}

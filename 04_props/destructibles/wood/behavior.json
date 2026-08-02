@@ -1,0 +1,14 @@
+{
+  "material": "wood",
+  "damage_states": [
+    "intact",
+    "fractured",
+    "collapsed"
+  ],
+  "impact_response": "debris and dust",
+  "sound_profile": "wood-impact",
+  "loot": [
+    "scrap",
+    "salvage"
+  ]
+}

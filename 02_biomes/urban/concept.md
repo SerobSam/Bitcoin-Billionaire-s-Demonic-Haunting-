@@ -1,7 +1,8 @@
-# Concept
+# Urban Sprawl
 
-This placeholder asset package captures the intended content for 02_biomes/urban/concept.md.
+A neon-lit megacity where corrupted billboards broadcast demonic messages and subway tunnels leak blackwater.
 
-- Category: 02_biomes
-- Status: scaffolded for production handoff
-- Notes: Expand with final art, textures, and metadata before shipping.
+## Gameplay Notes
+- Threats: spectral drones, ritualized drones, and collapsing infrastructure.
+- Environment motifs: tower-grid, static rain, and mirrored water.
+- Palette anchors: Terracotta Signal, Phosphor Gold.

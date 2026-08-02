@@ -1,3 +1,3 @@
-# Urban Biome
+# 02_biomes/urban
 
-The urban biome carries neon infrastructure, collapsed towers, and AR-safe transit routes.
+This asset package contains the curated content scaffold for 02_biomes/urban.

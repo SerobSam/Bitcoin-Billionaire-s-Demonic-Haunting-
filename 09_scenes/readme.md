@@ -1,3 +1,3 @@
-# Scenes
+# 09_scenes
 
-Scene packages capture sample biome and destruction-test moments.
+Scene definitions for sample encounters and destruction sandbox levels.

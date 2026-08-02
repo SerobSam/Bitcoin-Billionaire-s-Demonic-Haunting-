@@ -1,0 +1,14 @@
+{
+  "material": "masonry",
+  "damage_states": [
+    "intact",
+    "fractured",
+    "collapsed"
+  ],
+  "impact_response": "debris and dust",
+  "sound_profile": "masonry-impact",
+  "loot": [
+    "scrap",
+    "salvage"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "explosives",
+  "category": "tool",
+  "damage": 28,
+  "utility": [
+    "open",
+    "cut"
+  ],
+  "tags": [
+    "special"
+  ]
+}

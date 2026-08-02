@@ -1,0 +1,15 @@
+{
+  "name": "Forest Sample",
+  "description": "A root-lit ambush sequence with static fog and ritual cairns.",
+  "mood": "tense",
+  "entities": [
+    "hero",
+    "enemy",
+    "prop"
+  ],
+  "interactive_points": [
+    "console",
+    "door",
+    "loot_pile"
+  ]
+}

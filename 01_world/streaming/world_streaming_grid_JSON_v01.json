@@ -1,4 +1,30 @@
 {
-  "placeholder": true,
-  "asset": "01_world/streaming/world_streaming_grid_JSON_v01.json"
+  "name": "Streaming Grid Sample",
+  "version": "v01",
+  "cells": [
+    {
+      "id": "A1",
+      "biome": "cavern",
+      "load_bias": 1.0
+    },
+    {
+      "id": "A2",
+      "biome": "forest",
+      "load_bias": 0.8
+    },
+    {
+      "id": "A3",
+      "biome": "coastal",
+      "load_bias": 0.7
+    },
+    {
+      "id": "A4",
+      "biome": "urban",
+      "load_bias": 0.9
+    }
+  ],
+  "server_links": [
+    "node-alpha",
+    "node-beta"
+  ]
 }

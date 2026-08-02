@@ -1,0 +1,15 @@
+{
+  "name": "Mara Quell",
+  "role": "Analog exorcist",
+  "abilities": [
+    "sigil carving",
+    "network breach",
+    "shard tether"
+  ],
+  "starting_loadout": [
+    "packet crucible",
+    "wallet lantern",
+    "debug blade"
+  ],
+  "theme": "cold-bone and terracotta"
+}
