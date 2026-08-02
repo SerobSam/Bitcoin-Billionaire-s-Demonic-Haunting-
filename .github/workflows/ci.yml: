@@ -1,0 +1,55 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MAKE_DIR: '.'   # change to subfolder if Makefile is not at repo root
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Debug repo contents
+        run: |
+          echo "Working dir: $(pwd)"
+          ls -la
+          echo "Find Makefile and package.json:"
+          find . -maxdepth 4 -type f \( -iname 'Makefile' -o -iname 'package.json' \) -print || true
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake pkg-config
+
+      - name: Node build (only if package.json exists)
+        if: ${{ always() && (contains(steps.checkout.outputs, '') || true) }}
+        run: |
+          if [ -f package.json ]; then
+            echo "package.json found — running Node steps"
+            curl -sL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            npm ci
+            if npm run | grep -q build; then
+              npm run build
+            else
+              echo "No npm build script defined; skipping npm run build"
+            fi
+          else
+            echo "No package.json — skipping Node steps"
+          fi
+
+      - name: Build with make
+        run: |
+          cd ${{ env.MAKE_DIR }}
+          if [ -f Makefile ] || [ -f makefile ]; then
+            echo "Makefile found in ${{ env.MAKE_DIR }} — running make"
+            make
+          else
+            echo "No Makefile found in ${{ env.MAKE_DIR }} — skipping make"
+          fi
