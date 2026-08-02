@@ -1,0 +1,84 @@
+{
+  "biomes": [
+    {
+      "id": 0,
+      "name": "coastal",
+      "color": [
+        52,
+        168,
+        172
+      ],
+      "mask": "biome_masks_v01/biome_00_coastal.png"
+    },
+    {
+      "id": 1,
+      "name": "forest",
+      "color": [
+        42,
+        153,
+        64
+      ],
+      "mask": "biome_masks_v01/biome_01_forest.png"
+    },
+    {
+      "id": 2,
+      "name": "cavern",
+      "color": [
+        88,
+        24,
+        69
+      ],
+      "mask": "biome_masks_v01/biome_02_cavern.png"
+    },
+    {
+      "id": 3,
+      "name": "quarry",
+      "color": [
+        136,
+        98,
+        61
+      ],
+      "mask": "biome_masks_v01/biome_03_quarry.png"
+    },
+    {
+      "id": 4,
+      "name": "urban",
+      "color": [
+        120,
+        120,
+        120
+      ],
+      "mask": "biome_masks_v01/biome_04_urban.png"
+    },
+    {
+      "id": 5,
+      "name": "desert",
+      "color": [
+        233,
+        188,
+        121
+      ],
+      "mask": "biome_masks_v01/biome_05_desert.png"
+    },
+    {
+      "id": 6,
+      "name": "swamp",
+      "color": [
+        88,
+        102,
+        24
+      ],
+      "mask": "biome_masks_v01/biome_06_swamp.png"
+    },
+    {
+      "id": 7,
+      "name": "glacier",
+      "color": [
+        200,
+        230,
+        250
+      ],
+      "mask": "biome_masks_v01/biome_07_glacier.png"
+    }
+  ]
+}
