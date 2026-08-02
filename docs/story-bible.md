@@ -10,7 +10,7 @@ Mara Quell is a former incident-response engineer who became an occult investiga
 The Genesis Spark is not merely a demon using computers. It is a pact-like intelligence that feeds on irreversible choices: signed transactions, broken promises, and secrets made permanent. It tempts victims with certainty, wealth, and perfect prediction.
 
 ## Key Locations
-- **Vale Estate:** A cliffside mansion where mirrors show wallet balances instead of reflections.
+- **Vance Estate:** A cliffside mansion where mirrors show wallet balances instead of reflections.
 - **The Cold Vault:** A cryogenic storage bunker for seed phrases, heirlooms, and cursed ledgers.
 - **Hash Cathedral:** An abandoned hydro-powered mining facility converted into a ritual engine.
 - **Night Exchange:** A black-market trading floor that appears only during flash crashes.
