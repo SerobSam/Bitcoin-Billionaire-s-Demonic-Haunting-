@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-    # You can change this to windows-latest or macos-latest if needed
     runs-on: ubuntu-latest
 
     steps:
@@ -16,14 +15,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Configure CMake
-      # Creates the build directory and generates the build system files
       run: cmake -B ${{github.workspace}}/build
 
     - name: Build
-      # Compiles the code using the generated build system
       run: cmake --build ${{github.workspace}}/build
-
-    - name: Run Tests (Optional)
-      # If your project uses CTest, uncomment these lines to run your tests
-      # working-directory: ${{github.workspace}}/build
-      # run: ctest --output-on-failure
