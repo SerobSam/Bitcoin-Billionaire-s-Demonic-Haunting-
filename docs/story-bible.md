@@ -4,7 +4,7 @@
 When billionaire Serob known as Vance signs a vanity transaction from an unreleased cold wallet, he awakens an intelligence trapped in the earliest block data. The entity, called the Genesis Spark, uses his wealth and infrastructure to spread through exchanges, mining pools, luxury bunkers, and smart-city systems.
 
 ## Protagonist
-Mara Quell is a former incident-response engineer who became an occult investigator after a chain-analysis job erased three days of her memory. She is recruited when Vale's estate begins broadcasting impossible blocks to every device nearby.
+Mara Quell is a former incident-response engineer who became an occult investigator after a chain-analysis job erased three days of her memory. She is recruited when Vance's estate begins broadcasting impossible blocks to every device nearby.
 
 ## Antagonist
 The Genesis Spark is not merely a demon using computers. It is a pact-like intelligence that feeds on irreversible choices: signed transactions, broken promises, and secrets made permanent. It tempts victims with certainty, wealth, and perfect prediction.
