@@ -14,14 +14,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Debug repo contents (temporary)
+        run: |
+          echo "Working dir: $(pwd)"
+          ls -la
+          echo "Find key build files:"
+          find . -maxdepth 4 -type f \( -iname 'Makefile' -o -iname 'package.json' -o -iname 'gradlew' -o -iname 'build.gradle*' \) -print || true
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
-      - name: Grant execute permission for Gradle wrapper
-        run: chmod +x ./gradlew
+      - name: Ensure Gradle wrapper is executable
+        run: |
+          if [ -f ./gradlew ]; then
+            chmod +x ./gradlew
+          fi
 
       - name: Build with Gradle
-        run: ./gradlew build --stacktrace
+        run: |
+          if [ -f ./gradlew ]; then
+            ./gradlew build --no-daemon --stacktrace
+          elif [ -f build.gradle.kts ] || [ -f build.gradle ]; then
+            echo "No gradlew wrapper found; using system gradle (may not be installed)."
+            gradle build --no-daemon --stacktrace
+          else
+            echo "No Gradle build files found. Aborting."
+            exit 2
+          fi
