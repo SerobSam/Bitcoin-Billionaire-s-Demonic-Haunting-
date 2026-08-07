@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.0.0",
+  "classes": [
+    {
+      "id": "cypherpunk",
+      "name": "Cypherpunk",
+      "resource": "entropy",
+      "role": "ranged breach",
+      "passive_identity": "Cypherpunk converts entropy into signature combat pressure.",
+      "ultimate": "cypherpunk_ultimate",
+      "skills": [
+        {
+          "id": "cypherpunk_strike",
+          "name": "Strike",
+          "type": "active",
+          "cost_hashrate": 3,
+          "cooldown_ms": 5700,
+          "tags": [
+            "entropy",
+            "strike",
+            "combat"
+          ],
+          "description": "Cypherpunk strike ability tuned for ranged breach gameplay."
+        },
+        {
+          "id": "cypherpunk_snare",
+          "name": "Snare",
+          "type": "active",
+          "cost_hashrate": 6,
+          "cooldown_ms": 6400,
+          "tags": [
+            "entropy",
+            "snare",
+            "combat"
+          ],
+          "description": "Cypherpunk snare ability tuned for ranged breach gameplay."
+        },
+        {
+          "id": "cypherpunk_dash",
+          "name": "Dash",
+          "type": "active",
+          "cost_hashrate": 9,
+          "cooldown_ms": 7100,
+          "tags": [
+            "entropy",
+            "dash",
+            "combat"
+          ],
+          "description": "Cypherpunk dash ability tuned for ranged breach gameplay."
+        },
+        {
+          "id": "cypherpunk_ward",
+          "name": "Ward",
+          "type": "active",
+          "cost_hashrate": 12,
+          "cooldown_ms": 7800,
+          "tags": [
+            "entropy",
+            "ward",
+            "combat"
+          ],
+          "description": "Cypherpunk ward ability tuned for ranged breach gameplay."
+        },
+        {
+          "id": "cypherpunk_surge",
+          "name": "Surge",
+          "type": "active",
+          "cost_hashrate": 15,
+          "cooldown_ms": 8500,
+          "tags": [
+            "entropy",
+            "surge",
+            "combat"
+          ],
+          "description": "Cypherpunk surge ability tuned for ranged breach gameplay."
+        },
+        {
+          "id": "cypherpunk_ultimate",
+          "name": "Ultimate",
+          "type": "ultimate",
+          "cost_hashrate": 40,
+          "cooldown_ms": 60000,
+          "tags": [
+            "entropy",
+            "ultimate",
+            "combat"
+          ],
+          "description": "Cypherpunk ultimate ability tuned for ranged breach gameplay."
+        }
+      ],
+      "passives": [
+        {
+          "id": "cypherpunk_passive_01",
+          "name": "Cypherpunk Passive 01",
+          "effect": "Increases entropy efficiency tier 1."
+        },
+        {
+          "id": "cypherpunk_passive_02",
+          "name": "Cypherpunk Passive 02",
+          "effect": "Increases entropy efficiency tier 2."
+        },
+        {
+          "id": "cypherpunk_passive_03",
+          "name": "Cypherpunk Passive 03",
+          "effect": "Increases entropy efficiency tier 3."
+        },
+        {
+          "id": "cypherpunk_passive_04",
+          "name": "Cypherpunk Passive 04",
+          "effect": "Increases entropy efficiency tier 4."
+        },
+        {
+          "id": "cypherpunk_passive_05",
+          "name": "Cypherpunk Passive 05",
+          "effect": "Increases entropy efficiency tier 5."
+        },
+        {
+          "id": "cypherpunk_passive_06",
+          "name": "Cypherpunk Passive 06",
+          "effect": "Increases entropy efficiency tier 6."
+        },
+        {
+          "id": "cypherpunk_passive_07",
+          "name": "Cypherpunk Passive 07",
+          "effect": "Increases entropy efficiency tier 7."
+        },
+        {
+          "id": "cypherpunk_passive_08",
+          "name": "Cypherpunk Passive 08",
+          "effect": "Increases entropy efficiency tier 8."
+        },
+        {
+          "id": "cypherpunk_passive_09",
+          "name": "Cypherpunk Passive 09",
+          "effect": "Increases entropy efficiency tier 9."
+        },
+        {
+          "id": "cypherpunk_passive_10",
+          "name": "Cypherpunk Passive 10",
+          "effect": "Increases entropy efficiency tier 10."
+        },
+        {
+          "id": "cypherpunk_passive_11",
+          "name": "Cypherpunk Passive 11",
+          "effect": "Increases entropy efficiency tier 11."
+        },
+        {
+          "id": "cypherpunk_passive_12",
+          "name": "Cypherpunk Passive 12",
+          "effect": "Increases entropy efficiency tier 12."
+        }
+      ]
+    },
+    {
+      "id": "digital_wraith",
+      "name": "Digital Wraith",
+      "resource": "phase",
+      "role": "stealth assassin",
+      "passive_identity": "Digital Wraith converts phase into signature combat pressure.",
+      "ultimate": "digital_wraith_ultimate",
+      "skills": [
+        {
+          "id": "digital_wraith_strike",
+          "name": "Strike",
+          "type": "active",
+          "cost_hashrate": 3,
+          "cooldown_ms": 5700,
+          "tags": [
+            "phase",
+            "strike",
+            "combat"
+          ],
+          "description": "Digital Wraith strike ability tuned for stealth assassin gameplay."
+        },
+        {
+          "id": "digital_wraith_snare",
+          "name": "Snare",
+          "type": "active",
+          "cost_hashrate": 6,
+          "cooldown_ms": 6400,
+          "tags": [
+            "phase",
+            "snare",
+            "combat"
+          ],
+          "description": "Digital Wraith snare ability tuned for stealth assassin gameplay."
+        },
+        {
+          "id": "digital_wraith_dash",
+          "name": "Dash",
+          "type": "active",
+          "cost_hashrate": 9,
+          "cooldown_ms": 7100,
+          "tags": [
+            "phase",
+            "dash",
+            "combat"
+          ],
+          "description": "Digital Wraith dash ability tuned for stealth assassin gameplay."
+        },
+        {
+          "id": "digital_wraith_ward",
+          "name": "Ward",
+          "type": "active",
+          "cost_hashrate": 12,
+          "cooldown_ms": 7800,
+          "tags": [
+            "phase",
+            "ward",
+            "combat"
+          ],
+          "description": "Digital Wraith ward ability tuned for stealth assassin gameplay."
+        },
+        {
+          "id": "digital_wraith_surge",
+          "name": "Surge",
+          "type": "active",
+          "cost_hashrate": 15,
+          "cooldown_ms": 8500,
+          "tags": [
+            "phase",
+            "surge",
+            "combat"
+          ],
+          "description": "Digital Wraith surge ability tuned for stealth assassin gameplay."
+        },
+        {
+          "id": "digital_wraith_ultimate",
+          "name": "Ultimate",
+          "type": "ultimate",
+          "cost_hashrate": 40,
+          "cooldown_ms": 60000,
+          "tags": [
+            "phase",
+            "ultimate",
+            "combat"
+          ],
+          "description": "Digital Wraith ultimate ability tuned for stealth assassin gameplay."
+        }
+      ],
+      "passives": [
+        {
+          "id": "digital_wraith_passive_01",
+          "name": "Digital Wraith Passive 01",
+          "effect": "Increases phase efficiency tier 1."
+        },
+        {
+          "id": "digital_wraith_passive_02",
+          "name": "Digital Wraith Passive 02",
+          "effect": "Increases phase efficiency tier 2."
+        },
+        {
+          "id": "digital_wraith_passive_03",
+          "name": "Digital Wraith Passive 03",
+          "effect": "Increases phase efficiency tier 3."
+        },
+        {
+          "id": "digital_wraith_passive_04",
+          "name": "Digital Wraith Passive 04",
+          "effect": "Increases phase efficiency tier 4."
+        },
+        {
+          "id": "digital_wraith_passive_05",
+          "name": "Digital Wraith Passive 05",
+          "effect": "Increases phase efficiency tier 5."
+        },
+        {
+          "id": "digital_wraith_passive_06",
+          "name": "Digital Wraith Passive 06",
+          "effect": "Increases phase efficiency tier 6."
+        },
+        {
+          "id": "digital_wraith_passive_07",
+          "name": "Digital Wraith Passive 07",
+          "effect": "Increases phase efficiency tier 7."
+        },
+        {
+          "id": "digital_wraith_passive_08",
+          "name": "Digital Wraith Passive 08",
+          "effect": "Increases phase efficiency tier 8."
+        },
+        {
+          "id": "digital_wraith_passive_09",
+          "name": "Digital Wraith Passive 09",
+          "effect": "Increases phase efficiency tier 9."
+        },
+        {
+          "id": "digital_wraith_passive_10",
+          "name": "Digital Wraith Passive 10",
+          "effect": "Increases phase efficiency tier 10."
+        },
+        {
+          "id": "digital_wraith_passive_11",
+          "name": "Digital Wraith Passive 11",
+          "effect": "Increases phase efficiency tier 11."
+        },
+        {
+          "id": "digital_wraith_passive_12",
+          "name": "Digital Wraith Passive 12",
+          "effect": "Increases phase efficiency tier 12."
+        }
+      ]
+    },
+    {
+      "id": "grid_vanguard",
+      "name": "Grid Vanguard",
+      "resource": "charge",
+      "role": "tank controller",
+      "passive_identity": "Grid Vanguard converts charge into signature combat pressure.",
+      "ultimate": "grid_vanguard_ultimate",
+      "skills": [
+        {
+          "id": "grid_vanguard_strike",
+          "name": "Strike",
+          "type": "active",
+          "cost_hashrate": 3,
+          "cooldown_ms": 5700,
+          "tags": [
+            "charge",
+            "strike",
+            "combat"
+          ],
+          "description": "Grid Vanguard strike ability tuned for tank controller gameplay."
+        },
+        {
+          "id": "grid_vanguard_snare",
+          "name": "Snare",
+          "type": "active",
+          "cost_hashrate": 6,
+          "cooldown_ms": 6400,
+          "tags": [
+            "charge",
+            "snare",
+            "combat"
+          ],
+          "description": "Grid Vanguard snare ability tuned for tank controller gameplay."
+        },
+        {
+          "id": "grid_vanguard_dash",
+          "name": "Dash",
+          "type": "active",
+          "cost_hashrate": 9,
+          "cooldown_ms": 7100,
+          "tags": [
+            "charge",
+            "dash",
+            "combat"
+          ],
+          "description": "Grid Vanguard dash ability tuned for tank controller gameplay."
+        },
+        {
+          "id": "grid_vanguard_ward",
+          "name": "Ward",
+          "type": "active",
+          "cost_hashrate": 12,
+          "cooldown_ms": 7800,
+          "tags": [
+            "charge",
+            "ward",
+            "combat"
+          ],
+          "description": "Grid Vanguard ward ability tuned for tank controller gameplay."
+        },
+        {
+          "id": "grid_vanguard_surge",
+          "name": "Surge",
+          "type": "active",
+          "cost_hashrate": 15,
+          "cooldown_ms": 8500,
+          "tags": [
+            "charge",
+            "surge",
+            "combat"
+          ],
+          "description": "Grid Vanguard surge ability tuned for tank controller gameplay."
+        },
+        {
+          "id": "grid_vanguard_ultimate",
+          "name": "Ultimate",
+          "type": "ultimate",
+          "cost_hashrate": 40,
+          "cooldown_ms": 60000,
+          "tags": [
+            "charge",
+            "ultimate",
+            "combat"
+          ],
+          "description": "Grid Vanguard ultimate ability tuned for tank controller gameplay."
+        }
+      ],
+      "passives": [
+        {
+          "id": "grid_vanguard_passive_01",
+          "name": "Grid Vanguard Passive 01",
+          "effect": "Increases charge efficiency tier 1."
+        },
+        {
+          "id": "grid_vanguard_passive_02",
+          "name": "Grid Vanguard Passive 02",
+          "effect": "Increases charge efficiency tier 2."
+        },
+        {
+          "id": "grid_vanguard_passive_03",
+          "name": "Grid Vanguard Passive 03",
+          "effect": "Increases charge efficiency tier 3."
+        },
+        {
+          "id": "grid_vanguard_passive_04",
+          "name": "Grid Vanguard Passive 04",
+          "effect": "Increases charge efficiency tier 4."
+        },
+        {
+          "id": "grid_vanguard_passive_05",
+          "name": "Grid Vanguard Passive 05",
+          "effect": "Increases charge efficiency tier 5."
+        },
+        {
+          "id": "grid_vanguard_passive_06",
+          "name": "Grid Vanguard Passive 06",
+          "effect": "Increases charge efficiency tier 6."
+        },
+        {
+          "id": "grid_vanguard_passive_07",
+          "name": "Grid Vanguard Passive 07",
+          "effect": "Increases charge efficiency tier 7."
+        },
+        {
+          "id": "grid_vanguard_passive_08",
+          "name": "Grid Vanguard Passive 08",
+          "effect": "Increases charge efficiency tier 8."
+        },
+        {
+          "id": "grid_vanguard_passive_09",
+          "name": "Grid Vanguard Passive 09",
+          "effect": "Increases charge efficiency tier 9."
+        },
+        {
+          "id": "grid_vanguard_passive_10",
+          "name": "Grid Vanguard Passive 10",
+          "effect": "Increases charge efficiency tier 10."
+        },
+        {
+          "id": "grid_vanguard_passive_11",
+          "name": "Grid Vanguard Passive 11",
+          "effect": "Increases charge efficiency tier 11."
+        },
+        {
+          "id": "grid_vanguard_passive_12",
+          "name": "Grid Vanguard Passive 12",
+          "effect": "Increases charge efficiency tier 12."
+        }
+      ]
+    },
+    {
+      "id": "code_weaver",
+      "name": "Code Weaver",
+      "resource": "compile",
+      "role": "summoner support",
+      "passive_identity": "Code Weaver converts compile into signature combat pressure.",
+      "ultimate": "code_weaver_ultimate",
+      "skills": [
+        {
+          "id": "code_weaver_strike",
+          "name": "Strike",
+          "type": "active",
+          "cost_hashrate": 3,
+          "cooldown_ms": 5700,
+          "tags": [
+            "compile",
+            "strike",
+            "combat"
+          ],
+          "description": "Code Weaver strike ability tuned for summoner support gameplay."
+        },
+        {
+          "id": "code_weaver_snare",
+          "name": "Snare",
+          "type": "active",
+          "cost_hashrate": 6,
+          "cooldown_ms": 6400,
+          "tags": [
+            "compile",
+            "snare",
+            "combat"
+          ],
+          "description": "Code Weaver snare ability tuned for summoner support gameplay."
+        },
+        {
+          "id": "code_weaver_dash",
+          "name": "Dash",
+          "type": "active",
+          "cost_hashrate": 9,
+          "cooldown_ms": 7100,
+          "tags": [
+            "compile",
+            "dash",
+            "combat"
+          ],
+          "description": "Code Weaver dash ability tuned for summoner support gameplay."
+        },
+        {
+          "id": "code_weaver_ward",
+          "name": "Ward",
+          "type": "active",
+          "cost_hashrate": 12,
+          "cooldown_ms": 7800,
+          "tags": [
+            "compile",
+            "ward",
+            "combat"
+          ],
+          "description": "Code Weaver ward ability tuned for summoner support gameplay."
+        },
+        {
+          "id": "code_weaver_surge",
+          "name": "Surge",
+          "type": "active",
+          "cost_hashrate": 15,
+          "cooldown_ms": 8500,
+          "tags": [
+            "compile",
+            "surge",
+            "combat"
+          ],
+          "description": "Code Weaver surge ability tuned for summoner support gameplay."
+        },
+        {
+          "id": "code_weaver_ultimate",
+          "name": "Ultimate",
+          "type": "ultimate",
+          "cost_hashrate": 40,
+          "cooldown_ms": 60000,
+          "tags": [
+            "compile",
+            "ultimate",
+            "combat"
+          ],
+          "description": "Code Weaver ultimate ability tuned for summoner support gameplay."
+        }
+      ],
+      "passives": [
+        {
+          "id": "code_weaver_passive_01",
+          "name": "Code Weaver Passive 01",
+          "effect": "Increases compile efficiency tier 1."
+        },
+        {
+          "id": "code_weaver_passive_02",
+          "name": "Code Weaver Passive 02",
+          "effect": "Increases compile efficiency tier 2."
+        },
+        {
+          "id": "code_weaver_passive_03",
+          "name": "Code Weaver Passive 03",
+          "effect": "Increases compile efficiency tier 3."
+        },
+        {
+          "id": "code_weaver_passive_04",
+          "name": "Code Weaver Passive 04",
+          "effect": "Increases compile efficiency tier 4."
+        },
+        {
+          "id": "code_weaver_passive_05",
+          "name": "Code Weaver Passive 05",
+          "effect": "Increases compile efficiency tier 5."
+        },
+        {
+          "id": "code_weaver_passive_06",
+          "name": "Code Weaver Passive 06",
+          "effect": "Increases compile efficiency tier 6."
+        },
+        {
+          "id": "code_weaver_passive_07",
+          "name": "Code Weaver Passive 07",
+          "effect": "Increases compile efficiency tier 7."
+        },
+        {
+          "id": "code_weaver_passive_08",
+          "name": "Code Weaver Passive 08",
+          "effect": "Increases compile efficiency tier 8."
+        },
+        {
+          "id": "code_weaver_passive_09",
+          "name": "Code Weaver Passive 09",
+          "effect": "Increases compile efficiency tier 9."
+        },
+        {
+          "id": "code_weaver_passive_10",
+          "name": "Code Weaver Passive 10",
+          "effect": "Increases compile efficiency tier 10."
+        },
+        {
+          "id": "code_weaver_passive_11",
+          "name": "Code Weaver Passive 11",
+          "effect": "Increases compile efficiency tier 11."
+        },
+        {
+          "id": "code_weaver_passive_12",
+          "name": "Code Weaver Passive 12",
+          "effect": "Increases compile efficiency tier 12."
+        }
+      ]
+    }
+  ]
+}

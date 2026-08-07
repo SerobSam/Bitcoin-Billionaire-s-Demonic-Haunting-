@@ -1,0 +1,939 @@
+{
+  "schema_version": "1.0.0",
+  "package": "Genesis Protocol complete engine-ready 3D asset package",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "palette": [
+    {
+      "name": "Deep Ledger",
+      "hex": "#171A1C",
+      "usage": "primary neutral base: menus, shadows, asphalt, cavern voids; pair with Cold Bone for text"
+    },
+    {
+      "name": "Ash Concrete",
+      "hex": "#6E6A61",
+      "usage": "secondary neutral: masonry, dust, weathered UI, inactive controls"
+    },
+    {
+      "name": "Terracotta Signal",
+      "hex": "#B65A3C",
+      "usage": "primary accent: hero cloth, traversal marks, destructible weak points, danger paint"
+    },
+    {
+      "name": "Muted Teal",
+      "hex": "#3D7F7A",
+      "usage": "secondary accent: safe tech, AR scan geometry, water bounce, interactables"
+    },
+    {
+      "name": "Phosphor Gold",
+      "hex": "#D6B15E",
+      "usage": "UI accent and rare affordance: loot, boss weak points, Merkle confirmations; max 8% screen"
+    },
+    {
+      "name": "Cold Bone",
+      "hex": "#E7DFC9",
+      "usage": "foreground text, parchment cards, subtitle text, silhouette rim light"
+    }
+  ],
+  "export_settings": {
+    "meshes": {
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0"
+      ],
+      "units": "meters",
+      "up_axis": "Y",
+      "embed_media": false
+    },
+    "textures": {
+      "albedo": "PNG 16-bit sRGB",
+      "normal": "TGA 16-bit",
+      "roughness_metalness": "EXR packed RG",
+      "ao": "EXR",
+      "height": "EXR"
+    },
+    "icons": {
+      "source": "SVG",
+      "png": "512x512",
+      "atlas": "PNG atlas + JSON"
+    },
+    "metadata": "JSON per asset plus master manifest"
+  },
+  "world": [
+    {
+      "id": "biome_urban_world_LOD0_v01",
+      "name": "Urban District",
+      "concept_3d": "Irvine-Beige Mainnet cul-de-sacs, smart-lock interiors, cracked stucco arcades, demonic HOA kiosks",
+      "blockout": {
+        "scale": "authored in meters",
+        "landmarks": 8,
+        "greybox_meshes": [
+          "terrain_shell",
+          "vista_card",
+          "collision_proxy",
+          "navigation_proxy"
+        ],
+        "player_metrics": {
+          "lane_width_m": 3.0,
+          "vehicle_lane_width_m": 6.0,
+          "vault_height_m": "0.8-1.4",
+          "climbable_ledge_depth_m": "0.35-0.6"
+        }
+      },
+      "layered_world_model": [
+        "terrain heightfield",
+        "modular architecture/rocks",
+        "hero traversal mesh",
+        "destructible prop layer",
+        "foliage/decals",
+        "AR overlay anchors",
+        "occlusion and reflection probes"
+      ],
+      "heightmaps": [
+        "01_world/topography/urban_height_4096_EXR_v01.exr"
+      ],
+      "topography_maps": [
+        "01_world/topography/urban_topography_4096_PNG_v01.png"
+      ],
+      "biome_masks": [
+        "01_world/biome_masks/urban_mask_4096_PNG_v01.png"
+      ],
+      "streaming_tile_layout": "128m exterior tiles with 32m interior subtiles",
+      "pbr_texture_sets": [
+        {
+          "material": "stucco",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "asphalt",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "smart_glass",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "copper_wire",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        }
+      ],
+      "material_definitions": {
+        "shader": "Vulkan clustered PBR",
+        "channels": "baseColor, normal, roughness, metalness, AO, height, emissive optional",
+        "mip_policy": "stream mips by screen size and memory tier"
+      },
+      "lods": {
+        "LOD0": "hero path 0-30m full silhouette and collision",
+        "LOD1": "30-90m merged materials reduced props",
+        "LOD2": "90m+ impostors/HLOD no small debris"
+      },
+      "exports": [
+        "GLTF 2.0",
+        "FBX ASCII",
+        "JSON metadata"
+      ],
+      "memory_budget_bytes": 70000000
+    },
+    {
+      "id": "biome_forest_world_LOD0_v01",
+      "name": "Mixed Forest",
+      "concept_3d": "Recluse Buffer pine-oak canopy, analog tarp camps, root hatches, mesh repeater ruins",
+      "blockout": {
+        "scale": "authored in meters",
+        "landmarks": 8,
+        "greybox_meshes": [
+          "terrain_shell",
+          "vista_card",
+          "collision_proxy",
+          "navigation_proxy"
+        ],
+        "player_metrics": {
+          "lane_width_m": 3.0,
+          "vehicle_lane_width_m": 6.0,
+          "vault_height_m": "0.8-1.4",
+          "climbable_ledge_depth_m": "0.35-0.6"
+        }
+      },
+      "layered_world_model": [
+        "terrain heightfield",
+        "modular architecture/rocks",
+        "hero traversal mesh",
+        "destructible prop layer",
+        "foliage/decals",
+        "AR overlay anchors",
+        "occlusion and reflection probes"
+      ],
+      "heightmaps": [
+        "01_world/topography/forest_height_4096_EXR_v01.exr"
+      ],
+      "topography_maps": [
+        "01_world/topography/forest_topography_4096_PNG_v01.png"
+      ],
+      "biome_masks": [
+        "01_world/biome_masks/forest_mask_4096_PNG_v01.png"
+      ],
+      "streaming_tile_layout": "256m terrain tiles with foliage HLOD clusters",
+      "pbr_texture_sets": [
+        {
+          "material": "stucco",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "asphalt",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "smart_glass",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "copper_wire",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        }
+      ],
+      "material_definitions": {
+        "shader": "Vulkan clustered PBR",
+        "channels": "baseColor, normal, roughness, metalness, AO, height, emissive optional",
+        "mip_policy": "stream mips by screen size and memory tier"
+      },
+      "lods": {
+        "LOD0": "hero path 0-30m full silhouette and collision",
+        "LOD1": "30-90m merged materials reduced props",
+        "LOD2": "90m+ impostors/HLOD no small debris"
+      },
+      "exports": [
+        "GLTF 2.0",
+        "FBX ASCII",
+        "JSON metadata"
+      ],
+      "memory_budget_bytes": 64000000
+    },
+    {
+      "id": "biome_quarry_world_LOD0_v01",
+      "name": "Quarry",
+      "concept_3d": "Faraday Scar stepped limestone bowls, rust conveyor bridges, scaffold puzzles, exposed data veins",
+      "blockout": {
+        "scale": "authored in meters",
+        "landmarks": 8,
+        "greybox_meshes": [
+          "terrain_shell",
+          "vista_card",
+          "collision_proxy",
+          "navigation_proxy"
+        ],
+        "player_metrics": {
+          "lane_width_m": 3.0,
+          "vehicle_lane_width_m": 6.0,
+          "vault_height_m": "0.8-1.4",
+          "climbable_ledge_depth_m": "0.35-0.6"
+        }
+      },
+      "layered_world_model": [
+        "terrain heightfield",
+        "modular architecture/rocks",
+        "hero traversal mesh",
+        "destructible prop layer",
+        "foliage/decals",
+        "AR overlay anchors",
+        "occlusion and reflection probes"
+      ],
+      "heightmaps": [
+        "01_world/topography/quarry_height_4096_EXR_v01.exr"
+      ],
+      "topography_maps": [
+        "01_world/topography/quarry_topography_4096_PNG_v01.png"
+      ],
+      "biome_masks": [
+        "01_world/biome_masks/quarry_mask_4096_PNG_v01.png"
+      ],
+      "streaming_tile_layout": "192m stepped quarry cells with wall impostors after 90m",
+      "pbr_texture_sets": [
+        {
+          "material": "stucco",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "asphalt",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "smart_glass",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "copper_wire",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        }
+      ],
+      "material_definitions": {
+        "shader": "Vulkan clustered PBR",
+        "channels": "baseColor, normal, roughness, metalness, AO, height, emissive optional",
+        "mip_policy": "stream mips by screen size and memory tier"
+      },
+      "lods": {
+        "LOD0": "hero path 0-30m full silhouette and collision",
+        "LOD1": "30-90m merged materials reduced props",
+        "LOD2": "90m+ impostors/HLOD no small debris"
+      },
+      "exports": [
+        "GLTF 2.0",
+        "FBX ASCII",
+        "JSON metadata"
+      ],
+      "memory_budget_bytes": 76000000
+    },
+    {
+      "id": "biome_coastal_world_LOD0_v01",
+      "name": "Coastal Cliffs",
+      "concept_3d": "Port Edge switchbacks, stacked containers, salt substations, wet concrete wharfs",
+      "blockout": {
+        "scale": "authored in meters",
+        "landmarks": 8,
+        "greybox_meshes": [
+          "terrain_shell",
+          "vista_card",
+          "collision_proxy",
+          "navigation_proxy"
+        ],
+        "player_metrics": {
+          "lane_width_m": 3.0,
+          "vehicle_lane_width_m": 6.0,
+          "vault_height_m": "0.8-1.4",
+          "climbable_ledge_depth_m": "0.35-0.6"
+        }
+      },
+      "layered_world_model": [
+        "terrain heightfield",
+        "modular architecture/rocks",
+        "hero traversal mesh",
+        "destructible prop layer",
+        "foliage/decals",
+        "AR overlay anchors",
+        "occlusion and reflection probes"
+      ],
+      "heightmaps": [
+        "01_world/topography/coastal_height_4096_EXR_v01.exr"
+      ],
+      "topography_maps": [
+        "01_world/topography/coastal_topography_4096_PNG_v01.png"
+      ],
+      "biome_masks": [
+        "01_world/biome_masks/coastal_mask_4096_PNG_v01.png"
+      ],
+      "streaming_tile_layout": "192m coastal strip tiles prefetched along road/skiff route",
+      "pbr_texture_sets": [
+        {
+          "material": "stucco",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "asphalt",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "smart_glass",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "copper_wire",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        }
+      ],
+      "material_definitions": {
+        "shader": "Vulkan clustered PBR",
+        "channels": "baseColor, normal, roughness, metalness, AO, height, emissive optional",
+        "mip_policy": "stream mips by screen size and memory tier"
+      },
+      "lods": {
+        "LOD0": "hero path 0-30m full silhouette and collision",
+        "LOD1": "30-90m merged materials reduced props",
+        "LOD2": "90m+ impostors/HLOD no small debris"
+      },
+      "exports": [
+        "GLTF 2.0",
+        "FBX ASCII",
+        "JSON metadata"
+      ],
+      "memory_budget_bytes": 72000000
+    },
+    {
+      "id": "biome_cavern_world_LOD0_v01",
+      "name": "Subterranean Caverns",
+      "concept_3d": "Dark Pool blackwater rooms, mineral ribs, phosphor code veins, cold-storage vaults",
+      "blockout": {
+        "scale": "authored in meters",
+        "landmarks": 8,
+        "greybox_meshes": [
+          "terrain_shell",
+          "vista_card",
+          "collision_proxy",
+          "navigation_proxy"
+        ],
+        "player_metrics": {
+          "lane_width_m": 3.0,
+          "vehicle_lane_width_m": 6.0,
+          "vault_height_m": "0.8-1.4",
+          "climbable_ledge_depth_m": "0.35-0.6"
+        }
+      },
+      "layered_world_model": [
+        "terrain heightfield",
+        "modular architecture/rocks",
+        "hero traversal mesh",
+        "destructible prop layer",
+        "foliage/decals",
+        "AR overlay anchors",
+        "occlusion and reflection probes"
+      ],
+      "heightmaps": [
+        "01_world/topography/cavern_height_4096_EXR_v01.exr"
+      ],
+      "topography_maps": [
+        "01_world/topography/cavern_topography_4096_PNG_v01.png"
+      ],
+      "biome_masks": [
+        "01_world/biome_masks/cavern_mask_4096_PNG_v01.png"
+      ],
+      "streaming_tile_layout": "96m portal rooms streamed one room ahead and behind",
+      "pbr_texture_sets": [
+        {
+          "material": "stucco",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "asphalt",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "smart_glass",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        },
+        {
+          "material": "copper_wire",
+          "maps": [
+            "Albedo PNG",
+            "Normal TGA",
+            "RoughnessMetalness EXR",
+            "AO EXR",
+            "Height EXR"
+          ],
+          "resolution": "2048 or 4096"
+        }
+      ],
+      "material_definitions": {
+        "shader": "Vulkan clustered PBR",
+        "channels": "baseColor, normal, roughness, metalness, AO, height, emissive optional",
+        "mip_policy": "stream mips by screen size and memory tier"
+      },
+      "lods": {
+        "LOD0": "hero path 0-30m full silhouette and collision",
+        "LOD1": "30-90m merged materials reduced props",
+        "LOD2": "90m+ impostors/HLOD no small debris"
+      },
+      "exports": [
+        "GLTF 2.0",
+        "FBX ASCII",
+        "JSON metadata"
+      ],
+      "memory_budget_bytes": 58000000
+    }
+  ],
+  "characters": {
+    "skeleton_64_bone": "root,pelvis,spine_01-04,neck,head,jaw,eyes,clavicles,upper/lower arms,hands,3-bone fingers,legs,feet,toes,weapon sockets,cloth helpers",
+    "facial_blendshapes": [
+      "blink_L",
+      "blink_R",
+      "brow_up",
+      "brow_down",
+      "smile",
+      "frown",
+      "jaw_open",
+      "phoneme_A",
+      "phoneme_E",
+      "phoneme_O",
+      "phoneme_U",
+      "phoneme_M",
+      "fear",
+      "pain",
+      "possession_glitch"
+    ],
+    "hero": {
+      "id": "character_hero_analogexorcist_LOD0_v01",
+      "concept": "hooded analog exorcist with asymmetric shoulder radio, terracotta sash, teal scan lens and compact tool harness",
+      "outfits": [
+        "Faraday Salvager",
+        "Recluse Scout",
+        "Port Runner",
+        "Cold Storage Ritualist"
+      ],
+      "sculpt_pass": "primary planes readable at 20m, tactile canvas/leather/ceramic trim, exaggerated tool sockets",
+      "retopology": "deformation loops at shoulders/hips/knees/elbows, no long thin triangles, mirrored UVs only on hidden interiors",
+      "skinning": "max 4 influences per vertex, twist bones weighted over 30cm falloff",
+      "lods": {
+        "LOD0": "60k tris 4x2k materials",
+        "LOD1": "30k tris 2x2k materials",
+        "LOD2": "12k tris 1x1k baked normal"
+      }
+    },
+    "npc_archetypes": [
+      "Recluse engineer",
+      "Port smuggler",
+      "Quarry foreman",
+      "HOA zealot",
+      "Darknet merchant",
+      "Cold-storage monk",
+      "Analog mechanic",
+      "Haunted survivor"
+    ]
+  },
+  "animations": {
+    "naming": "anim_<character>_<state>_<variant>_v##",
+    "root_motion": "locomotion and breach clips own horizontal root; combat in-place except lunges; vertical motion authored for jump/climb/vault",
+    "sets": [
+      "idle_calm",
+      "idle_alert",
+      "walk",
+      "run",
+      "sprint",
+      "jump",
+      "climb",
+      "vault",
+      "attack_light_combo",
+      "attack_heavy",
+      "block",
+      "parry",
+      "pickup",
+      "lockpick",
+      "forced_breach",
+      "hammer_strike",
+      "pick_strike",
+      "saw_cut",
+      "explosive_plant",
+      "death_front",
+      "ragdoll_blend"
+    ],
+    "blendspaces": {
+      "locomotion_2d": "speed x strafe angle",
+      "injury_overlay": "health normalized x stamina",
+      "aim_offset": "yaw x pitch",
+      "terrain_slope": "slope angle x speed"
+    },
+    "behavior_tree_reactions": [
+      "HearDestruction->Investigate/Flee/Alert",
+      "SeeForcedBreach->RaiseAlarm+UpdateCover",
+      "DebrisBlocksPath->VaultUnder0.8mElseReroute",
+      "GlassBreakNear->FlinchThenCover",
+      "FoliageDestroyed->InvestigateAudioScent"
+    ]
+  },
+  "destructibility": {
+    "state_machine": [
+      "intact",
+      "damaged",
+      "broken",
+      "debris"
+    ],
+    "materials": {
+      "wood": {
+        "fracture_map": "04_props/destructibles/wood/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      },
+      "masonry": {
+        "fracture_map": "04_props/destructibles/masonry/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      },
+      "glass": {
+        "fracture_map": "04_props/destructibles/glass/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      },
+      "metal": {
+        "fracture_map": "04_props/destructibles/metal/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      },
+      "foliage": {
+        "fracture_map": "04_props/destructibles/foliage/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      },
+      "soil": {
+        "fracture_map": "04_props/destructibles/soil/fracture_map_EXR_v01.exr",
+        "debris_pool": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "vfx": [
+          "impact decal",
+          "particle burst",
+          "settle dust"
+        ],
+        "physics": "pooled rigidbodies, sleep after velocity <0.05m/s for 0.5s"
+      }
+    },
+    "locked_doors": {
+      "lockpick": "non-destructive, consumes lockpick durability, stealth loot + lore bias, no alarm",
+      "forced_breach": "door transitions broken/debris, NPC alert 25m, scrap loot bias, navmesh delta emitted"
+    },
+    "performance": {
+      "rigidbodies_per_event": {
+        "low": 16,
+        "mid": 32,
+        "high": 64
+      },
+      "cpu_ms_per_event": {
+        "low": 0.7,
+        "mid": 1.2,
+        "high": 2.0
+      },
+      "solver_iterations": {
+        "low_mid": "4 velocity / 2 position",
+        "high": "6 velocity / 3 position"
+      }
+    }
+  },
+  "tools": {
+    "hammer": {
+      "id": "tool_hammer_standard_LOD0_v01",
+      "concept": "hammer with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_hammer_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_hammer.svg",
+        "06_ui/icons/png/icon_tool_hammer.png"
+      ],
+      "metadata": "05_tools/hammer/spec.json"
+    },
+    "pick": {
+      "id": "tool_pick_standard_LOD0_v01",
+      "concept": "pick with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_pick_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_pick.svg",
+        "06_ui/icons/png/icon_tool_pick.png"
+      ],
+      "metadata": "05_tools/pick/spec.json"
+    },
+    "lockpick": {
+      "id": "tool_lockpick_standard_LOD0_v01",
+      "concept": "lockpick with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_lockpick_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_lockpick.svg",
+        "06_ui/icons/png/icon_tool_lockpick.png"
+      ],
+      "metadata": "05_tools/lockpick/spec.json"
+    },
+    "saw": {
+      "id": "tool_saw_standard_LOD0_v01",
+      "concept": "saw with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_saw_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_saw.svg",
+        "06_ui/icons/png/icon_tool_saw.png"
+      ],
+      "metadata": "05_tools/saw/spec.json"
+    },
+    "explosives": {
+      "id": "tool_explosives_standard_LOD0_v01",
+      "concept": "explosives with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_explosives_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_explosives.svg",
+        "06_ui/icons/png/icon_tool_explosives.png"
+      ],
+      "metadata": "05_tools/explosives/spec.json"
+    },
+    "scaffold_deployer": {
+      "id": "tool_scaffold_deployer_standard_LOD0_v01",
+      "concept": "scaffold deployer with terracotta grip, ash metal body and muted teal feedback notch",
+      "in_hand_model": "LOD0/LOD1/LOD2 FBX+GLTF with grip socket and collision proxy",
+      "vfx": [
+        "tool trail",
+        "material impact particles",
+        "teal valid-use pulse"
+      ],
+      "sound_cues": [
+        "equip",
+        "use_start",
+        "impact_or_success",
+        "durability_warning"
+      ],
+      "usage_animation": "anim_hero_tool_scaffold_deployer_use_v01",
+      "durability": "integer durability with material-specific wear multipliers",
+      "ui_icon": [
+        "06_ui/icons/svg/icon_tool_scaffold_deployer.svg",
+        "06_ui/icons/png/icon_tool_scaffold_deployer.png"
+      ],
+      "metadata": "05_tools/scaffold_deployer/spec.json"
+    }
+  },
+  "ui": {
+    "screens": [
+      "HUD",
+      "Inventory",
+      "Crafting panel",
+      "Map",
+      "Contextual tooltips"
+    ],
+    "responsive": "phone 360dp, large phone 411dp, tablet 600dp; safe-area aware",
+    "icons": [
+      "inventory",
+      "craft tools",
+      "destructible indicator",
+      "lock states",
+      "subsurface entrances",
+      "quest markers"
+    ],
+    "typography": {
+      "heading": "condensed geometric sans 600/700 uppercase tracking +2%",
+      "body": "humanist sans 400/500 line-height 1.45",
+      "minimums": "14sp body, 16sp labels, 20sp panel, 28sp title"
+    },
+    "accessibility": "4.5:1 body text, shapes paired with color, reduced motion for pulses"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "node_types": [
+    "leaf",
+    "branch",
+    "root"
+  ],
+  "seed_phrase_slots": [
+    "slot_01",
+    "slot_02",
+    "slot_03",
+    "slot_04",
+    "slot_05",
+    "slot_06",
+    "slot_07",
+    "slot_08",
+    "slot_09",
+    "slot_10",
+    "slot_11",
+    "slot_12"
+  ],
+  "modifier_types": [
+    "damage",
+    "cooldown",
+    "radius",
+    "duration",
+    "chain",
+    "summon",
+    "shield",
+    "mobility",
+    "loot",
+    "scan",
+    "debuff",
+    "ultimate_charge"
+  ]
+}
