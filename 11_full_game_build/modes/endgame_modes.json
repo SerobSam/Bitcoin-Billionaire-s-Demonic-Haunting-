@@ -1,0 +1,77 @@
+{
+  "modes": {
+    "dark_pool_dungeon_runs": {
+      "players": "1-4",
+      "reward_tiers": [
+        "encrypted",
+        "sovereign",
+        "genesis",
+        "immutable"
+      ],
+      "session_persistence": "floor seed + destructible deltas",
+      "tiles": [
+        "Dark Pool Dungeons",
+        "Subterranean Caverns"
+      ]
+    },
+    "overflow_arena": {
+      "objective": "survive escalating waves",
+      "players": "1-4",
+      "reward_tiers": [
+        "scrap",
+        "copper",
+        "silicon",
+        "encrypted",
+        "sovereign",
+        "genesis",
+        "immutable"
+      ],
+      "wave_sources": [
+        "character_ghostprocess_final_LOD0_v01",
+        "character_sybilswarm_final_LOD0_v01",
+        "character_darkpoolwarden_final_LOD0_v01",
+        "character_genesisentity_phase1_final_LOD0_v01",
+        "character_genesisentity_phase2_final_LOD0_v01"
+      ]
+    },
+    "sybil_invasion": {
+      "matchmaking": "region + difficulty + class role",
+      "players": "1-4",
+      "replication": {
+        "authority": "host authoritative with deterministic asset ids",
+        "replicated": [
+          "player_transform",
+          "skill_cast",
+          "damage_event",
+          "destructible_state",
+          "loot_claim",
+          "revive_state"
+        ],
+        "tick_rate_hz": 30
+      },
+      "reward_tiers": [
+        "silicon",
+        "encrypted",
+        "sovereign",
+        "genesis",
+        "immutable"
+      ]
+    },
+    "zero_state_relay_tower_defense": {
+      "enemy_scaling": {
+        "coop_2p": 1.55,
+        "coop_3p": 2.05,
+        "coop_4p": 2.45,
+        "new_game_plus_per_clear": 0.35,
+        "solo": 1.0
+      },
+      "objective": "defend three relay cores",
+      "players": "1-4",
+      "reward_tiers": [
+        "sovereign",
+        "genesis",
+        "immutable"
+      ]
+    }
+  }
+}

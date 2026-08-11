@@ -1,0 +1,398 @@
+{
+  "boss_phase_logic": {
+    "character_genesisentity_phase1_final_LOD0_v01": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death",
+    "character_genesisentity_phase2_final_LOD0_v01": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death"
+  },
+  "classes": {
+    "code_weaver": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_code_weaver_skill_code_weaver_strike_v01",
+        "anim_code_weaver_skill_code_weaver_snare_v01",
+        "anim_code_weaver_skill_code_weaver_dash_v01",
+        "anim_code_weaver_skill_code_weaver_ward_v01",
+        "anim_code_weaver_skill_code_weaver_surge_v01",
+        "anim_code_weaver_skill_code_weaver_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "compile",
+      "role": "summoner support",
+      "ultimate": "code_weaver_ultimate"
+    },
+    "cypherpunk": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_cypherpunk_skill_cypherpunk_strike_v01",
+        "anim_cypherpunk_skill_cypherpunk_snare_v01",
+        "anim_cypherpunk_skill_cypherpunk_dash_v01",
+        "anim_cypherpunk_skill_cypherpunk_ward_v01",
+        "anim_cypherpunk_skill_cypherpunk_surge_v01",
+        "anim_cypherpunk_skill_cypherpunk_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "entropy",
+      "role": "ranged breach",
+      "ultimate": "cypherpunk_ultimate"
+    },
+    "digital_wraith": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_digital_wraith_skill_digital_wraith_strike_v01",
+        "anim_digital_wraith_skill_digital_wraith_snare_v01",
+        "anim_digital_wraith_skill_digital_wraith_dash_v01",
+        "anim_digital_wraith_skill_digital_wraith_ward_v01",
+        "anim_digital_wraith_skill_digital_wraith_surge_v01",
+        "anim_digital_wraith_skill_digital_wraith_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "phase",
+      "role": "stealth assassin",
+      "ultimate": "digital_wraith_ultimate"
+    },
+    "grid_vanguard": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "charge",
+      "role": "tank controller",
+      "ultimate": "grid_vanguard_ultimate"
+    }
+  },
+  "crafting": {
+    "materials_from_loot_tiers": [
+      "scrap",
+      "copper",
+      "silicon",
+      "encrypted",
+      "sovereign",
+      "genesis",
+      "immutable"
+    ],
+    "tools": [
+      "tool_pneumatic_needle_gun_final_LOD0_v01",
+      "tool_typewriter_slugs_final_LOD0_v01",
+      "tool_ransomware_blade_final_LOD0_v01",
+      "tool_hammer_final_LOD0_v01",
+      "tool_pick_final_LOD0_v01",
+      "tool_lockpick_final_LOD0_v01",
+      "tool_saw_final_LOD0_v01",
+      "tool_explosives_final_LOD0_v01",
+      "tool_scaffold_deployer_final_LOD0_v01"
+    ]
+  },
+  "destructible_object_system": {
+    "locked_doors": {
+      "breach": {
+        "animation": "anim_hero_forced_breach_v01",
+        "result": "door enters broken/debris, NPC alert radius 25m, scrap-biased loot, navmesh delta"
+      },
+      "lockpick": {
+        "animation": "anim_hero_lockpick_loop_v01",
+        "result": "door remains intact, stealth loot table, no NPC alarm"
+      }
+    },
+    "loot_tiers": [
+      {
+        "affix_max": 1,
+        "affix_min": 0,
+        "color": "#6E6A61",
+        "drop_weight": 1000,
+        "id": "scrap",
+        "name": "Scrap"
+      },
+      {
+        "affix_max": 2,
+        "affix_min": 1,
+        "color": "#B65A3C",
+        "drop_weight": 620,
+        "id": "copper",
+        "name": "Copper"
+      },
+      {
+        "affix_max": 3,
+        "affix_min": 2,
+        "color": "#3D7F7A",
+        "drop_weight": 360,
+        "id": "silicon",
+        "name": "Silicon"
+      },
+      {
+        "affix_max": 4,
+        "affix_min": 3,
+        "color": "#D6B15E",
+        "drop_weight": 190,
+        "id": "encrypted",
+        "name": "Encrypted"
+      },
+      {
+        "affix_max": 5,
+        "affix_min": 4,
+        "color": "#E7DFC9",
+        "drop_weight": 80,
+        "id": "sovereign",
+        "name": "Sovereign"
+      },
+      {
+        "affix_max": 6,
+        "affix_min": 5,
+        "color": "#9B5CFF",
+        "drop_weight": 25,
+        "id": "genesis",
+        "name": "Genesis"
+      },
+      {
+        "affix_max": 7,
+        "affix_min": 6,
+        "color": "#FFFFFF",
+        "drop_weight": 5,
+        "id": "immutable",
+        "name": "Immutable"
+      }
+    ],
+    "materials": {
+      "foliage": {
+        "debris_pool_prefab": "04_props/destructibles/foliage/debris/prop_foliage_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/foliage/fracture/prop_foliage_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      },
+      "glass": {
+        "debris_pool_prefab": "04_props/destructibles/glass/debris/prop_glass_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/glass/fracture/prop_glass_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      },
+      "masonry": {
+        "debris_pool_prefab": "04_props/destructibles/masonry/debris/prop_masonry_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/masonry/fracture/prop_masonry_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      },
+      "metal": {
+        "debris_pool_prefab": "04_props/destructibles/metal/debris/prop_metal_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/metal/fracture/prop_metal_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      },
+      "soil": {
+        "debris_pool_prefab": "04_props/destructibles/soil/debris/prop_soil_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/soil/fracture/prop_soil_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      },
+      "wood": {
+        "debris_pool_prefab": "04_props/destructibles/wood/debris/prop_wood_debrispool_LOD0_v01.gltf",
+        "fracture_map": "04_props/destructibles/wood/fracture/prop_wood_fracture_LOD0_v01.exr",
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "max_lifetime_s": 8,
+          "sleep_velocity_mps": 0.05,
+          "solver_position_iterations": 2,
+          "solver_velocity_iterations": 4
+        },
+        "pool_counts": {
+          "high": 64,
+          "low": 16,
+          "mid": 32
+        }
+      }
+    },
+    "save_delta_fields": [
+      "object_id",
+      "state",
+      "health",
+      "loot_claimed",
+      "navmesh_delta_hash"
+    ],
+    "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "state_machine": [
+      "intact",
+      "damaged",
+      "broken",
+      "debris"
+    ]
+  },
+  "enemy_ai_state_machines": {
+    "boss": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death",
+    "enemy": "Spawn->Patrol->Investigate->Chase->Attack->Stagger->Death",
+    "player": "Idle->Locomotion->Traversal/Combat/SkillCast->HitReact->Death/Ragdoll"
+  },
+  "loot_tiers": [
+    {
+      "affix_max": 1,
+      "affix_min": 0,
+      "color": "#6E6A61",
+      "drop_weight": 1000,
+      "id": "scrap",
+      "name": "Scrap"
+    },
+    {
+      "affix_max": 2,
+      "affix_min": 1,
+      "color": "#B65A3C",
+      "drop_weight": 620,
+      "id": "copper",
+      "name": "Copper"
+    },
+    {
+      "affix_max": 3,
+      "affix_min": 2,
+      "color": "#3D7F7A",
+      "drop_weight": 360,
+      "id": "silicon",
+      "name": "Silicon"
+    },
+    {
+      "affix_max": 4,
+      "affix_min": 3,
+      "color": "#D6B15E",
+      "drop_weight": 190,
+      "id": "encrypted",
+      "name": "Encrypted"
+    },
+    {
+      "affix_max": 5,
+      "affix_min": 4,
+      "color": "#E7DFC9",
+      "drop_weight": 80,
+      "id": "sovereign",
+      "name": "Sovereign"
+    },
+    {
+      "affix_max": 6,
+      "affix_min": 5,
+      "color": "#9B5CFF",
+      "drop_weight": 25,
+      "id": "genesis",
+      "name": "Genesis"
+    },
+    {
+      "affix_max": 7,
+      "affix_min": 6,
+      "color": "#FFFFFF",
+      "drop_weight": 5,
+      "id": "immutable",
+      "name": "Immutable"
+    }
+  ],
+  "merkle_progression": {
+    "modifier_types": [
+      "damage",
+      "cooldown",
+      "radius",
+      "duration",
+      "chain",
+      "summon",
+      "shield",
+      "mobility",
+      "loot",
+      "scan",
+      "debuff",
+      "ultimate_charge"
+    ],
+    "node_types": [
+      "leaf",
+      "branch",
+      "root"
+    ],
+    "seed_phrase_slots": [
+      "slot_01",
+      "slot_02",
+      "slot_03",
+      "slot_04",
+      "slot_05",
+      "slot_06",
+      "slot_07",
+      "slot_08",
+      "slot_09",
+      "slot_10",
+      "slot_11",
+      "slot_12"
+    ]
+  }
+}

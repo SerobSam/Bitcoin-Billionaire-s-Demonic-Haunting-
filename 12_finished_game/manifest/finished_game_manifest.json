@@ -1,0 +1,34 @@
+{
+  "biome_mission_count": 5,
+  "class_count": 4,
+  "final_region_count": 7,
+  "loot_tier_count": 7,
+  "outputs": [
+    "campaign/final_campaign_runtime.json",
+    "multiplayer/final_online_runtime.json",
+    "systems/final_gameplay_runtime.json",
+    "ui/final_ui_runtime.json",
+    "android/play_store_release_checklist.json"
+  ],
+  "schema_version": "1.0.0",
+  "source_files": {
+    "android_release": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/android/release_build_spec.json",
+    "asset_manifest": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/manifest/asset_manifest.json",
+    "campaign": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/campaign/campaign_acts_i_iv.json",
+    "classes": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/classes.json",
+    "complete_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/complete_3d_asset_package_spec.json",
+    "controls": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/controls/input_camera_mapping.json",
+    "coop": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/multiplayer/coop_rules.json",
+    "destructible_state_machine": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/destructibility/destructible_state_machine.json",
+    "endgame": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/modes/endgame_modes.json",
+    "final_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "full_game_manifest": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/manifest/full_game_build_manifest.json",
+    "loot": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/loot_tiers.json",
+    "materialized_manifest": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/manifest/final_3d_asset_manifest.json",
+    "merkle": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/merkle_rules.json",
+    "pvp": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/multiplayer/pvp_rules.json",
+    "systems": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/systems/gameplay_systems.json",
+    "ui": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/11_full_game_build/ui/full_ui_build.json"
+  },
+  "uses_destructible_state_machine": "system_destructible_state_machine_standard_v01"
+}

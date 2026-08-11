@@ -1,0 +1,506 @@
+{
+  "acts": [
+    {
+      "act": "I",
+      "biome_framework": "Urban District",
+      "missions": [
+        {
+          "enemies": [
+            "character_ghostprocess_final_LOD0_v01"
+          ],
+          "id": "mission_irvine_hashwake",
+          "loot_table": [
+            "scrap",
+            "copper"
+          ],
+          "objectives": [
+            "teach walk/run/sprint/dash",
+            "unlock first Merkle leaf",
+            "breach smart-lock tutorial"
+          ]
+        },
+        {
+          "enemies": [
+            "character_sybilswarm_final_LOD0_v01"
+          ],
+          "id": "mission_belair_blackout",
+          "loot_table": [
+            "copper",
+            "silicon"
+          ],
+          "objectives": [
+            "restore emergency relay",
+            "choose lockpick or breach route",
+            "defeat Sybil ambush"
+          ]
+        }
+      ],
+      "regions": [
+        "Irvine Suburbs",
+        "Bel Air Blackout Zone"
+      ],
+      "title": "Blackout Handshake"
+    },
+    {
+      "act": "II",
+      "biome_framework": "Quarry",
+      "missions": [
+        {
+          "enemies": [
+            "character_ghostprocess_final_LOD0_v01",
+            "character_sybilswarm_final_LOD0_v01"
+          ],
+          "id": "mission_manhattan_merkle",
+          "loot_table": [
+            "silicon",
+            "encrypted"
+          ],
+          "objectives": [
+            "route through Consensus rooftops",
+            "defend Merkle compiler",
+            "extract encrypted cache"
+          ]
+        },
+        {
+          "enemies": [
+            "character_ghostprocess_final_LOD0_v01",
+            "character_sybilswarm_final_LOD0_v01",
+            "character_darkpoolwarden_final_LOD0_v01",
+            "character_genesisentity_phase1_final_LOD0_v01",
+            "character_genesisentity_phase2_final_LOD0_v01"
+          ],
+          "id": "mission_mojave_ground",
+          "loot_table": [
+            "copper",
+            "encrypted"
+          ],
+          "objectives": [
+            "align grounding rods",
+            "escort rail junction payload",
+            "survive dust destruction event"
+          ]
+        }
+      ],
+      "regions": [
+        "Manhattan Consensus",
+        "Mojave Ground Return Rail Junction"
+      ],
+      "title": "Consensus Fracture"
+    },
+    {
+      "act": "III",
+      "biome_framework": "Subterranean Caverns",
+      "missions": [
+        {
+          "enemies": [
+            "character_darkpoolwarden_final_LOD0_v01"
+          ],
+          "id": "mission_alpine_seedvault",
+          "loot_table": [
+            "encrypted",
+            "sovereign"
+          ],
+          "objectives": [
+            "recover 12-slot mnemonic board",
+            "survive Cold Storage alarm",
+            "craft final tool upgrade"
+          ]
+        },
+        {
+          "enemies": [
+            "character_darkpoolwarden_final_LOD0_v01"
+          ],
+          "id": "mission_darkpool_warden",
+          "loot_table": [
+            "sovereign",
+            "genesis"
+          ],
+          "objectives": [
+            "complete Dark Pool dungeon run",
+            "destroy liquidity mirrors",
+            "defeat Dark Pool Warden"
+          ]
+        }
+      ],
+      "regions": [
+        "Alpine Cold Storage Bunker",
+        "Dark Pool Dungeons"
+      ],
+      "title": "Cold Pool Descent"
+    },
+    {
+      "act": "IV",
+      "biome_framework": "Coastal Cliffs",
+      "missions": [
+        {
+          "enemies": [
+            "character_ghostprocess_final_LOD0_v01",
+            "character_sybilswarm_final_LOD0_v01",
+            "character_darkpoolwarden_final_LOD0_v01",
+            "character_genesisentity_phase1_final_LOD0_v01",
+            "character_genesisentity_phase2_final_LOD0_v01"
+          ],
+          "id": "mission_zero_state_tower",
+          "loot_table": [
+            "sovereign",
+            "genesis"
+          ],
+          "objectives": [
+            "activate relay tower defense",
+            "hold three Core Nodes",
+            "open Genesis arena"
+          ]
+        },
+        {
+          "bosses": [
+            "character_genesisentity_phase1_final_LOD0_v01",
+            "character_genesisentity_phase2_final_LOD0_v01"
+          ],
+          "id": "mission_genesis_entity",
+          "loot_table": [
+            "genesis",
+            "immutable"
+          ],
+          "objectives": [
+            "defeat Genesis Entity Phase 1",
+            "survive phase transition",
+            "defeat Genesis Entity Phase 2"
+          ]
+        }
+      ],
+      "regions": [
+        "Zero-State Relay Towers"
+      ],
+      "title": "Zero-State Genesis"
+    }
+  ],
+  "biome_missions": [
+    {
+      "act_slot": 1,
+      "biome": "Urban District",
+      "destructible_materials": [
+        "wood",
+        "masonry",
+        "glass",
+        "metal",
+        "foliage",
+        "soil"
+      ],
+      "id": "mission_biome_urban_district_v01",
+      "loot_table": [
+        "scrap",
+        "copper"
+      ],
+      "objectives": [
+        "survey Urban District layered world model",
+        "resolve traversal route and hidden entrance",
+        "clear destructible encounter using state-machine deltas"
+      ],
+      "world_asset_id": "biome_urban_world_LOD0_v01"
+    },
+    {
+      "act_slot": 2,
+      "biome": "Mixed Forest",
+      "destructible_materials": [
+        "wood",
+        "masonry",
+        "glass",
+        "metal",
+        "foliage",
+        "soil"
+      ],
+      "id": "mission_biome_mixed_forest_v01",
+      "loot_table": [
+        "copper",
+        "silicon"
+      ],
+      "objectives": [
+        "survey Mixed Forest layered world model",
+        "resolve traversal route and hidden entrance",
+        "clear destructible encounter using state-machine deltas"
+      ],
+      "world_asset_id": "biome_forest_world_LOD0_v01"
+    },
+    {
+      "act_slot": 3,
+      "biome": "Quarry",
+      "destructible_materials": [
+        "wood",
+        "masonry",
+        "glass",
+        "metal",
+        "foliage",
+        "soil"
+      ],
+      "id": "mission_biome_quarry_v01",
+      "loot_table": [
+        "silicon",
+        "encrypted"
+      ],
+      "objectives": [
+        "survey Quarry layered world model",
+        "resolve traversal route and hidden entrance",
+        "clear destructible encounter using state-machine deltas"
+      ],
+      "world_asset_id": "biome_quarry_world_LOD0_v01"
+    },
+    {
+      "act_slot": 4,
+      "biome": "Coastal Cliffs",
+      "destructible_materials": [
+        "wood",
+        "masonry",
+        "glass",
+        "metal",
+        "foliage",
+        "soil"
+      ],
+      "id": "mission_biome_coastal_cliffs_v01",
+      "loot_table": [
+        "encrypted",
+        "sovereign"
+      ],
+      "objectives": [
+        "survey Coastal Cliffs layered world model",
+        "resolve traversal route and hidden entrance",
+        "clear destructible encounter using state-machine deltas"
+      ],
+      "world_asset_id": "biome_coastal_world_LOD0_v01"
+    },
+    {
+      "act_slot": 4,
+      "biome": "Subterranean Caverns",
+      "destructible_materials": [
+        "wood",
+        "masonry",
+        "glass",
+        "metal",
+        "foliage",
+        "soil"
+      ],
+      "id": "mission_biome_subterranean_caverns_v01",
+      "loot_table": [
+        "sovereign",
+        "genesis"
+      ],
+      "objectives": [
+        "survey Subterranean Caverns layered world model",
+        "resolve traversal route and hidden entrance",
+        "clear destructible encounter using state-machine deltas"
+      ],
+      "world_asset_id": "biome_cavern_world_LOD0_v01"
+    }
+  ],
+  "difficulty_scaling": {
+    "coop_2p": 1.55,
+    "coop_3p": 2.05,
+    "coop_4p": 2.45,
+    "new_game_plus_per_clear": 0.35,
+    "solo": 1.0
+  },
+  "enemy_spawns": {
+    "Alpine Cold Storage Bunker": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Bel Air Blackout Zone": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Dark Pool Dungeons": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Irvine Suburbs": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Manhattan Consensus": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Mojave Ground Return Rail Junction": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ],
+    "Zero-State Relay Towers": [
+      "character_ghostprocess_final_LOD0_v01",
+      "character_sybilswarm_final_LOD0_v01",
+      "character_darkpoolwarden_final_LOD0_v01",
+      "character_genesisentity_phase1_final_LOD0_v01",
+      "character_genesisentity_phase2_final_LOD0_v01"
+    ]
+  },
+  "save_system": {
+    "autosave_events": [
+      "mission_start",
+      "boss_phase_change",
+      "loot_claim",
+      "relay_capture"
+    ],
+    "checkpoint_scope": "mission + destructible deltas + Merkle tree + inventory",
+    "destructible_state_machine": "system_destructible_state_machine_standard_v01",
+    "persistent_fields": [
+      "player_class",
+      "inventory",
+      "merkle_nodes",
+      "seed_slots",
+      "world_deltas",
+      "checkpoint"
+    ]
+  },
+  "scripted_events": [
+    {
+      "id": "script_lockpick_or_breach",
+      "save_delta": [
+        "door_state",
+        "loot_quality_delta",
+        "noise_radius_m"
+      ],
+      "uses": {
+        "forced_breach": {
+          "animation": "anim_interact_forced_breach_v01",
+          "destructive": true,
+          "duration_seconds": 1.1,
+          "loot_quality_delta": -1,
+          "noise_radius_m": 28
+        },
+        "lockpick": {
+          "animation": "anim_interact_lockpick_loop_v01",
+          "destructive": false,
+          "duration_seconds": 4.2,
+          "loot_quality_delta": 0,
+          "noise_radius_m": 4
+        }
+      }
+    },
+    {
+      "id": "script_merkle_unlock",
+      "node_types": [
+        "leaf",
+        "branch",
+        "root"
+      ],
+      "seed_slots": [
+        "slot_01",
+        "slot_02",
+        "slot_03",
+        "slot_04",
+        "slot_05",
+        "slot_06",
+        "slot_07",
+        "slot_08",
+        "slot_09",
+        "slot_10",
+        "slot_11",
+        "slot_12"
+      ]
+    },
+    {
+      "animation": "boss_phase2_transform",
+      "bosses": [
+        "character_genesisentity_phase1_final_LOD0_v01",
+        "character_genesisentity_phase2_final_LOD0_v01"
+      ],
+      "id": "script_genesis_phase_transition"
+    }
+  ],
+  "storyline": "Acts I-IV escalate from suburban hashwake, blackout breach, consensus fracture, cold pool descent, and Zero-State Genesis finality using only named regions, biomes, enemies, loot, Merkle rules, and boss metadata from repo JSON.",
+  "traversal_routes": {
+    "Alpine Cold Storage Bunker": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 96,
+      "vehicle_lane_m": 6.0
+    },
+    "Bel Air Blackout Zone": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 128,
+      "vehicle_lane_m": 6.0
+    },
+    "Dark Pool Dungeons": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 64,
+      "vehicle_lane_m": 6.0
+    },
+    "Irvine Suburbs": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 128,
+      "vehicle_lane_m": 6.0
+    },
+    "Manhattan Consensus": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 96,
+      "vehicle_lane_m": 6.0
+    },
+    "Mojave Ground Return Rail Junction": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 192,
+      "vehicle_lane_m": 6.0
+    },
+    "Zero-State Relay Towers": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 96,
+      "vehicle_lane_m": 6.0
+    }
+  }
+}

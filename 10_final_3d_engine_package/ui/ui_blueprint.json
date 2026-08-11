@@ -1,0 +1,122 @@
+{
+  "accessibility": [
+    "4.5:1 body contrast",
+    "3:1 icon contrast",
+    "colorblind palette variants",
+    "reduced motion for pulsing AR"
+  ],
+  "icons": {
+    "atlas": "06_ui/icons/atlas/icon_atlas.json",
+    "png_dir": "06_ui/icons/png",
+    "source_dir": "06_ui/icons/svg"
+  },
+  "merkle_node_types": [
+    "leaf",
+    "branch",
+    "root"
+  ],
+  "mnemonic_seed_slots": [
+    "slot_01",
+    "slot_02",
+    "slot_03",
+    "slot_04",
+    "slot_05",
+    "slot_06",
+    "slot_07",
+    "slot_08",
+    "slot_09",
+    "slot_10",
+    "slot_11",
+    "slot_12"
+  ],
+  "modifier_types": [
+    "damage",
+    "cooldown",
+    "radius",
+    "duration",
+    "chain",
+    "summon",
+    "shield",
+    "mobility",
+    "loot",
+    "scan",
+    "debuff",
+    "ultimate_charge"
+  ],
+  "palette": [
+    {
+      "hex": "#171A1C",
+      "name": "Deep Ledger",
+      "usage": "primary deep neutral for shadows, asphalt, panels and cavern voids"
+    },
+    {
+      "hex": "#6E6A61",
+      "name": "Ash Concrete",
+      "usage": "secondary neutral for stucco, masonry, dust and inactive controls"
+    },
+    {
+      "hex": "#B65A3C",
+      "name": "Terracotta Signal",
+      "usage": "primary accent for hazards, hero straps, breach points and warm practicals"
+    },
+    {
+      "hex": "#3D7F7A",
+      "name": "Muted Teal",
+      "usage": "secondary accent for AR, safe tech, scan volumes and cold bounce"
+    },
+    {
+      "hex": "#D6B15E",
+      "name": "Phosphor Gold",
+      "usage": "rare accent for loot, boss weak points and Merkle confirmations"
+    },
+    {
+      "hex": "#E7DFC9",
+      "name": "Cold Bone",
+      "usage": "foreground text, snow highlights, subtitles and readable rim lights"
+    }
+  ],
+  "screens": {
+    "hud": [
+      "health",
+      "hashrate",
+      "skill bar",
+      "tool wheel",
+      "destructible reticle"
+    ],
+    "inventory": [
+      "item grid",
+      "rarity filters",
+      "compare panel"
+    ],
+    "map": [
+      "region tiles",
+      "POIs",
+      "subsurface entrance uncertainty rings"
+    ],
+    "merkle_tree": [
+      "node graph",
+      "proof path highlight",
+      "skill unlock confirmation"
+    ],
+    "mnemonic_board": [
+      "12 seed slots",
+      "modifier sockets",
+      "checksum warning"
+    ],
+    "tooltips": [
+      "icon first",
+      "320dp max",
+      "shape coded warnings"
+    ]
+  },
+  "source_specs": [
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/merkle_rules.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/complete_3d_asset_package_spec.json"
+  ],
+  "typography": {
+    "body": "humanist sans 400/500",
+    "heading": "condensed geometric sans 600/700",
+    "minimum": "14sp body, 16sp labels, 20sp panel titles"
+  }
+}
