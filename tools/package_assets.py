@@ -8,7 +8,7 @@ from pathlib import Path
 
 INCLUDE_DIRS = [
     "00_styleguide", "01_world", "02_biomes", "03_characters", "04_props", "assets/gameplay",
-    "05_tools", "06_ui", "07_vfx", "08_audio_refs", "09_scenes", "10_final_3d_engine_package", "11_full_game_build", "12_finished_game", "manifest", "assets/manifest",
+    "05_tools", "06_ui", "07_vfx", "08_audio_refs", "09_scenes", "manifest", "assets/manifest",
 ]
 INCLUDE_FILES = ["docs/assets/production_ready_art_asset_pipeline.md", "docs/assets/production_pipeline.md", "docs/assets/complete_3d_asset_package_spec.json", "docs/assets/final_3d_engine_package_spec.json"]
 
