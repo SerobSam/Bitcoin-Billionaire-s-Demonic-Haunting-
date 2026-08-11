@@ -1,0 +1,72 @@
+{
+  "accessibility": [
+    "4.5:1 body contrast",
+    "3:1 icon contrast",
+    "colorblind palette variants",
+    "reduced motion for pulsing AR"
+  ],
+  "animation_integration": {
+    "blendspaces": {
+      "aim_offset": "yaw x pitch",
+      "boss_phase": "phase x aggression",
+      "cast_layer": "upper-body mask over locomotion",
+      "player_locomotion": "speed x strafe angle",
+      "ragdoll": "authored death pose to physics over 0.18s"
+    },
+    "root_motion": "locomotion and breach clips export root translation; attacks are in-place except lunges; boss transforms pin root and animate sockets"
+  },
+  "camera": {
+    "collision_probe": "spherecast camera boom",
+    "lock_on_orbit": true,
+    "mode": "third_person",
+    "shoulder_swap": true
+  },
+  "combat": {
+    "block": "L1",
+    "heavy_attack": "R2 hold",
+    "light_attack": "R1 / primary touch",
+    "parry": "L1 timed",
+    "target_lock": "R3 / touch focus"
+  },
+  "movement": {
+    "dash": "B / touch dodge",
+    "run": "left_stick >=0.55",
+    "sprint": "left_stick + sprint",
+    "vault_climb_jump": "context action + traversal tag",
+    "walk": "left_stick <0.55"
+  },
+  "skills": {
+    "code_weaver": {
+      "code_weaver_dash": "skill_slot_3",
+      "code_weaver_snare": "skill_slot_2",
+      "code_weaver_strike": "skill_slot_1",
+      "code_weaver_surge": "skill_slot_5",
+      "code_weaver_ultimate": "skill_slot_6",
+      "code_weaver_ward": "skill_slot_4"
+    },
+    "cypherpunk": {
+      "cypherpunk_dash": "skill_slot_3",
+      "cypherpunk_snare": "skill_slot_2",
+      "cypherpunk_strike": "skill_slot_1",
+      "cypherpunk_surge": "skill_slot_5",
+      "cypherpunk_ultimate": "skill_slot_6",
+      "cypherpunk_ward": "skill_slot_4"
+    },
+    "digital_wraith": {
+      "digital_wraith_dash": "skill_slot_3",
+      "digital_wraith_snare": "skill_slot_2",
+      "digital_wraith_strike": "skill_slot_1",
+      "digital_wraith_surge": "skill_slot_5",
+      "digital_wraith_ultimate": "skill_slot_6",
+      "digital_wraith_ward": "skill_slot_4"
+    },
+    "grid_vanguard": {
+      "grid_vanguard_dash": "skill_slot_3",
+      "grid_vanguard_snare": "skill_slot_2",
+      "grid_vanguard_strike": "skill_slot_1",
+      "grid_vanguard_surge": "skill_slot_5",
+      "grid_vanguard_ultimate": "skill_slot_6",
+      "grid_vanguard_ward": "skill_slot_4"
+    }
+  }
+}

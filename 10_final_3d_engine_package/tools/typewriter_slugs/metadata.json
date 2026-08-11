@@ -1,0 +1,52 @@
+{
+  "animations": [
+    "anim_hero_tool_typewriter_slugs_equip_v01",
+    "anim_hero_tool_typewriter_slugs_use_v01",
+    "anim_hero_tool_typewriter_slugs_recover_v01"
+  ],
+  "category": "tool",
+  "export_settings": {
+    "embed_media": false,
+    "icons": [
+      "SVG source",
+      "512x512 PNG",
+      "PNG atlas",
+      "JSON atlas metadata"
+    ],
+    "mesh": [
+      "FBX ASCII",
+      "GLTF 2.0"
+    ],
+    "texture_maps": {
+      "albedo": "PNG 16-bit sRGB",
+      "ao": "EXR",
+      "height": "EXR 16/32-bit linear",
+      "normal": "TGA 16-bit tangent-space MikkTSpace",
+      "roughness": "EXR R channel"
+    },
+    "units": "meters",
+    "up_axis": "Y"
+  },
+  "icons": {
+    "png": "06_ui/icons/png/icon_tool_typewriter_slugs.png",
+    "svg": "06_ui/icons/svg/icon_tool_typewriter_slugs.svg"
+  },
+  "id": "tool_typewriter_slugs_final_LOD0_v01",
+  "model": {
+    "collision": "single convex hull + socket grip marker",
+    "in_hand_fbx": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_inhand_LOD0_v01.fbx",
+    "in_hand_gltf": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_inhand_LOD0_v01.gltf",
+    "world_pickup_gltf": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_pickup_LOD0_v01.gltf"
+  },
+  "readme_path": "10_final_3d_engine_package/tools/typewriter_slugs/README.md",
+  "sound_cues": [
+    "sfx_tool_typewriter_slugs_equip",
+    "sfx_tool_typewriter_slugs_use",
+    "sfx_tool_typewriter_slugs_impact"
+  ],
+  "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+  "vfx": [
+    "vfx_tool_typewriter_slugs_trail_LOD0_v01",
+    "vfx_tool_typewriter_slugs_impact_LOD0_v01"
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "locked_doors": {
+    "breach": {
+      "animation": "anim_hero_forced_breach_v01",
+      "result": "door enters broken/debris, NPC alert radius 25m, scrap-biased loot, navmesh delta"
+    },
+    "lockpick": {
+      "animation": "anim_hero_lockpick_loop_v01",
+      "result": "door remains intact, stealth loot table, no NPC alarm"
+    }
+  },
+  "loot_tiers": [
+    {
+      "affix_max": 1,
+      "affix_min": 0,
+      "color": "#6E6A61",
+      "drop_weight": 1000,
+      "id": "scrap",
+      "name": "Scrap"
+    },
+    {
+      "affix_max": 2,
+      "affix_min": 1,
+      "color": "#B65A3C",
+      "drop_weight": 620,
+      "id": "copper",
+      "name": "Copper"
+    },
+    {
+      "affix_max": 3,
+      "affix_min": 2,
+      "color": "#3D7F7A",
+      "drop_weight": 360,
+      "id": "silicon",
+      "name": "Silicon"
+    },
+    {
+      "affix_max": 4,
+      "affix_min": 3,
+      "color": "#D6B15E",
+      "drop_weight": 190,
+      "id": "encrypted",
+      "name": "Encrypted"
+    },
+    {
+      "affix_max": 5,
+      "affix_min": 4,
+      "color": "#E7DFC9",
+      "drop_weight": 80,
+      "id": "sovereign",
+      "name": "Sovereign"
+    },
+    {
+      "affix_max": 6,
+      "affix_min": 5,
+      "color": "#9B5CFF",
+      "drop_weight": 25,
+      "id": "genesis",
+      "name": "Genesis"
+    },
+    {
+      "affix_max": 7,
+      "affix_min": 6,
+      "color": "#FFFFFF",
+      "drop_weight": 5,
+      "id": "immutable",
+      "name": "Immutable"
+    }
+  ],
+  "materials": {
+    "foliage": {
+      "debris_pool_prefab": "04_props/destructibles/foliage/debris/prop_foliage_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/foliage/fracture/prop_foliage_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    },
+    "glass": {
+      "debris_pool_prefab": "04_props/destructibles/glass/debris/prop_glass_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/glass/fracture/prop_glass_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    },
+    "masonry": {
+      "debris_pool_prefab": "04_props/destructibles/masonry/debris/prop_masonry_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/masonry/fracture/prop_masonry_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    },
+    "metal": {
+      "debris_pool_prefab": "04_props/destructibles/metal/debris/prop_metal_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/metal/fracture/prop_metal_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    },
+    "soil": {
+      "debris_pool_prefab": "04_props/destructibles/soil/debris/prop_soil_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/soil/fracture/prop_soil_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    },
+    "wood": {
+      "debris_pool_prefab": "04_props/destructibles/wood/debris/prop_wood_debrispool_LOD0_v01.gltf",
+      "fracture_map": "04_props/destructibles/wood/fracture/prop_wood_fracture_LOD0_v01.exr",
+      "particles": [
+        "impact_sparks_or_dust",
+        "break_burst",
+        "settle_motes"
+      ],
+      "physics": {
+        "max_lifetime_s": 8,
+        "sleep_velocity_mps": 0.05,
+        "solver_position_iterations": 2,
+        "solver_velocity_iterations": 4
+      },
+      "pool_counts": {
+        "high": 64,
+        "low": 16,
+        "mid": 32
+      }
+    }
+  },
+  "save_delta_fields": [
+    "object_id",
+    "state",
+    "health",
+    "loot_claimed",
+    "navmesh_delta_hash"
+  ],
+  "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+  "state_machine": [
+    "intact",
+    "damaged",
+    "broken",
+    "debris"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "blendspaces": {
+    "aim_offset": "yaw x pitch",
+    "boss_phase": "phase x aggression",
+    "cast_layer": "upper-body mask over locomotion",
+    "player_locomotion": "speed x strafe angle",
+    "ragdoll": "authored death pose to physics over 0.18s"
+  },
+  "class_skill_clip_counts": {
+    "code_weaver": 6,
+    "cypherpunk": 6,
+    "digital_wraith": 6,
+    "grid_vanguard": 6
+  },
+  "class_skill_clips": {
+    "code_weaver": [
+      "anim_code_weaver_skill_code_weaver_strike_v01",
+      "anim_code_weaver_skill_code_weaver_snare_v01",
+      "anim_code_weaver_skill_code_weaver_dash_v01",
+      "anim_code_weaver_skill_code_weaver_ward_v01",
+      "anim_code_weaver_skill_code_weaver_surge_v01",
+      "anim_code_weaver_skill_code_weaver_ultimate_v01"
+    ],
+    "cypherpunk": [
+      "anim_cypherpunk_skill_cypherpunk_strike_v01",
+      "anim_cypherpunk_skill_cypherpunk_snare_v01",
+      "anim_cypherpunk_skill_cypherpunk_dash_v01",
+      "anim_cypherpunk_skill_cypherpunk_ward_v01",
+      "anim_cypherpunk_skill_cypherpunk_surge_v01",
+      "anim_cypherpunk_skill_cypherpunk_ultimate_v01"
+    ],
+    "digital_wraith": [
+      "anim_digital_wraith_skill_digital_wraith_strike_v01",
+      "anim_digital_wraith_skill_digital_wraith_snare_v01",
+      "anim_digital_wraith_skill_digital_wraith_dash_v01",
+      "anim_digital_wraith_skill_digital_wraith_ward_v01",
+      "anim_digital_wraith_skill_digital_wraith_surge_v01",
+      "anim_digital_wraith_skill_digital_wraith_ultimate_v01"
+    ],
+    "grid_vanguard": [
+      "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+      "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+      "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+      "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+      "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+      "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01"
+    ]
+  },
+  "global_clips": [
+    "idle",
+    "walk",
+    "run",
+    "sprint",
+    "attack_light",
+    "attack_heavy",
+    "skill_cast_primary",
+    "skill_cast_secondary",
+    "damage_front",
+    "damage_back",
+    "death",
+    "ragdoll_transition",
+    "enemy_patrol",
+    "enemy_investigate",
+    "enemy_attack",
+    "boss_phase1_intro",
+    "boss_phase1_attack",
+    "boss_phase2_transform",
+    "boss_phase2_attack",
+    "boss_stagger",
+    "boss_death"
+  ],
+  "root_motion_rules": "locomotion and breach clips export root translation; attacks are in-place except lunges; boss transforms pin root and animate sockets",
+  "source_specs": [
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/classes.json"
+  ],
+  "state_machines": {
+    "boss": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death",
+    "enemy": "Spawn->Patrol->Investigate->Chase->Attack->Stagger->Death",
+    "player": "Idle->Locomotion->Traversal/Combat/SkillCast->HitReact->Death/Ragdoll"
+  }
+}

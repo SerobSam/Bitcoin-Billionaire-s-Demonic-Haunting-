@@ -1,0 +1,114 @@
+{
+  "class_balance": {
+    "code_weaver": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_code_weaver_skill_code_weaver_strike_v01",
+        "anim_code_weaver_skill_code_weaver_snare_v01",
+        "anim_code_weaver_skill_code_weaver_dash_v01",
+        "anim_code_weaver_skill_code_weaver_ward_v01",
+        "anim_code_weaver_skill_code_weaver_surge_v01",
+        "anim_code_weaver_skill_code_weaver_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "compile",
+      "role": "summoner support",
+      "ultimate": "code_weaver_ultimate"
+    },
+    "cypherpunk": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_cypherpunk_skill_cypherpunk_strike_v01",
+        "anim_cypherpunk_skill_cypherpunk_snare_v01",
+        "anim_cypherpunk_skill_cypherpunk_dash_v01",
+        "anim_cypherpunk_skill_cypherpunk_ward_v01",
+        "anim_cypherpunk_skill_cypherpunk_surge_v01",
+        "anim_cypherpunk_skill_cypherpunk_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "entropy",
+      "role": "ranged breach",
+      "ultimate": "cypherpunk_ultimate"
+    },
+    "digital_wraith": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_digital_wraith_skill_digital_wraith_strike_v01",
+        "anim_digital_wraith_skill_digital_wraith_snare_v01",
+        "anim_digital_wraith_skill_digital_wraith_dash_v01",
+        "anim_digital_wraith_skill_digital_wraith_ward_v01",
+        "anim_digital_wraith_skill_digital_wraith_surge_v01",
+        "anim_digital_wraith_skill_digital_wraith_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "phase",
+      "role": "stealth assassin",
+      "ultimate": "digital_wraith_ultimate"
+    },
+    "grid_vanguard": {
+      "active_skill_count": 5,
+      "animation_clips": [
+        "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+        "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01"
+      ],
+      "coop_threat_scalar": 1.0,
+      "pvp_damage_scalar": 0.82,
+      "resource": "charge",
+      "role": "tank controller",
+      "ultimate": "grid_vanguard_ultimate"
+    }
+  },
+  "mission_variants": {
+    "I": {
+      "enemy_scalar": 1.55,
+      "loot_rolls": "personal with party rarity pity",
+      "revive_tokens_per_player": 2,
+      "shared_progression": true
+    },
+    "II": {
+      "enemy_scalar": 1.55,
+      "loot_rolls": "personal with party rarity pity",
+      "revive_tokens_per_player": 2,
+      "shared_progression": true
+    },
+    "III": {
+      "enemy_scalar": 1.55,
+      "loot_rolls": "personal with party rarity pity",
+      "revive_tokens_per_player": 2,
+      "shared_progression": true
+    },
+    "IV": {
+      "enemy_scalar": 1.55,
+      "loot_rolls": "personal with party rarity pity",
+      "revive_tokens_per_player": 2,
+      "shared_progression": true
+    }
+  },
+  "network_replication": {
+    "authority": "host authoritative with deterministic asset ids",
+    "replicated": [
+      "player_transform",
+      "skill_cast",
+      "damage_event",
+      "destructible_state",
+      "loot_claim",
+      "revive_state"
+    ],
+    "tick_rate_hz": 30
+  },
+  "shared_merkle_synergy": {
+    "node_types": [
+      "leaf",
+      "branch",
+      "root"
+    ],
+    "synergy_rule": "matching branch modifiers grant party buff; root modifiers are host-authoritative"
+  }
+}

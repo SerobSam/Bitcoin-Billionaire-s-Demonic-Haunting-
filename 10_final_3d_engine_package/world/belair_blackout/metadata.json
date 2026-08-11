@@ -1,0 +1,127 @@
+{
+  "blockout": {
+    "collision_proxy": "01_world/belair_blackout/collision/world_belair_blackout_collision_LOD0_v01.fbx",
+    "file": "01_world/belair_blackout/blockout/world_belair_blackout_blockout_LOD0_v01.gltf",
+    "metrics": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 128,
+      "vehicle_lane_m": 6.0
+    }
+  },
+  "category": "world",
+  "collision_policy": "author UCX convex hulls for modules, heightfield for terrain, fracture hulls for destructible layer",
+  "exports": {
+    "embed_media": false,
+    "icons": [
+      "SVG source",
+      "512x512 PNG",
+      "PNG atlas",
+      "JSON atlas metadata"
+    ],
+    "mesh": [
+      "FBX ASCII",
+      "GLTF 2.0"
+    ],
+    "texture_maps": {
+      "albedo": "PNG 16-bit sRGB",
+      "ao": "EXR",
+      "height": "EXR 16/32-bit linear",
+      "normal": "TGA 16-bit tangent-space MikkTSpace",
+      "roughness": "EXR R channel"
+    },
+    "units": "meters",
+    "up_axis": "Y"
+  },
+  "final_meshes": [
+    {
+      "collision": "heightfield + simplified trimesh",
+      "export": "01_world/belair_blackout/meshes/world_belair_blackout_terrain_LOD0_v01.gltf",
+      "name": "belair_blackout_terrain_shell"
+    },
+    {
+      "collision": "per-piece UCX hulls",
+      "export": "01_world/belair_blackout/meshes/world_belair_blackout_modules_LOD0_v01.fbx",
+      "name": "belair_blackout_modular_set"
+    },
+    {
+      "collision": "fracture-aware convex chunks",
+      "export": "01_world/belair_blackout/meshes/world_belair_blackout_destructibles_LOD0_v01.gltf",
+      "name": "belair_blackout_destructible_layer"
+    }
+  ],
+  "id": "world_belair_blackout_final_LOD0_v01",
+  "lighting_preset": {
+    "fill": "muted teal bounce",
+    "fog": "height fog with painterly cards",
+    "key": "warm terracotta practical or biome sun",
+    "rim": "Cold Bone edge light"
+  },
+  "lods": {
+    "LOD0": "0-30m authored meshes, full material set, collision enabled",
+    "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+    "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+  },
+  "name": "Bel Air Blackout Zone",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "pbr_materials": [
+    {
+      "albedo": "01_world/belair_blackout/textures/tex_black_glass_albedo_LOD0_v01.png",
+      "ao": "01_world/belair_blackout/textures/tex_black_glass_ao_LOD0_v01.exr",
+      "height": "01_world/belair_blackout/textures/tex_black_glass_height_LOD0_v01.exr",
+      "material": "black_glass",
+      "normal": "01_world/belair_blackout/textures/tex_black_glass_normal_LOD0_v01.tga",
+      "roughness": "01_world/belair_blackout/textures/tex_black_glass_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/belair_blackout/textures/tex_polished_stone_albedo_LOD0_v01.png",
+      "ao": "01_world/belair_blackout/textures/tex_polished_stone_ao_LOD0_v01.exr",
+      "height": "01_world/belair_blackout/textures/tex_polished_stone_height_LOD0_v01.exr",
+      "material": "polished_stone",
+      "normal": "01_world/belair_blackout/textures/tex_polished_stone_normal_LOD0_v01.tga",
+      "roughness": "01_world/belair_blackout/textures/tex_polished_stone_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/belair_blackout/textures/tex_burnt_hedge_albedo_LOD0_v01.png",
+      "ao": "01_world/belair_blackout/textures/tex_burnt_hedge_ao_LOD0_v01.exr",
+      "height": "01_world/belair_blackout/textures/tex_burnt_hedge_height_LOD0_v01.exr",
+      "material": "burnt_hedge",
+      "normal": "01_world/belair_blackout/textures/tex_burnt_hedge_normal_LOD0_v01.tga",
+      "roughness": "01_world/belair_blackout/textures/tex_burnt_hedge_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/belair_blackout/textures/tex_emergency_cable_albedo_LOD0_v01.png",
+      "ao": "01_world/belair_blackout/textures/tex_emergency_cable_ao_LOD0_v01.exr",
+      "height": "01_world/belair_blackout/textures/tex_emergency_cable_height_LOD0_v01.exr",
+      "material": "emergency_cable",
+      "normal": "01_world/belair_blackout/textures/tex_emergency_cable_normal_LOD0_v01.tga",
+      "roughness": "01_world/belair_blackout/textures/tex_emergency_cable_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/belair_blackout/textures/tex_smart_gate_metal_albedo_LOD0_v01.png",
+      "ao": "01_world/belair_blackout/textures/tex_smart_gate_metal_ao_LOD0_v01.exr",
+      "height": "01_world/belair_blackout/textures/tex_smart_gate_metal_height_LOD0_v01.exr",
+      "material": "smart_gate_metal",
+      "normal": "01_world/belair_blackout/textures/tex_smart_gate_metal_normal_LOD0_v01.tga",
+      "roughness": "01_world/belair_blackout/textures/tex_smart_gate_metal_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    }
+  ],
+  "readme_path": "10_final_3d_engine_package/world/belair_blackout/README.md",
+  "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+  "streaming": {
+    "dependency_rule": "load material set, collision proxy and AR anchors with tile",
+    "prefetch_radius_tiles": 2,
+    "resident_budget_bytes": 82000000,
+    "tile_size_m": 128
+  }
+}
