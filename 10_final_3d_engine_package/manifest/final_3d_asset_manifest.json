@@ -1,0 +1,167 @@
+{
+  "asset_count": 25,
+  "assets": [
+    {
+      "category": "world",
+      "id": "world_belair_blackout_final_LOD0_v01",
+      "metadata": "world/belair_blackout/metadata.json",
+      "readme": "world/belair_blackout/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_irvine_suburbs_final_LOD0_v01",
+      "metadata": "world/irvine_suburbs/metadata.json",
+      "readme": "world/irvine_suburbs/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_manhattan_consensus_final_LOD0_v01",
+      "metadata": "world/manhattan_consensus/metadata.json",
+      "readme": "world/manhattan_consensus/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_alpine_coldstorage_final_LOD0_v01",
+      "metadata": "world/alpine_coldstorage/metadata.json",
+      "readme": "world/alpine_coldstorage/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_mojave_groundreturn_final_LOD0_v01",
+      "metadata": "world/mojave_groundreturn/metadata.json",
+      "readme": "world/mojave_groundreturn/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_darkpool_dungeons_final_LOD0_v01",
+      "metadata": "world/darkpool_dungeons/metadata.json",
+      "readme": "world/darkpool_dungeons/README.md"
+    },
+    {
+      "category": "world",
+      "id": "world_zerostate_relays_final_LOD0_v01",
+      "metadata": "world/zerostate_relays/metadata.json",
+      "readme": "world/zerostate_relays/README.md"
+    },
+    {
+      "category": "playable",
+      "id": "character_cypherpunk_final_LOD0_v01",
+      "metadata": "characters/cypherpunk/metadata.json",
+      "readme": "characters/cypherpunk/README.md"
+    },
+    {
+      "category": "playable",
+      "id": "character_digitalwraith_final_LOD0_v01",
+      "metadata": "characters/digitalwraith/metadata.json",
+      "readme": "characters/digitalwraith/README.md"
+    },
+    {
+      "category": "playable",
+      "id": "character_gridvanguard_final_LOD0_v01",
+      "metadata": "characters/gridvanguard/metadata.json",
+      "readme": "characters/gridvanguard/README.md"
+    },
+    {
+      "category": "playable",
+      "id": "character_codeweaver_final_LOD0_v01",
+      "metadata": "characters/codeweaver/metadata.json",
+      "readme": "characters/codeweaver/README.md"
+    },
+    {
+      "category": "enemy",
+      "id": "character_ghostprocess_final_LOD0_v01",
+      "metadata": "characters/ghostprocess/metadata.json",
+      "readme": "characters/ghostprocess/README.md"
+    },
+    {
+      "category": "enemy",
+      "id": "character_sybilswarm_final_LOD0_v01",
+      "metadata": "characters/sybilswarm/metadata.json",
+      "readme": "characters/sybilswarm/README.md"
+    },
+    {
+      "category": "enemy",
+      "id": "character_darkpoolwarden_final_LOD0_v01",
+      "metadata": "characters/darkpoolwarden/metadata.json",
+      "readme": "characters/darkpoolwarden/README.md"
+    },
+    {
+      "category": "boss",
+      "id": "character_genesisentity_phase1_final_LOD0_v01",
+      "metadata": "characters/genesisentity_phase1/metadata.json",
+      "readme": "characters/genesisentity_phase1/README.md"
+    },
+    {
+      "category": "boss",
+      "id": "character_genesisentity_phase2_final_LOD0_v01",
+      "metadata": "characters/genesisentity_phase2/metadata.json",
+      "readme": "characters/genesisentity_phase2/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_pneumatic_needle_gun_final_LOD0_v01",
+      "metadata": "tools/pneumatic_needle_gun/metadata.json",
+      "readme": "tools/pneumatic_needle_gun/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_typewriter_slugs_final_LOD0_v01",
+      "metadata": "tools/typewriter_slugs/metadata.json",
+      "readme": "tools/typewriter_slugs/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_ransomware_blade_final_LOD0_v01",
+      "metadata": "tools/ransomware_blade/metadata.json",
+      "readme": "tools/ransomware_blade/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_hammer_final_LOD0_v01",
+      "metadata": "tools/hammer/metadata.json",
+      "readme": "tools/hammer/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_pick_final_LOD0_v01",
+      "metadata": "tools/pick/metadata.json",
+      "readme": "tools/pick/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_lockpick_final_LOD0_v01",
+      "metadata": "tools/lockpick/metadata.json",
+      "readme": "tools/lockpick/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_saw_final_LOD0_v01",
+      "metadata": "tools/saw/metadata.json",
+      "readme": "tools/saw/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_explosives_final_LOD0_v01",
+      "metadata": "tools/explosives/metadata.json",
+      "readme": "tools/explosives/README.md"
+    },
+    {
+      "category": "tool",
+      "id": "tool_scaffold_deployer_final_LOD0_v01",
+      "metadata": "tools/scaffold_deployer/metadata.json",
+      "readme": "tools/scaffold_deployer/README.md"
+    }
+  ],
+  "export_bundle_command": "python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "repository_manifest_asset_count": 20,
+  "schema_version": "1.0.0",
+  "source_specs": [
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/complete_3d_asset_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/classes.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/loot_tiers.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/merkle_rules.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/manifest/asset_manifest.json"
+  ]
+}

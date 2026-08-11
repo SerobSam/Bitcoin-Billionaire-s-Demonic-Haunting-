@@ -1,0 +1,32 @@
+{
+  "authoritative_asset_count": 20,
+  "class_count": 4,
+  "complete_biome_count": 5,
+  "final_region_count": 7,
+  "loot_tier_count": 7,
+  "materialized_asset_count": 25,
+  "outputs": [
+    "campaign",
+    "multiplayer",
+    "modes",
+    "controls",
+    "systems",
+    "ui",
+    "android",
+    "world"
+  ],
+  "schema_version": "1.0.0",
+  "source_files": {
+    "animation_blueprint": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/animations/animation_blueprint.json",
+    "asset_manifest": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/manifest/asset_manifest.json",
+    "classes": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/classes.json",
+    "complete_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/complete_3d_asset_package_spec.json",
+    "destructibility": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/destructibility/destructibility_blueprint.json",
+    "final_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "lighting": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/lighting/lighting_palette_blueprint.json",
+    "loot": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/loot_tiers.json",
+    "materialized_manifest": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/manifest/final_3d_asset_manifest.json",
+    "merkle": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/merkle_rules.json",
+    "ui": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/10_final_3d_engine_package/ui/ui_blueprint.json"
+  }
+}

@@ -59,6 +59,16 @@ AssetPackage/
 - **Cavern Sample**: portal streaming, spectral liquidity, low-light readability, Subterranean entrance loop.
 - **Destruction Lab**: all material types, lockpick/forced breach outcomes, debris pooling telemetry, navmesh semantic update.
 
+## Production-Ready Pipeline Expansion
+
+The complete engine-ready pipeline is maintained in `docs/assets/production_ready_art_asset_pipeline.md`. It adds explicit color accessibility variants, biome-by-biome PBR requirements, hidden subsurface entrance rules, destructible physics budgets, locked-door outcomes, character rig contracts, animation coverage, UI typography, craft tool visual specs, iteration gates, and deterministic zip packaging.
+
+## Export Bundle Command
+
+```bash
+python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip
+```
+
 ## CI Commands
 
 ```bash
@@ -114,9 +124,28 @@ AssetPackage/
 - **Cavern Sample**: portal streaming, spectral liquidity, low-light readability, Subterranean entrance loop.
 - **Destruction Lab**: all material types, lockpick/forced breach outcomes, debris pooling telemetry, navmesh semantic update.
 
+## Production-Ready Pipeline Expansion
+
+The complete engine-ready pipeline is maintained in `docs/assets/production_ready_art_asset_pipeline.md`. It adds explicit color accessibility variants, biome-by-biome PBR requirements, hidden subsurface entrance rules, destructible physics budgets, locked-door outcomes, character rig contracts, animation coverage, UI typography, craft tool visual specs, iteration gates, and deterministic zip packaging.
+
+## Export Bundle Command
+
+```bash
+python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip
+```
+
 ## CI Commands
 
 ```bash
 python3 -m json.tool assets/manifest/asset_manifest.json
 python3 tools/validate_asset_manifest.py assets/manifest/asset_manifest.json
 ```
+
+## Final 3D Engine Package
+`docs/assets/final_3d_engine_package_spec.json` is included in deterministic exports and is the authoritative build checklist for Genesis Protocol region, class, enemy, boss, tool, destructibility, UI, and animation asset integration.
+
+## Materialized Final 3D Package
+Run `python3 tools/generate_final_3d_package.py` to convert authoritative specs and gameplay JSON into `10_final_3d_engine_package/`, which contains per-world, per-character, per-tool, UI, lighting, destructibility, animation, README, and manifest metadata for engine import.
+
+## Full Game Build Package
+Run `python3 tools/generate_full_game_build.py` after materializing 3D metadata to generate `11_full_game_build/`, the authoritative campaign, co-op, PvP, endgame, input, gameplay systems, UI, Android, release, and world integration handoff generated from repo JSON.

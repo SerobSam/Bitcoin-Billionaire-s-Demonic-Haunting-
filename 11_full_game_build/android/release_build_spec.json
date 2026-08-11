@@ -1,0 +1,47 @@
+{
+  "aab_steps": [
+    "python3 tools/generate_final_3d_package.py",
+    "python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip",
+    "./gradlew bundleRelease"
+  ],
+  "api_level": {
+    "compile_sdk": 36,
+    "min_sdk": 26,
+    "target_sdk": 36
+  },
+  "bundle_structure": [
+    "base APK: code/UI/core classes",
+    "assetpack_worlds",
+    "assetpack_audio",
+    "assetpack_highres"
+  ],
+  "compression": {
+    "audio": "Opus",
+    "meshes": "GLTF/FBX converted to runtime binary cache",
+    "textures": "ASTC by device tier"
+  },
+  "package_name": "com.genesisprotocol.game",
+  "permissions": [
+    "INTERNET",
+    "ACCESS_NETWORK_STATE"
+  ],
+  "release_channels": [
+    "internal",
+    "closed_alpha",
+    "open_beta",
+    "production"
+  ],
+  "signing": {
+    "key_alias_env": "GENESIS_KEY_ALIAS",
+    "keystore_env": "GENESIS_KEYSTORE",
+    "password_env": [
+      "GENESIS_KEYSTORE_PASSWORD",
+      "GENESIS_KEY_PASSWORD"
+    ]
+  },
+  "supported_devices": [
+    "Android API 26+",
+    "Vulkan 1.0+",
+    "arm64-v8a"
+  ]
+}

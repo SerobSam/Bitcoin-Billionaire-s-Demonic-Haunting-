@@ -1,0 +1,56 @@
+{
+  "base_animation_state_machine": "Spawn->Patrol->Investigate->Chase->Attack->Stagger->Death",
+  "blendspaces": {
+    "aim_offset": "yaw x pitch",
+    "boss_phase": "phase x aggression",
+    "cast_layer": "upper-body mask over locomotion",
+    "player_locomotion": "speed x strafe angle",
+    "ragdoll": "authored death pose to physics over 0.18s"
+  },
+  "category": "playable",
+  "concept": "Code Weaver playable class with woven cable mantle, mnemonic bead rig, AR loom gauntlets and sigil compiler focus",
+  "exports": {
+    "fbx": "03_characters/codeweaver/character_codeweaver_final_LOD0_v01.fbx",
+    "gltf": "03_characters/codeweaver/character_codeweaver_final_LOD0_v01.gltf",
+    "metadata": "03_characters/codeweaver/metadata/character_codeweaver_final_LOD0_v01.json"
+  },
+  "facial_blendshapes": [
+    "blink_L",
+    "blink_R",
+    "brow_up",
+    "brow_down",
+    "jaw_open",
+    "phoneme_A",
+    "phoneme_E",
+    "phoneme_O",
+    "phoneme_U",
+    "phoneme_M",
+    "fear",
+    "pain",
+    "snarl",
+    "possession_glitch"
+  ],
+  "gameplay_class": null,
+  "id": "character_codeweaver_final_LOD0_v01",
+  "lods": {
+    "LOD0": "60k playable / 45k elite / 120k boss tris",
+    "LOD1": "30k playable / 22k elite / 60k boss tris",
+    "LOD2": "12k playable / 8k elite / 25k boss tris"
+  },
+  "production_pipeline": [
+    "sculpt high-poly in neutral A-pose",
+    "retopo to deformation-friendly quads",
+    "UV into body/head/gear/weapon sets",
+    "bake normal/AO/curvature/ID",
+    "texture in Genesis palette with material wear masks"
+  ],
+  "readme_path": "10_final_3d_engine_package/characters/codeweaver/README.md",
+  "root_motion_rules": "locomotion and breach clips export root translation; attacks are in-place except lunges; boss transforms pin root and animate sockets",
+  "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+  "skill_animation_clips": [],
+  "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+  "source_specs": [
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/assets/gameplay/classes.json"
+  ]
+}
