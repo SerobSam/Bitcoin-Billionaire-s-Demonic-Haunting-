@@ -369,6 +369,101 @@
       ],
       "dependencies": [],
       "readme_path": "09_scenes/destruction_lab/readme.md"
+    },
+    {
+      "id": "scene_complete3d_package_LOD0_v01",
+      "name": "Complete 3D Asset Package Specification",
+      "category": "scene",
+      "variant": "package",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON"
+      ],
+      "size_bytes": 27834,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [],
+      "readme_path": "docs/assets/complete_3d_asset_package_spec.json"
+    },
+    {
+      "id": "scene_final3d_enginepackage_LOD0_v01",
+      "name": "Final Genesis Protocol 3D Engine Package Specification",
+      "category": "scene",
+      "variant": "enginepackage",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON"
+      ],
+      "size_bytes": 74921,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [
+        "scene_complete3d_package_LOD0_v01"
+      ],
+      "readme_path": "docs/assets/final_3d_engine_package_spec.json"
+    },
+    {
+      "id": "scene_materialized_final3d_LOD0_v01",
+      "name": "Materialized Final 3D Engine Metadata Package",
+      "category": "scene",
+      "variant": "materialized",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON",
+        "MD"
+      ],
+      "size_bytes": 108259,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [
+        "scene_final3d_enginepackage_LOD0_v01"
+      ],
+      "readme_path": "10_final_3d_engine_package/README.md"
+    },
+    {
+      "id": "scene_fullgame_build_LOD0_v01",
+      "name": "Full Genesis Protocol Game Build Package",
+      "category": "scene",
+      "variant": "build",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON",
+        "XML",
+        "KTS",
+        "MD"
+      ],
+      "size_bytes": 36687,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [
+        "scene_materialized_final3d_LOD0_v01"
+      ],
+      "readme_path": "11_full_game_build/README.md"
+    },
+    {
+      "id": "scene_finished_game_LOD0_v01",
+      "name": "Finished Genesis Protocol Runtime Game Package",
+      "category": "scene",
+      "variant": "finished",
+      "LOD": "LOD0",
+      "version": "v01",
+      "formats": [
+        "JSON",
+        "XML",
+        "KTS",
+        "MD"
+      ],
+      "size_bytes": 66726,
+      "polycount": 0,
+      "texture_resolutions": [],
+      "dependencies": [
+        "scene_fullgame_build_LOD0_v01"
+      ],
+      "readme_path": "12_finished_game/README.md"
     }
   ]
 }

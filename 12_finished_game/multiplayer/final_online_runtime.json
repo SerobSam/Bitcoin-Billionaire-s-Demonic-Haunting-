@@ -1,0 +1,388 @@
+{
+  "coop": {
+    "boss_mechanics": {
+      "character_genesisentity_phase1_final_LOD0_v01": {
+        "phase_transition_replication": "reliable ordered",
+        "revive_lockout_seconds": 8,
+        "shared_breakbar": true
+      },
+      "character_genesisentity_phase2_final_LOD0_v01": {
+        "phase_transition_replication": "reliable ordered",
+        "revive_lockout_seconds": 8,
+        "shared_breakbar": true
+      }
+    },
+    "class_balance": {
+      "code_weaver": {
+        "active_skill_count": 5,
+        "animation_clips": [
+          "anim_code_weaver_skill_code_weaver_strike_v01",
+          "anim_code_weaver_skill_code_weaver_snare_v01",
+          "anim_code_weaver_skill_code_weaver_dash_v01",
+          "anim_code_weaver_skill_code_weaver_ward_v01",
+          "anim_code_weaver_skill_code_weaver_surge_v01",
+          "anim_code_weaver_skill_code_weaver_ultimate_v01"
+        ],
+        "coop_threat_scalar": 1.0,
+        "pvp_damage_scalar": 0.82,
+        "resource": "compile",
+        "role": "summoner support",
+        "ultimate": "code_weaver_ultimate"
+      },
+      "cypherpunk": {
+        "active_skill_count": 5,
+        "animation_clips": [
+          "anim_cypherpunk_skill_cypherpunk_strike_v01",
+          "anim_cypherpunk_skill_cypherpunk_snare_v01",
+          "anim_cypherpunk_skill_cypherpunk_dash_v01",
+          "anim_cypherpunk_skill_cypherpunk_ward_v01",
+          "anim_cypherpunk_skill_cypherpunk_surge_v01",
+          "anim_cypherpunk_skill_cypherpunk_ultimate_v01"
+        ],
+        "coop_threat_scalar": 1.0,
+        "pvp_damage_scalar": 0.82,
+        "resource": "entropy",
+        "role": "ranged breach",
+        "ultimate": "cypherpunk_ultimate"
+      },
+      "digital_wraith": {
+        "active_skill_count": 5,
+        "animation_clips": [
+          "anim_digital_wraith_skill_digital_wraith_strike_v01",
+          "anim_digital_wraith_skill_digital_wraith_snare_v01",
+          "anim_digital_wraith_skill_digital_wraith_dash_v01",
+          "anim_digital_wraith_skill_digital_wraith_ward_v01",
+          "anim_digital_wraith_skill_digital_wraith_surge_v01",
+          "anim_digital_wraith_skill_digital_wraith_ultimate_v01"
+        ],
+        "coop_threat_scalar": 1.0,
+        "pvp_damage_scalar": 0.82,
+        "resource": "phase",
+        "role": "stealth assassin",
+        "ultimate": "digital_wraith_ultimate"
+      },
+      "grid_vanguard": {
+        "active_skill_count": 5,
+        "animation_clips": [
+          "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+          "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+          "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+          "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+          "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+          "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01"
+        ],
+        "coop_threat_scalar": 1.0,
+        "pvp_damage_scalar": 0.82,
+        "resource": "charge",
+        "role": "tank controller",
+        "ultimate": "grid_vanguard_ultimate"
+      }
+    },
+    "difficulty_tiers": {
+      "hard": 1.35,
+      "immutable": 2.4,
+      "nightmare": 1.8,
+      "normal": 1.0
+    },
+    "loot_scaling": {
+      "copper": {
+        "party_bonus_weight": 62.0,
+        "personal_roll": true
+      },
+      "encrypted": {
+        "party_bonus_weight": 19.0,
+        "personal_roll": true
+      },
+      "genesis": {
+        "party_bonus_weight": 2.5,
+        "personal_roll": true
+      },
+      "immutable": {
+        "party_bonus_weight": 0.5,
+        "personal_roll": true
+      },
+      "scrap": {
+        "party_bonus_weight": 100.0,
+        "personal_roll": true
+      },
+      "silicon": {
+        "party_bonus_weight": 36.0,
+        "personal_roll": true
+      },
+      "sovereign": {
+        "party_bonus_weight": 8.0,
+        "personal_roll": true
+      }
+    },
+    "mission_variants": {
+      "I": {
+        "enemy_scalar": 1.55,
+        "loot_rolls": "personal with party rarity pity",
+        "revive_tokens_per_player": 2,
+        "shared_progression": true
+      },
+      "II": {
+        "enemy_scalar": 1.55,
+        "loot_rolls": "personal with party rarity pity",
+        "revive_tokens_per_player": 2,
+        "shared_progression": true
+      },
+      "III": {
+        "enemy_scalar": 1.55,
+        "loot_rolls": "personal with party rarity pity",
+        "revive_tokens_per_player": 2,
+        "shared_progression": true
+      },
+      "IV": {
+        "enemy_scalar": 1.55,
+        "loot_rolls": "personal with party rarity pity",
+        "revive_tokens_per_player": 2,
+        "shared_progression": true
+      }
+    },
+    "network_replication": {
+      "authority": "host authoritative with deterministic asset ids",
+      "replicated": [
+        "player_transform",
+        "skill_cast",
+        "damage_event",
+        "destructible_state",
+        "loot_claim",
+        "revive_state"
+      ],
+      "tick_rate_hz": 30
+    },
+    "shared_merkle_synergy": {
+      "node_types": [
+        "leaf",
+        "branch",
+        "root"
+      ],
+      "synergy_rule": "matching branch modifiers grant party buff; root modifiers are host-authoritative"
+    }
+  },
+  "endgame": {
+    "modes": {
+      "dark_pool_dungeon_runs": {
+        "players": "1-4",
+        "reward_tiers": [
+          "encrypted",
+          "sovereign",
+          "genesis",
+          "immutable"
+        ],
+        "session_persistence": "floor seed + destructible deltas",
+        "tiles": [
+          "Dark Pool Dungeons",
+          "Subterranean Caverns"
+        ]
+      },
+      "overflow_arena": {
+        "objective": "survive escalating waves",
+        "players": "1-4",
+        "reward_tiers": [
+          "scrap",
+          "copper",
+          "silicon",
+          "encrypted",
+          "sovereign",
+          "genesis",
+          "immutable"
+        ],
+        "wave_sources": [
+          "character_ghostprocess_final_LOD0_v01",
+          "character_sybilswarm_final_LOD0_v01",
+          "character_darkpoolwarden_final_LOD0_v01",
+          "character_genesisentity_phase1_final_LOD0_v01",
+          "character_genesisentity_phase2_final_LOD0_v01"
+        ]
+      },
+      "sybil_invasion": {
+        "matchmaking": "region + difficulty + class role",
+        "players": "1-4",
+        "replication": {
+          "authority": "host authoritative with deterministic asset ids",
+          "replicated": [
+            "player_transform",
+            "skill_cast",
+            "damage_event",
+            "destructible_state",
+            "loot_claim",
+            "revive_state"
+          ],
+          "tick_rate_hz": 30
+        },
+        "reward_tiers": [
+          "silicon",
+          "encrypted",
+          "sovereign",
+          "genesis",
+          "immutable"
+        ]
+      },
+      "zero_state_relay_tower_defense": {
+        "enemy_scaling": {
+          "coop_2p": 1.55,
+          "coop_3p": 2.05,
+          "coop_4p": 2.45,
+          "new_game_plus_per_clear": 0.35,
+          "solo": 1.0
+        },
+        "objective": "defend three relay cores",
+        "players": "1-4",
+        "reward_tiers": [
+          "sovereign",
+          "genesis",
+          "immutable"
+        ]
+      }
+    }
+  },
+  "pvp": {
+    "anti_cheat": [
+      "server-authoritative damage",
+      "cooldown verification",
+      "Merkle loadout hash"
+    ],
+    "balance_rules": {
+      "code_weaver": {
+        "cooldown_scalar": 1.15,
+        "loot_disabled": true,
+        "normalized_hashrate": 100,
+        "ultimate_charge_scalar": 0.7
+      },
+      "cypherpunk": {
+        "cooldown_scalar": 1.15,
+        "loot_disabled": true,
+        "normalized_hashrate": 100,
+        "ultimate_charge_scalar": 0.7
+      },
+      "digital_wraith": {
+        "cooldown_scalar": 1.15,
+        "loot_disabled": true,
+        "normalized_hashrate": 100,
+        "ultimate_charge_scalar": 0.7
+      },
+      "grid_vanguard": {
+        "cooldown_scalar": 1.15,
+        "loot_disabled": true,
+        "normalized_hashrate": 100,
+        "ultimate_charge_scalar": 0.7
+      }
+    },
+    "mmr": {
+      "placement_matches": 10,
+      "ranked_rewards": [
+        "silicon",
+        "encrypted",
+        "sovereign",
+        "genesis",
+        "immutable"
+      ],
+      "seasonal_soft_reset": 0.65
+    },
+    "modes": {
+      "core_node_control": {
+        "replicated_objectives": [
+          "node_owner",
+          "capture_progress",
+          "contested_state"
+        ],
+        "team_sizes": [
+          "3v3"
+        ],
+        "win_condition": "territory capture score"
+      },
+      "packet_breach": {
+        "payload_uses_destructibility": true,
+        "team_sizes": [
+          "2v2",
+          "3v3"
+        ],
+        "win_condition": "plant or prevent payload breach"
+      },
+      "siphon_protocol": {
+        "class_scalars": {
+          "code_weaver": {
+            "active_skill_count": 5,
+            "animation_clips": [
+              "anim_code_weaver_skill_code_weaver_strike_v01",
+              "anim_code_weaver_skill_code_weaver_snare_v01",
+              "anim_code_weaver_skill_code_weaver_dash_v01",
+              "anim_code_weaver_skill_code_weaver_ward_v01",
+              "anim_code_weaver_skill_code_weaver_surge_v01",
+              "anim_code_weaver_skill_code_weaver_ultimate_v01"
+            ],
+            "coop_threat_scalar": 1.0,
+            "pvp_damage_scalar": 0.82,
+            "resource": "compile",
+            "role": "summoner support",
+            "ultimate": "code_weaver_ultimate"
+          },
+          "cypherpunk": {
+            "active_skill_count": 5,
+            "animation_clips": [
+              "anim_cypherpunk_skill_cypherpunk_strike_v01",
+              "anim_cypherpunk_skill_cypherpunk_snare_v01",
+              "anim_cypherpunk_skill_cypherpunk_dash_v01",
+              "anim_cypherpunk_skill_cypherpunk_ward_v01",
+              "anim_cypherpunk_skill_cypherpunk_surge_v01",
+              "anim_cypherpunk_skill_cypherpunk_ultimate_v01"
+            ],
+            "coop_threat_scalar": 1.0,
+            "pvp_damage_scalar": 0.82,
+            "resource": "entropy",
+            "role": "ranged breach",
+            "ultimate": "cypherpunk_ultimate"
+          },
+          "digital_wraith": {
+            "active_skill_count": 5,
+            "animation_clips": [
+              "anim_digital_wraith_skill_digital_wraith_strike_v01",
+              "anim_digital_wraith_skill_digital_wraith_snare_v01",
+              "anim_digital_wraith_skill_digital_wraith_dash_v01",
+              "anim_digital_wraith_skill_digital_wraith_ward_v01",
+              "anim_digital_wraith_skill_digital_wraith_surge_v01",
+              "anim_digital_wraith_skill_digital_wraith_ultimate_v01"
+            ],
+            "coop_threat_scalar": 1.0,
+            "pvp_damage_scalar": 0.82,
+            "resource": "phase",
+            "role": "stealth assassin",
+            "ultimate": "digital_wraith_ultimate"
+          },
+          "grid_vanguard": {
+            "active_skill_count": 5,
+            "animation_clips": [
+              "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+              "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+              "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+              "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+              "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+              "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01"
+            ],
+            "coop_threat_scalar": 1.0,
+            "pvp_damage_scalar": 0.82,
+            "resource": "charge",
+            "role": "tank controller",
+            "ultimate": "grid_vanguard_ultimate"
+          }
+        },
+        "team_sizes": [
+          "1v1",
+          "2v2",
+          "3v3"
+        ],
+        "win_condition": "drain opposing Core Node"
+      }
+    },
+    "pvp_loot": [
+      "silicon",
+      "encrypted",
+      "sovereign",
+      "genesis",
+      "immutable"
+    ],
+    "seasonal_reset_rule": "MMR = floor(MMR * 0.65) + placement_delta"
+  }
+}

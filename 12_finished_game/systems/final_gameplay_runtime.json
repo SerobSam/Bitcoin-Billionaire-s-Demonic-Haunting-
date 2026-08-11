@@ -1,0 +1,1123 @@
+{
+  "boss_phase_logic": {
+    "character_genesisentity_phase1_final_LOD0_v01": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death",
+    "character_genesisentity_phase2_final_LOD0_v01": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death"
+  },
+  "class_runtime": {
+    "code_weaver": {
+      "passive_identity": "Code Weaver converts compile into signature combat pressure.",
+      "passives": [
+        {
+          "effect": "Increases compile efficiency tier 1.",
+          "id": "code_weaver_passive_01",
+          "name": "Code Weaver Passive 01"
+        },
+        {
+          "effect": "Increases compile efficiency tier 2.",
+          "id": "code_weaver_passive_02",
+          "name": "Code Weaver Passive 02"
+        },
+        {
+          "effect": "Increases compile efficiency tier 3.",
+          "id": "code_weaver_passive_03",
+          "name": "Code Weaver Passive 03"
+        },
+        {
+          "effect": "Increases compile efficiency tier 4.",
+          "id": "code_weaver_passive_04",
+          "name": "Code Weaver Passive 04"
+        },
+        {
+          "effect": "Increases compile efficiency tier 5.",
+          "id": "code_weaver_passive_05",
+          "name": "Code Weaver Passive 05"
+        },
+        {
+          "effect": "Increases compile efficiency tier 6.",
+          "id": "code_weaver_passive_06",
+          "name": "Code Weaver Passive 06"
+        },
+        {
+          "effect": "Increases compile efficiency tier 7.",
+          "id": "code_weaver_passive_07",
+          "name": "Code Weaver Passive 07"
+        },
+        {
+          "effect": "Increases compile efficiency tier 8.",
+          "id": "code_weaver_passive_08",
+          "name": "Code Weaver Passive 08"
+        },
+        {
+          "effect": "Increases compile efficiency tier 9.",
+          "id": "code_weaver_passive_09",
+          "name": "Code Weaver Passive 09"
+        },
+        {
+          "effect": "Increases compile efficiency tier 10.",
+          "id": "code_weaver_passive_10",
+          "name": "Code Weaver Passive 10"
+        },
+        {
+          "effect": "Increases compile efficiency tier 11.",
+          "id": "code_weaver_passive_11",
+          "name": "Code Weaver Passive 11"
+        },
+        {
+          "effect": "Increases compile efficiency tier 12.",
+          "id": "code_weaver_passive_12",
+          "name": "Code Weaver Passive 12"
+        }
+      ],
+      "resource": "compile",
+      "role": "summoner support",
+      "skills": [
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_strike_v01",
+          "cooldown_ms": 5700,
+          "cost_hashrate": 3,
+          "id": "code_weaver_strike",
+          "input_slot": "skill_slot_1",
+          "tags": [
+            "compile",
+            "strike",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_snare_v01",
+          "cooldown_ms": 6400,
+          "cost_hashrate": 6,
+          "id": "code_weaver_snare",
+          "input_slot": "skill_slot_2",
+          "tags": [
+            "compile",
+            "snare",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_dash_v01",
+          "cooldown_ms": 7100,
+          "cost_hashrate": 9,
+          "id": "code_weaver_dash",
+          "input_slot": "skill_slot_3",
+          "tags": [
+            "compile",
+            "dash",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_ward_v01",
+          "cooldown_ms": 7800,
+          "cost_hashrate": 12,
+          "id": "code_weaver_ward",
+          "input_slot": "skill_slot_4",
+          "tags": [
+            "compile",
+            "ward",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_surge_v01",
+          "cooldown_ms": 8500,
+          "cost_hashrate": 15,
+          "id": "code_weaver_surge",
+          "input_slot": "skill_slot_5",
+          "tags": [
+            "compile",
+            "surge",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_code_weaver_skill_code_weaver_ultimate_v01",
+          "cooldown_ms": 60000,
+          "cost_hashrate": 40,
+          "id": "code_weaver_ultimate",
+          "input_slot": "skill_slot_6",
+          "tags": [
+            "compile",
+            "ultimate",
+            "combat"
+          ],
+          "type": "ultimate"
+        }
+      ],
+      "ultimate": "code_weaver_ultimate"
+    },
+    "cypherpunk": {
+      "passive_identity": "Cypherpunk converts entropy into signature combat pressure.",
+      "passives": [
+        {
+          "effect": "Increases entropy efficiency tier 1.",
+          "id": "cypherpunk_passive_01",
+          "name": "Cypherpunk Passive 01"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 2.",
+          "id": "cypherpunk_passive_02",
+          "name": "Cypherpunk Passive 02"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 3.",
+          "id": "cypherpunk_passive_03",
+          "name": "Cypherpunk Passive 03"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 4.",
+          "id": "cypherpunk_passive_04",
+          "name": "Cypherpunk Passive 04"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 5.",
+          "id": "cypherpunk_passive_05",
+          "name": "Cypherpunk Passive 05"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 6.",
+          "id": "cypherpunk_passive_06",
+          "name": "Cypherpunk Passive 06"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 7.",
+          "id": "cypherpunk_passive_07",
+          "name": "Cypherpunk Passive 07"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 8.",
+          "id": "cypherpunk_passive_08",
+          "name": "Cypherpunk Passive 08"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 9.",
+          "id": "cypherpunk_passive_09",
+          "name": "Cypherpunk Passive 09"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 10.",
+          "id": "cypherpunk_passive_10",
+          "name": "Cypherpunk Passive 10"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 11.",
+          "id": "cypherpunk_passive_11",
+          "name": "Cypherpunk Passive 11"
+        },
+        {
+          "effect": "Increases entropy efficiency tier 12.",
+          "id": "cypherpunk_passive_12",
+          "name": "Cypherpunk Passive 12"
+        }
+      ],
+      "resource": "entropy",
+      "role": "ranged breach",
+      "skills": [
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_strike_v01",
+          "cooldown_ms": 5700,
+          "cost_hashrate": 3,
+          "id": "cypherpunk_strike",
+          "input_slot": "skill_slot_1",
+          "tags": [
+            "entropy",
+            "strike",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_snare_v01",
+          "cooldown_ms": 6400,
+          "cost_hashrate": 6,
+          "id": "cypherpunk_snare",
+          "input_slot": "skill_slot_2",
+          "tags": [
+            "entropy",
+            "snare",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_dash_v01",
+          "cooldown_ms": 7100,
+          "cost_hashrate": 9,
+          "id": "cypherpunk_dash",
+          "input_slot": "skill_slot_3",
+          "tags": [
+            "entropy",
+            "dash",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_ward_v01",
+          "cooldown_ms": 7800,
+          "cost_hashrate": 12,
+          "id": "cypherpunk_ward",
+          "input_slot": "skill_slot_4",
+          "tags": [
+            "entropy",
+            "ward",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_surge_v01",
+          "cooldown_ms": 8500,
+          "cost_hashrate": 15,
+          "id": "cypherpunk_surge",
+          "input_slot": "skill_slot_5",
+          "tags": [
+            "entropy",
+            "surge",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_cypherpunk_skill_cypherpunk_ultimate_v01",
+          "cooldown_ms": 60000,
+          "cost_hashrate": 40,
+          "id": "cypherpunk_ultimate",
+          "input_slot": "skill_slot_6",
+          "tags": [
+            "entropy",
+            "ultimate",
+            "combat"
+          ],
+          "type": "ultimate"
+        }
+      ],
+      "ultimate": "cypherpunk_ultimate"
+    },
+    "digital_wraith": {
+      "passive_identity": "Digital Wraith converts phase into signature combat pressure.",
+      "passives": [
+        {
+          "effect": "Increases phase efficiency tier 1.",
+          "id": "digital_wraith_passive_01",
+          "name": "Digital Wraith Passive 01"
+        },
+        {
+          "effect": "Increases phase efficiency tier 2.",
+          "id": "digital_wraith_passive_02",
+          "name": "Digital Wraith Passive 02"
+        },
+        {
+          "effect": "Increases phase efficiency tier 3.",
+          "id": "digital_wraith_passive_03",
+          "name": "Digital Wraith Passive 03"
+        },
+        {
+          "effect": "Increases phase efficiency tier 4.",
+          "id": "digital_wraith_passive_04",
+          "name": "Digital Wraith Passive 04"
+        },
+        {
+          "effect": "Increases phase efficiency tier 5.",
+          "id": "digital_wraith_passive_05",
+          "name": "Digital Wraith Passive 05"
+        },
+        {
+          "effect": "Increases phase efficiency tier 6.",
+          "id": "digital_wraith_passive_06",
+          "name": "Digital Wraith Passive 06"
+        },
+        {
+          "effect": "Increases phase efficiency tier 7.",
+          "id": "digital_wraith_passive_07",
+          "name": "Digital Wraith Passive 07"
+        },
+        {
+          "effect": "Increases phase efficiency tier 8.",
+          "id": "digital_wraith_passive_08",
+          "name": "Digital Wraith Passive 08"
+        },
+        {
+          "effect": "Increases phase efficiency tier 9.",
+          "id": "digital_wraith_passive_09",
+          "name": "Digital Wraith Passive 09"
+        },
+        {
+          "effect": "Increases phase efficiency tier 10.",
+          "id": "digital_wraith_passive_10",
+          "name": "Digital Wraith Passive 10"
+        },
+        {
+          "effect": "Increases phase efficiency tier 11.",
+          "id": "digital_wraith_passive_11",
+          "name": "Digital Wraith Passive 11"
+        },
+        {
+          "effect": "Increases phase efficiency tier 12.",
+          "id": "digital_wraith_passive_12",
+          "name": "Digital Wraith Passive 12"
+        }
+      ],
+      "resource": "phase",
+      "role": "stealth assassin",
+      "skills": [
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_strike_v01",
+          "cooldown_ms": 5700,
+          "cost_hashrate": 3,
+          "id": "digital_wraith_strike",
+          "input_slot": "skill_slot_1",
+          "tags": [
+            "phase",
+            "strike",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_snare_v01",
+          "cooldown_ms": 6400,
+          "cost_hashrate": 6,
+          "id": "digital_wraith_snare",
+          "input_slot": "skill_slot_2",
+          "tags": [
+            "phase",
+            "snare",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_dash_v01",
+          "cooldown_ms": 7100,
+          "cost_hashrate": 9,
+          "id": "digital_wraith_dash",
+          "input_slot": "skill_slot_3",
+          "tags": [
+            "phase",
+            "dash",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_ward_v01",
+          "cooldown_ms": 7800,
+          "cost_hashrate": 12,
+          "id": "digital_wraith_ward",
+          "input_slot": "skill_slot_4",
+          "tags": [
+            "phase",
+            "ward",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_surge_v01",
+          "cooldown_ms": 8500,
+          "cost_hashrate": 15,
+          "id": "digital_wraith_surge",
+          "input_slot": "skill_slot_5",
+          "tags": [
+            "phase",
+            "surge",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_digital_wraith_skill_digital_wraith_ultimate_v01",
+          "cooldown_ms": 60000,
+          "cost_hashrate": 40,
+          "id": "digital_wraith_ultimate",
+          "input_slot": "skill_slot_6",
+          "tags": [
+            "phase",
+            "ultimate",
+            "combat"
+          ],
+          "type": "ultimate"
+        }
+      ],
+      "ultimate": "digital_wraith_ultimate"
+    },
+    "grid_vanguard": {
+      "passive_identity": "Grid Vanguard converts charge into signature combat pressure.",
+      "passives": [
+        {
+          "effect": "Increases charge efficiency tier 1.",
+          "id": "grid_vanguard_passive_01",
+          "name": "Grid Vanguard Passive 01"
+        },
+        {
+          "effect": "Increases charge efficiency tier 2.",
+          "id": "grid_vanguard_passive_02",
+          "name": "Grid Vanguard Passive 02"
+        },
+        {
+          "effect": "Increases charge efficiency tier 3.",
+          "id": "grid_vanguard_passive_03",
+          "name": "Grid Vanguard Passive 03"
+        },
+        {
+          "effect": "Increases charge efficiency tier 4.",
+          "id": "grid_vanguard_passive_04",
+          "name": "Grid Vanguard Passive 04"
+        },
+        {
+          "effect": "Increases charge efficiency tier 5.",
+          "id": "grid_vanguard_passive_05",
+          "name": "Grid Vanguard Passive 05"
+        },
+        {
+          "effect": "Increases charge efficiency tier 6.",
+          "id": "grid_vanguard_passive_06",
+          "name": "Grid Vanguard Passive 06"
+        },
+        {
+          "effect": "Increases charge efficiency tier 7.",
+          "id": "grid_vanguard_passive_07",
+          "name": "Grid Vanguard Passive 07"
+        },
+        {
+          "effect": "Increases charge efficiency tier 8.",
+          "id": "grid_vanguard_passive_08",
+          "name": "Grid Vanguard Passive 08"
+        },
+        {
+          "effect": "Increases charge efficiency tier 9.",
+          "id": "grid_vanguard_passive_09",
+          "name": "Grid Vanguard Passive 09"
+        },
+        {
+          "effect": "Increases charge efficiency tier 10.",
+          "id": "grid_vanguard_passive_10",
+          "name": "Grid Vanguard Passive 10"
+        },
+        {
+          "effect": "Increases charge efficiency tier 11.",
+          "id": "grid_vanguard_passive_11",
+          "name": "Grid Vanguard Passive 11"
+        },
+        {
+          "effect": "Increases charge efficiency tier 12.",
+          "id": "grid_vanguard_passive_12",
+          "name": "Grid Vanguard Passive 12"
+        }
+      ],
+      "resource": "charge",
+      "role": "tank controller",
+      "skills": [
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_strike_v01",
+          "cooldown_ms": 5700,
+          "cost_hashrate": 3,
+          "id": "grid_vanguard_strike",
+          "input_slot": "skill_slot_1",
+          "tags": [
+            "charge",
+            "strike",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_snare_v01",
+          "cooldown_ms": 6400,
+          "cost_hashrate": 6,
+          "id": "grid_vanguard_snare",
+          "input_slot": "skill_slot_2",
+          "tags": [
+            "charge",
+            "snare",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_dash_v01",
+          "cooldown_ms": 7100,
+          "cost_hashrate": 9,
+          "id": "grid_vanguard_dash",
+          "input_slot": "skill_slot_3",
+          "tags": [
+            "charge",
+            "dash",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_ward_v01",
+          "cooldown_ms": 7800,
+          "cost_hashrate": 12,
+          "id": "grid_vanguard_ward",
+          "input_slot": "skill_slot_4",
+          "tags": [
+            "charge",
+            "ward",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_surge_v01",
+          "cooldown_ms": 8500,
+          "cost_hashrate": 15,
+          "id": "grid_vanguard_surge",
+          "input_slot": "skill_slot_5",
+          "tags": [
+            "charge",
+            "surge",
+            "combat"
+          ],
+          "type": "active"
+        },
+        {
+          "animation_clip": "anim_grid_vanguard_skill_grid_vanguard_ultimate_v01",
+          "cooldown_ms": 60000,
+          "cost_hashrate": 40,
+          "id": "grid_vanguard_ultimate",
+          "input_slot": "skill_slot_6",
+          "tags": [
+            "charge",
+            "ultimate",
+            "combat"
+          ],
+          "type": "ultimate"
+        }
+      ],
+      "ultimate": "grid_vanguard_ultimate"
+    }
+  },
+  "crafting": {
+    "materials_from_loot_tiers": [
+      "scrap",
+      "copper",
+      "silicon",
+      "encrypted",
+      "sovereign",
+      "genesis",
+      "immutable"
+    ],
+    "tools": [
+      "tool_pneumatic_needle_gun_final_LOD0_v01",
+      "tool_typewriter_slugs_final_LOD0_v01",
+      "tool_ransomware_blade_final_LOD0_v01",
+      "tool_hammer_final_LOD0_v01",
+      "tool_pick_final_LOD0_v01",
+      "tool_lockpick_final_LOD0_v01",
+      "tool_saw_final_LOD0_v01",
+      "tool_explosives_final_LOD0_v01",
+      "tool_scaffold_deployer_final_LOD0_v01"
+    ]
+  },
+  "destructible_object_system": {
+    "canonical_state_machine": {
+      "id": "system_destructible_state_machine_standard_v01",
+      "locked_door_outcomes": {
+        "forced_breach": {
+          "animation": "anim_interact_forced_breach_v01",
+          "destructive": true,
+          "duration_seconds": 1.1,
+          "loot_quality_delta": -1,
+          "noise_radius_m": 28
+        },
+        "lockpick": {
+          "animation": "anim_interact_lockpick_loop_v01",
+          "destructive": false,
+          "duration_seconds": 4.2,
+          "loot_quality_delta": 0,
+          "noise_radius_m": 4
+        }
+      },
+      "materials": {
+        "foliage": {
+          "debris_pool": "pool_leaf_cards_v01",
+          "max_primary_chunks": 6,
+          "noise_radius_m": 8,
+          "sleep_seconds": 1.5
+        },
+        "glass": {
+          "debris_pool": "pool_glass_shards_v01",
+          "max_primary_chunks": 8,
+          "noise_radius_m": 20,
+          "sleep_seconds": 2.0
+        },
+        "masonry": {
+          "debris_pool": "pool_masonry_rubble_v01",
+          "max_primary_chunks": 24,
+          "noise_radius_m": 26,
+          "sleep_seconds": 4.0
+        },
+        "metal": {
+          "debris_pool": "pool_metal_panels_v01",
+          "max_primary_chunks": 10,
+          "noise_radius_m": 30,
+          "sleep_seconds": 4.5
+        },
+        "soil": {
+          "debris_pool": "pool_soil_clumps_v01",
+          "max_primary_chunks": 0,
+          "noise_radius_m": 10,
+          "sleep_seconds": 1.0
+        },
+        "wood": {
+          "debris_pool": "pool_wood_splinters_v01",
+          "max_primary_chunks": 12,
+          "noise_radius_m": 18,
+          "sleep_seconds": 3.0
+        }
+      },
+      "physics_budget": {
+        "cpu_spike_ms": 2.5,
+        "gpu_vfx_ms": 1.5,
+        "max_active_rigid_debris": 64,
+        "max_visual_debris_instances": 256
+      },
+      "states": [
+        "intact",
+        "damaged",
+        "broken",
+        "debris"
+      ],
+      "transitions": [
+        {
+          "events": [
+            "apply_damage_decal",
+            "emit_material_creak"
+          ],
+          "from": "intact",
+          "to": "damaged",
+          "trigger": "damage >= damage_threshold"
+        },
+        {
+          "events": [
+            "swap_fractured_mesh",
+            "spawn_primary_chunks",
+            "update_navmesh_semantic"
+          ],
+          "from": "damaged",
+          "to": "broken",
+          "trigger": "damage >= break_threshold || forced_breach"
+        },
+        {
+          "events": [
+            "return_rigid_bodies_to_pool",
+            "spawn_debris_decals",
+            "persist_semantic_state"
+          ],
+          "from": "broken",
+          "to": "debris",
+          "trigger": "chunks_sleep_timeout || distance_cull"
+        }
+      ]
+    },
+    "materialized_blueprint": {
+      "locked_doors": {
+        "breach": {
+          "animation": "anim_hero_forced_breach_v01",
+          "result": "door enters broken/debris, NPC alert radius 25m, scrap-biased loot, navmesh delta"
+        },
+        "lockpick": {
+          "animation": "anim_hero_lockpick_loop_v01",
+          "result": "door remains intact, stealth loot table, no NPC alarm"
+        }
+      },
+      "loot_tiers": [
+        {
+          "affix_max": 1,
+          "affix_min": 0,
+          "color": "#6E6A61",
+          "drop_weight": 1000,
+          "id": "scrap",
+          "name": "Scrap"
+        },
+        {
+          "affix_max": 2,
+          "affix_min": 1,
+          "color": "#B65A3C",
+          "drop_weight": 620,
+          "id": "copper",
+          "name": "Copper"
+        },
+        {
+          "affix_max": 3,
+          "affix_min": 2,
+          "color": "#3D7F7A",
+          "drop_weight": 360,
+          "id": "silicon",
+          "name": "Silicon"
+        },
+        {
+          "affix_max": 4,
+          "affix_min": 3,
+          "color": "#D6B15E",
+          "drop_weight": 190,
+          "id": "encrypted",
+          "name": "Encrypted"
+        },
+        {
+          "affix_max": 5,
+          "affix_min": 4,
+          "color": "#E7DFC9",
+          "drop_weight": 80,
+          "id": "sovereign",
+          "name": "Sovereign"
+        },
+        {
+          "affix_max": 6,
+          "affix_min": 5,
+          "color": "#9B5CFF",
+          "drop_weight": 25,
+          "id": "genesis",
+          "name": "Genesis"
+        },
+        {
+          "affix_max": 7,
+          "affix_min": 6,
+          "color": "#FFFFFF",
+          "drop_weight": 5,
+          "id": "immutable",
+          "name": "Immutable"
+        }
+      ],
+      "materials": {
+        "foliage": {
+          "debris_pool_prefab": "04_props/destructibles/foliage/debris/prop_foliage_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/foliage/fracture/prop_foliage_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        },
+        "glass": {
+          "debris_pool_prefab": "04_props/destructibles/glass/debris/prop_glass_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/glass/fracture/prop_glass_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        },
+        "masonry": {
+          "debris_pool_prefab": "04_props/destructibles/masonry/debris/prop_masonry_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/masonry/fracture/prop_masonry_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        },
+        "metal": {
+          "debris_pool_prefab": "04_props/destructibles/metal/debris/prop_metal_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/metal/fracture/prop_metal_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        },
+        "soil": {
+          "debris_pool_prefab": "04_props/destructibles/soil/debris/prop_soil_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/soil/fracture/prop_soil_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        },
+        "wood": {
+          "debris_pool_prefab": "04_props/destructibles/wood/debris/prop_wood_debrispool_LOD0_v01.gltf",
+          "fracture_map": "04_props/destructibles/wood/fracture/prop_wood_fracture_LOD0_v01.exr",
+          "particles": [
+            "impact_sparks_or_dust",
+            "break_burst",
+            "settle_motes"
+          ],
+          "physics": {
+            "max_lifetime_s": 8,
+            "sleep_velocity_mps": 0.05,
+            "solver_position_iterations": 2,
+            "solver_velocity_iterations": 4
+          },
+          "pool_counts": {
+            "high": 64,
+            "low": 16,
+            "mid": 32
+          }
+        }
+      },
+      "save_delta_fields": [
+        "object_id",
+        "state",
+        "health",
+        "loot_claimed",
+        "navmesh_delta_hash"
+      ],
+      "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+      "state_machine": [
+        "intact",
+        "damaged",
+        "broken",
+        "debris"
+      ]
+    }
+  },
+  "enemy_ai": {
+    "boss": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death",
+    "enemy": "Spawn->Patrol->Investigate->Chase->Attack->Stagger->Death",
+    "player": "Idle->Locomotion->Traversal/Combat/SkillCast->HitReact->Death/Ragdoll"
+  },
+  "input_and_camera": {
+    "accessibility": [
+      "4.5:1 body contrast",
+      "3:1 icon contrast",
+      "colorblind palette variants",
+      "reduced motion for pulsing AR"
+    ],
+    "animation_integration": {
+      "blendspaces": {
+        "aim_offset": "yaw x pitch",
+        "boss_phase": "phase x aggression",
+        "cast_layer": "upper-body mask over locomotion",
+        "player_locomotion": "speed x strafe angle",
+        "ragdoll": "authored death pose to physics over 0.18s"
+      },
+      "root_motion": "locomotion and breach clips export root translation; attacks are in-place except lunges; boss transforms pin root and animate sockets"
+    },
+    "camera": {
+      "collision_probe": "spherecast camera boom",
+      "lock_on_orbit": true,
+      "mode": "third_person",
+      "shoulder_swap": true
+    },
+    "combat": {
+      "block": "L1",
+      "heavy_attack": "R2 hold",
+      "light_attack": "R1 / primary touch",
+      "parry": "L1 timed",
+      "target_lock": "R3 / touch focus"
+    },
+    "movement": {
+      "dash": "B / touch dodge",
+      "run": "left_stick >=0.55",
+      "sprint": "left_stick + sprint",
+      "vault_climb_jump": "context action + traversal tag",
+      "walk": "left_stick <0.55"
+    },
+    "skills": {
+      "code_weaver": {
+        "code_weaver_dash": "skill_slot_3",
+        "code_weaver_snare": "skill_slot_2",
+        "code_weaver_strike": "skill_slot_1",
+        "code_weaver_surge": "skill_slot_5",
+        "code_weaver_ultimate": "skill_slot_6",
+        "code_weaver_ward": "skill_slot_4"
+      },
+      "cypherpunk": {
+        "cypherpunk_dash": "skill_slot_3",
+        "cypherpunk_snare": "skill_slot_2",
+        "cypherpunk_strike": "skill_slot_1",
+        "cypherpunk_surge": "skill_slot_5",
+        "cypherpunk_ultimate": "skill_slot_6",
+        "cypherpunk_ward": "skill_slot_4"
+      },
+      "digital_wraith": {
+        "digital_wraith_dash": "skill_slot_3",
+        "digital_wraith_snare": "skill_slot_2",
+        "digital_wraith_strike": "skill_slot_1",
+        "digital_wraith_surge": "skill_slot_5",
+        "digital_wraith_ultimate": "skill_slot_6",
+        "digital_wraith_ward": "skill_slot_4"
+      },
+      "grid_vanguard": {
+        "grid_vanguard_dash": "skill_slot_3",
+        "grid_vanguard_snare": "skill_slot_2",
+        "grid_vanguard_strike": "skill_slot_1",
+        "grid_vanguard_surge": "skill_slot_5",
+        "grid_vanguard_ultimate": "skill_slot_6",
+        "grid_vanguard_ward": "skill_slot_4"
+      }
+    }
+  },
+  "loot": {
+    "color_source": "assets/gameplay/loot_tiers.json",
+    "crafting_materials": [
+      "scrap",
+      "copper",
+      "silicon",
+      "encrypted",
+      "sovereign",
+      "genesis",
+      "immutable"
+    ],
+    "tiers": [
+      {
+        "affix_max": 1,
+        "affix_min": 0,
+        "color": "#6E6A61",
+        "drop_weight": 1000,
+        "id": "scrap",
+        "name": "Scrap"
+      },
+      {
+        "affix_max": 2,
+        "affix_min": 1,
+        "color": "#B65A3C",
+        "drop_weight": 620,
+        "id": "copper",
+        "name": "Copper"
+      },
+      {
+        "affix_max": 3,
+        "affix_min": 2,
+        "color": "#3D7F7A",
+        "drop_weight": 360,
+        "id": "silicon",
+        "name": "Silicon"
+      },
+      {
+        "affix_max": 4,
+        "affix_min": 3,
+        "color": "#D6B15E",
+        "drop_weight": 190,
+        "id": "encrypted",
+        "name": "Encrypted"
+      },
+      {
+        "affix_max": 5,
+        "affix_min": 4,
+        "color": "#E7DFC9",
+        "drop_weight": 80,
+        "id": "sovereign",
+        "name": "Sovereign"
+      },
+      {
+        "affix_max": 6,
+        "affix_min": 5,
+        "color": "#9B5CFF",
+        "drop_weight": 25,
+        "id": "genesis",
+        "name": "Genesis"
+      },
+      {
+        "affix_max": 7,
+        "affix_min": 6,
+        "color": "#FFFFFF",
+        "drop_weight": 5,
+        "id": "immutable",
+        "name": "Immutable"
+      }
+    ]
+  },
+  "merkle_tree": {
+    "loadout_hash": "sha256(class_id + unlocked_nodes + seed_slots)",
+    "modifier_types": [
+      "damage",
+      "cooldown",
+      "radius",
+      "duration",
+      "chain",
+      "summon",
+      "shield",
+      "mobility",
+      "loot",
+      "scan",
+      "debuff",
+      "ultimate_charge"
+    ],
+    "node_types": [
+      "leaf",
+      "branch",
+      "root"
+    ],
+    "seed_phrase_slots": [
+      "slot_01",
+      "slot_02",
+      "slot_03",
+      "slot_04",
+      "slot_05",
+      "slot_06",
+      "slot_07",
+      "slot_08",
+      "slot_09",
+      "slot_10",
+      "slot_11",
+      "slot_12"
+    ]
+  },
+  "skill_system": {
+    "active_types": [
+      "active"
+    ],
+    "animation_binding": "anim_<class>_skill_<skill>_v01",
+    "cooldown_source": "assets/gameplay/classes.json",
+    "ultimate_types": [
+      "ultimate"
+    ]
+  }
+}

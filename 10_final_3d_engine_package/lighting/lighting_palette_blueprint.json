@@ -1,0 +1,90 @@
+{
+  "environmental_tint_rules": {
+    "base_shadow_and_panel": "Deep Ledger",
+    "danger_and_breach": "Terracotta Signal",
+    "dust_masonry_inactive": "Ash Concrete",
+    "rare_loot_and_boss_weakpoints": "Phosphor Gold",
+    "safe_scan_and_AR": "Muted Teal",
+    "text_and_rim_readability": "Cold Bone"
+  },
+  "lighting_presets_by_world": {
+    "world_alpine_coldstorage_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_belair_blackout_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_darkpool_dungeons_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_irvine_suburbs_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_manhattan_consensus_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_mojave_groundreturn_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    },
+    "world_zerostate_relays_final_LOD0_v01": {
+      "fill": "muted teal bounce",
+      "fog": "height fog with painterly cards",
+      "key": "warm terracotta practical or biome sun",
+      "rim": "Cold Bone edge light"
+    }
+  },
+  "palette": [
+    {
+      "hex": "#171A1C",
+      "name": "Deep Ledger",
+      "usage": "primary deep neutral for shadows, asphalt, panels and cavern voids"
+    },
+    {
+      "hex": "#6E6A61",
+      "name": "Ash Concrete",
+      "usage": "secondary neutral for stucco, masonry, dust and inactive controls"
+    },
+    {
+      "hex": "#B65A3C",
+      "name": "Terracotta Signal",
+      "usage": "primary accent for hazards, hero straps, breach points and warm practicals"
+    },
+    {
+      "hex": "#3D7F7A",
+      "name": "Muted Teal",
+      "usage": "secondary accent for AR, safe tech, scan volumes and cold bounce"
+    },
+    {
+      "hex": "#D6B15E",
+      "name": "Phosphor Gold",
+      "usage": "rare accent for loot, boss weak points and Merkle confirmations"
+    },
+    {
+      "hex": "#E7DFC9",
+      "name": "Cold Bone",
+      "usage": "foreground text, snow highlights, subtitles and readable rim lights"
+    }
+  ],
+  "source_specs": [
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+    "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/complete_3d_asset_package_spec.json"
+  ]
+}

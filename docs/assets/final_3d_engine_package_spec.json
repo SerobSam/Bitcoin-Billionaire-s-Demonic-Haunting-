@@ -1,0 +1,1946 @@
+{
+  "schema_version": "2.0.0",
+  "project": "Genesis Protocol",
+  "package_id": "genesis_final_3d_engine_package_v01",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "export_settings": {
+    "mesh": [
+      "FBX ASCII",
+      "GLTF 2.0"
+    ],
+    "units": "meters",
+    "up_axis": "Y",
+    "embed_media": false,
+    "texture_maps": {
+      "albedo": "PNG 16-bit sRGB",
+      "normal": "TGA 16-bit tangent-space MikkTSpace",
+      "roughness": "EXR R channel",
+      "ao": "EXR",
+      "height": "EXR 16/32-bit linear"
+    },
+    "icons": [
+      "SVG source",
+      "512x512 PNG",
+      "PNG atlas",
+      "JSON atlas metadata"
+    ]
+  },
+  "palette": [
+    {
+      "name": "Deep Ledger",
+      "hex": "#171A1C",
+      "usage": "primary deep neutral for shadows, asphalt, panels and cavern voids"
+    },
+    {
+      "name": "Ash Concrete",
+      "hex": "#6E6A61",
+      "usage": "secondary neutral for stucco, masonry, dust and inactive controls"
+    },
+    {
+      "name": "Terracotta Signal",
+      "hex": "#B65A3C",
+      "usage": "primary accent for hazards, hero straps, breach points and warm practicals"
+    },
+    {
+      "name": "Muted Teal",
+      "hex": "#3D7F7A",
+      "usage": "secondary accent for AR, safe tech, scan volumes and cold bounce"
+    },
+    {
+      "name": "Phosphor Gold",
+      "hex": "#D6B15E",
+      "usage": "rare accent for loot, boss weak points and Merkle confirmations"
+    },
+    {
+      "name": "Cold Bone",
+      "hex": "#E7DFC9",
+      "usage": "foreground text, snow highlights, subtitles and readable rim lights"
+    }
+  ],
+  "world_models": [
+    {
+      "id": "world_belair_blackout_final_LOD0_v01",
+      "name": "Bel Air Blackout Zone",
+      "blockout": {
+        "file": "01_world/belair_blackout/blockout/world_belair_blackout_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 128,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/belair_blackout/collision/world_belair_blackout_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "belair_blackout_terrain_shell",
+          "export": "01_world/belair_blackout/meshes/world_belair_blackout_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "belair_blackout_modular_set",
+          "export": "01_world/belair_blackout/meshes/world_belair_blackout_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "belair_blackout_destructible_layer",
+          "export": "01_world/belair_blackout/meshes/world_belair_blackout_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "black_glass",
+          "albedo": "01_world/belair_blackout/textures/tex_black_glass_albedo_LOD0_v01.png",
+          "normal": "01_world/belair_blackout/textures/tex_black_glass_normal_LOD0_v01.tga",
+          "roughness": "01_world/belair_blackout/textures/tex_black_glass_roughness_LOD0_v01.exr",
+          "ao": "01_world/belair_blackout/textures/tex_black_glass_ao_LOD0_v01.exr",
+          "height": "01_world/belair_blackout/textures/tex_black_glass_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "polished_stone",
+          "albedo": "01_world/belair_blackout/textures/tex_polished_stone_albedo_LOD0_v01.png",
+          "normal": "01_world/belair_blackout/textures/tex_polished_stone_normal_LOD0_v01.tga",
+          "roughness": "01_world/belair_blackout/textures/tex_polished_stone_roughness_LOD0_v01.exr",
+          "ao": "01_world/belair_blackout/textures/tex_polished_stone_ao_LOD0_v01.exr",
+          "height": "01_world/belair_blackout/textures/tex_polished_stone_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "burnt_hedge",
+          "albedo": "01_world/belair_blackout/textures/tex_burnt_hedge_albedo_LOD0_v01.png",
+          "normal": "01_world/belair_blackout/textures/tex_burnt_hedge_normal_LOD0_v01.tga",
+          "roughness": "01_world/belair_blackout/textures/tex_burnt_hedge_roughness_LOD0_v01.exr",
+          "ao": "01_world/belair_blackout/textures/tex_burnt_hedge_ao_LOD0_v01.exr",
+          "height": "01_world/belair_blackout/textures/tex_burnt_hedge_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "emergency_cable",
+          "albedo": "01_world/belair_blackout/textures/tex_emergency_cable_albedo_LOD0_v01.png",
+          "normal": "01_world/belair_blackout/textures/tex_emergency_cable_normal_LOD0_v01.tga",
+          "roughness": "01_world/belair_blackout/textures/tex_emergency_cable_roughness_LOD0_v01.exr",
+          "ao": "01_world/belair_blackout/textures/tex_emergency_cable_ao_LOD0_v01.exr",
+          "height": "01_world/belair_blackout/textures/tex_emergency_cable_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "smart_gate_metal",
+          "albedo": "01_world/belair_blackout/textures/tex_smart_gate_metal_albedo_LOD0_v01.png",
+          "normal": "01_world/belair_blackout/textures/tex_smart_gate_metal_normal_LOD0_v01.tga",
+          "roughness": "01_world/belair_blackout/textures/tex_smart_gate_metal_roughness_LOD0_v01.exr",
+          "ao": "01_world/belair_blackout/textures/tex_smart_gate_metal_ao_LOD0_v01.exr",
+          "height": "01_world/belair_blackout/textures/tex_smart_gate_metal_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 128,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 82000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/belair_blackout/metadata/world_belair_blackout_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_irvine_suburbs_final_LOD0_v01",
+      "name": "Irvine Suburbs",
+      "blockout": {
+        "file": "01_world/irvine_suburbs/blockout/world_irvine_suburbs_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 128,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/irvine_suburbs/collision/world_irvine_suburbs_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "irvine_suburbs_terrain_shell",
+          "export": "01_world/irvine_suburbs/meshes/world_irvine_suburbs_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "irvine_suburbs_modular_set",
+          "export": "01_world/irvine_suburbs/meshes/world_irvine_suburbs_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "irvine_suburbs_destructible_layer",
+          "export": "01_world/irvine_suburbs/meshes/world_irvine_suburbs_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "beige_stucco",
+          "albedo": "01_world/irvine_suburbs/textures/tex_beige_stucco_albedo_LOD0_v01.png",
+          "normal": "01_world/irvine_suburbs/textures/tex_beige_stucco_normal_LOD0_v01.tga",
+          "roughness": "01_world/irvine_suburbs/textures/tex_beige_stucco_roughness_LOD0_v01.exr",
+          "ao": "01_world/irvine_suburbs/textures/tex_beige_stucco_ao_LOD0_v01.exr",
+          "height": "01_world/irvine_suburbs/textures/tex_beige_stucco_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "asphalt",
+          "albedo": "01_world/irvine_suburbs/textures/tex_asphalt_albedo_LOD0_v01.png",
+          "normal": "01_world/irvine_suburbs/textures/tex_asphalt_normal_LOD0_v01.tga",
+          "roughness": "01_world/irvine_suburbs/textures/tex_asphalt_roughness_LOD0_v01.exr",
+          "ao": "01_world/irvine_suburbs/textures/tex_asphalt_ao_LOD0_v01.exr",
+          "height": "01_world/irvine_suburbs/textures/tex_asphalt_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "lawn_grass",
+          "albedo": "01_world/irvine_suburbs/textures/tex_lawn_grass_albedo_LOD0_v01.png",
+          "normal": "01_world/irvine_suburbs/textures/tex_lawn_grass_normal_LOD0_v01.tga",
+          "roughness": "01_world/irvine_suburbs/textures/tex_lawn_grass_roughness_LOD0_v01.exr",
+          "ao": "01_world/irvine_suburbs/textures/tex_lawn_grass_ao_LOD0_v01.exr",
+          "height": "01_world/irvine_suburbs/textures/tex_lawn_grass_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "vinyl_fence",
+          "albedo": "01_world/irvine_suburbs/textures/tex_vinyl_fence_albedo_LOD0_v01.png",
+          "normal": "01_world/irvine_suburbs/textures/tex_vinyl_fence_normal_LOD0_v01.tga",
+          "roughness": "01_world/irvine_suburbs/textures/tex_vinyl_fence_roughness_LOD0_v01.exr",
+          "ao": "01_world/irvine_suburbs/textures/tex_vinyl_fence_ao_LOD0_v01.exr",
+          "height": "01_world/irvine_suburbs/textures/tex_vinyl_fence_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "smart_glass",
+          "albedo": "01_world/irvine_suburbs/textures/tex_smart_glass_albedo_LOD0_v01.png",
+          "normal": "01_world/irvine_suburbs/textures/tex_smart_glass_normal_LOD0_v01.tga",
+          "roughness": "01_world/irvine_suburbs/textures/tex_smart_glass_roughness_LOD0_v01.exr",
+          "ao": "01_world/irvine_suburbs/textures/tex_smart_glass_ao_LOD0_v01.exr",
+          "height": "01_world/irvine_suburbs/textures/tex_smart_glass_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 128,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 76000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/irvine_suburbs/metadata/world_irvine_suburbs_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_manhattan_consensus_final_LOD0_v01",
+      "name": "Manhattan Consensus",
+      "blockout": {
+        "file": "01_world/manhattan_consensus/blockout/world_manhattan_consensus_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 96,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/manhattan_consensus/collision/world_manhattan_consensus_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "manhattan_consensus_terrain_shell",
+          "export": "01_world/manhattan_consensus/meshes/world_manhattan_consensus_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "manhattan_consensus_modular_set",
+          "export": "01_world/manhattan_consensus/meshes/world_manhattan_consensus_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "manhattan_consensus_destructible_layer",
+          "export": "01_world/manhattan_consensus/meshes/world_manhattan_consensus_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "wet_asphalt",
+          "albedo": "01_world/manhattan_consensus/textures/tex_wet_asphalt_albedo_LOD0_v01.png",
+          "normal": "01_world/manhattan_consensus/textures/tex_wet_asphalt_normal_LOD0_v01.tga",
+          "roughness": "01_world/manhattan_consensus/textures/tex_wet_asphalt_roughness_LOD0_v01.exr",
+          "ao": "01_world/manhattan_consensus/textures/tex_wet_asphalt_ao_LOD0_v01.exr",
+          "height": "01_world/manhattan_consensus/textures/tex_wet_asphalt_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "brushed_steel",
+          "albedo": "01_world/manhattan_consensus/textures/tex_brushed_steel_albedo_LOD0_v01.png",
+          "normal": "01_world/manhattan_consensus/textures/tex_brushed_steel_normal_LOD0_v01.tga",
+          "roughness": "01_world/manhattan_consensus/textures/tex_brushed_steel_roughness_LOD0_v01.exr",
+          "ao": "01_world/manhattan_consensus/textures/tex_brushed_steel_ao_LOD0_v01.exr",
+          "height": "01_world/manhattan_consensus/textures/tex_brushed_steel_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "ticker_glass",
+          "albedo": "01_world/manhattan_consensus/textures/tex_ticker_glass_albedo_LOD0_v01.png",
+          "normal": "01_world/manhattan_consensus/textures/tex_ticker_glass_normal_LOD0_v01.tga",
+          "roughness": "01_world/manhattan_consensus/textures/tex_ticker_glass_roughness_LOD0_v01.exr",
+          "ao": "01_world/manhattan_consensus/textures/tex_ticker_glass_ao_LOD0_v01.exr",
+          "height": "01_world/manhattan_consensus/textures/tex_ticker_glass_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "granite_lobby",
+          "albedo": "01_world/manhattan_consensus/textures/tex_granite_lobby_albedo_LOD0_v01.png",
+          "normal": "01_world/manhattan_consensus/textures/tex_granite_lobby_normal_LOD0_v01.tga",
+          "roughness": "01_world/manhattan_consensus/textures/tex_granite_lobby_roughness_LOD0_v01.exr",
+          "ao": "01_world/manhattan_consensus/textures/tex_granite_lobby_ao_LOD0_v01.exr",
+          "height": "01_world/manhattan_consensus/textures/tex_granite_lobby_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "billboard_emissive",
+          "albedo": "01_world/manhattan_consensus/textures/tex_billboard_emissive_albedo_LOD0_v01.png",
+          "normal": "01_world/manhattan_consensus/textures/tex_billboard_emissive_normal_LOD0_v01.tga",
+          "roughness": "01_world/manhattan_consensus/textures/tex_billboard_emissive_roughness_LOD0_v01.exr",
+          "ao": "01_world/manhattan_consensus/textures/tex_billboard_emissive_ao_LOD0_v01.exr",
+          "height": "01_world/manhattan_consensus/textures/tex_billboard_emissive_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 96,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 88000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/manhattan_consensus/metadata/world_manhattan_consensus_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_alpine_coldstorage_final_LOD0_v01",
+      "name": "Alpine Cold Storage Bunker",
+      "blockout": {
+        "file": "01_world/alpine_coldstorage/blockout/world_alpine_coldstorage_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 96,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/alpine_coldstorage/collision/world_alpine_coldstorage_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "alpine_coldstorage_terrain_shell",
+          "export": "01_world/alpine_coldstorage/meshes/world_alpine_coldstorage_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "alpine_coldstorage_modular_set",
+          "export": "01_world/alpine_coldstorage/meshes/world_alpine_coldstorage_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "alpine_coldstorage_destructible_layer",
+          "export": "01_world/alpine_coldstorage/meshes/world_alpine_coldstorage_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "packed_snow",
+          "albedo": "01_world/alpine_coldstorage/textures/tex_packed_snow_albedo_LOD0_v01.png",
+          "normal": "01_world/alpine_coldstorage/textures/tex_packed_snow_normal_LOD0_v01.tga",
+          "roughness": "01_world/alpine_coldstorage/textures/tex_packed_snow_roughness_LOD0_v01.exr",
+          "ao": "01_world/alpine_coldstorage/textures/tex_packed_snow_ao_LOD0_v01.exr",
+          "height": "01_world/alpine_coldstorage/textures/tex_packed_snow_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "ice_frost",
+          "albedo": "01_world/alpine_coldstorage/textures/tex_ice_frost_albedo_LOD0_v01.png",
+          "normal": "01_world/alpine_coldstorage/textures/tex_ice_frost_normal_LOD0_v01.tga",
+          "roughness": "01_world/alpine_coldstorage/textures/tex_ice_frost_roughness_LOD0_v01.exr",
+          "ao": "01_world/alpine_coldstorage/textures/tex_ice_frost_ao_LOD0_v01.exr",
+          "height": "01_world/alpine_coldstorage/textures/tex_ice_frost_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "vault_steel",
+          "albedo": "01_world/alpine_coldstorage/textures/tex_vault_steel_albedo_LOD0_v01.png",
+          "normal": "01_world/alpine_coldstorage/textures/tex_vault_steel_normal_LOD0_v01.tga",
+          "roughness": "01_world/alpine_coldstorage/textures/tex_vault_steel_roughness_LOD0_v01.exr",
+          "ao": "01_world/alpine_coldstorage/textures/tex_vault_steel_ao_LOD0_v01.exr",
+          "height": "01_world/alpine_coldstorage/textures/tex_vault_steel_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "server_plastic",
+          "albedo": "01_world/alpine_coldstorage/textures/tex_server_plastic_albedo_LOD0_v01.png",
+          "normal": "01_world/alpine_coldstorage/textures/tex_server_plastic_normal_LOD0_v01.tga",
+          "roughness": "01_world/alpine_coldstorage/textures/tex_server_plastic_roughness_LOD0_v01.exr",
+          "ao": "01_world/alpine_coldstorage/textures/tex_server_plastic_ao_LOD0_v01.exr",
+          "height": "01_world/alpine_coldstorage/textures/tex_server_plastic_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "cold_concrete",
+          "albedo": "01_world/alpine_coldstorage/textures/tex_cold_concrete_albedo_LOD0_v01.png",
+          "normal": "01_world/alpine_coldstorage/textures/tex_cold_concrete_normal_LOD0_v01.tga",
+          "roughness": "01_world/alpine_coldstorage/textures/tex_cold_concrete_roughness_LOD0_v01.exr",
+          "ao": "01_world/alpine_coldstorage/textures/tex_cold_concrete_ao_LOD0_v01.exr",
+          "height": "01_world/alpine_coldstorage/textures/tex_cold_concrete_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 96,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 70000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/alpine_coldstorage/metadata/world_alpine_coldstorage_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_mojave_groundreturn_final_LOD0_v01",
+      "name": "Mojave Ground Return Rail Junction",
+      "blockout": {
+        "file": "01_world/mojave_groundreturn/blockout/world_mojave_groundreturn_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 192,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/mojave_groundreturn/collision/world_mojave_groundreturn_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "mojave_groundreturn_terrain_shell",
+          "export": "01_world/mojave_groundreturn/meshes/world_mojave_groundreturn_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "mojave_groundreturn_modular_set",
+          "export": "01_world/mojave_groundreturn/meshes/world_mojave_groundreturn_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "mojave_groundreturn_destructible_layer",
+          "export": "01_world/mojave_groundreturn/meshes/world_mojave_groundreturn_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "desert_sand",
+          "albedo": "01_world/mojave_groundreturn/textures/tex_desert_sand_albedo_LOD0_v01.png",
+          "normal": "01_world/mojave_groundreturn/textures/tex_desert_sand_normal_LOD0_v01.tga",
+          "roughness": "01_world/mojave_groundreturn/textures/tex_desert_sand_roughness_LOD0_v01.exr",
+          "ao": "01_world/mojave_groundreturn/textures/tex_desert_sand_ao_LOD0_v01.exr",
+          "height": "01_world/mojave_groundreturn/textures/tex_desert_sand_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "rusted_rail",
+          "albedo": "01_world/mojave_groundreturn/textures/tex_rusted_rail_albedo_LOD0_v01.png",
+          "normal": "01_world/mojave_groundreturn/textures/tex_rusted_rail_normal_LOD0_v01.tga",
+          "roughness": "01_world/mojave_groundreturn/textures/tex_rusted_rail_roughness_LOD0_v01.exr",
+          "ao": "01_world/mojave_groundreturn/textures/tex_rusted_rail_ao_LOD0_v01.exr",
+          "height": "01_world/mojave_groundreturn/textures/tex_rusted_rail_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "copper_groundrod",
+          "albedo": "01_world/mojave_groundreturn/textures/tex_copper_groundrod_albedo_LOD0_v01.png",
+          "normal": "01_world/mojave_groundreturn/textures/tex_copper_groundrod_normal_LOD0_v01.tga",
+          "roughness": "01_world/mojave_groundreturn/textures/tex_copper_groundrod_roughness_LOD0_v01.exr",
+          "ao": "01_world/mojave_groundreturn/textures/tex_copper_groundrod_ao_LOD0_v01.exr",
+          "height": "01_world/mojave_groundreturn/textures/tex_copper_groundrod_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "sunbleached_wood",
+          "albedo": "01_world/mojave_groundreturn/textures/tex_sunbleached_wood_albedo_LOD0_v01.png",
+          "normal": "01_world/mojave_groundreturn/textures/tex_sunbleached_wood_normal_LOD0_v01.tga",
+          "roughness": "01_world/mojave_groundreturn/textures/tex_sunbleached_wood_roughness_LOD0_v01.exr",
+          "ao": "01_world/mojave_groundreturn/textures/tex_sunbleached_wood_ao_LOD0_v01.exr",
+          "height": "01_world/mojave_groundreturn/textures/tex_sunbleached_wood_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "dusty_ballast",
+          "albedo": "01_world/mojave_groundreturn/textures/tex_dusty_ballast_albedo_LOD0_v01.png",
+          "normal": "01_world/mojave_groundreturn/textures/tex_dusty_ballast_normal_LOD0_v01.tga",
+          "roughness": "01_world/mojave_groundreturn/textures/tex_dusty_ballast_roughness_LOD0_v01.exr",
+          "ao": "01_world/mojave_groundreturn/textures/tex_dusty_ballast_ao_LOD0_v01.exr",
+          "height": "01_world/mojave_groundreturn/textures/tex_dusty_ballast_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 192,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 74000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/mojave_groundreturn/metadata/world_mojave_groundreturn_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_darkpool_dungeons_final_LOD0_v01",
+      "name": "Dark Pool Dungeons",
+      "blockout": {
+        "file": "01_world/darkpool_dungeons/blockout/world_darkpool_dungeons_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 64,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/darkpool_dungeons/collision/world_darkpool_dungeons_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "darkpool_dungeons_terrain_shell",
+          "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "darkpool_dungeons_modular_set",
+          "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "darkpool_dungeons_destructible_layer",
+          "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "blackwater",
+          "albedo": "01_world/darkpool_dungeons/textures/tex_blackwater_albedo_LOD0_v01.png",
+          "normal": "01_world/darkpool_dungeons/textures/tex_blackwater_normal_LOD0_v01.tga",
+          "roughness": "01_world/darkpool_dungeons/textures/tex_blackwater_roughness_LOD0_v01.exr",
+          "ao": "01_world/darkpool_dungeons/textures/tex_blackwater_ao_LOD0_v01.exr",
+          "height": "01_world/darkpool_dungeons/textures/tex_blackwater_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "basalt",
+          "albedo": "01_world/darkpool_dungeons/textures/tex_basalt_albedo_LOD0_v01.png",
+          "normal": "01_world/darkpool_dungeons/textures/tex_basalt_normal_LOD0_v01.tga",
+          "roughness": "01_world/darkpool_dungeons/textures/tex_basalt_roughness_LOD0_v01.exr",
+          "ao": "01_world/darkpool_dungeons/textures/tex_basalt_ao_LOD0_v01.exr",
+          "height": "01_world/darkpool_dungeons/textures/tex_basalt_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "mineral_crust",
+          "albedo": "01_world/darkpool_dungeons/textures/tex_mineral_crust_albedo_LOD0_v01.png",
+          "normal": "01_world/darkpool_dungeons/textures/tex_mineral_crust_normal_LOD0_v01.tga",
+          "roughness": "01_world/darkpool_dungeons/textures/tex_mineral_crust_roughness_LOD0_v01.exr",
+          "ao": "01_world/darkpool_dungeons/textures/tex_mineral_crust_ao_LOD0_v01.exr",
+          "height": "01_world/darkpool_dungeons/textures/tex_mineral_crust_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "phosphor_code",
+          "albedo": "01_world/darkpool_dungeons/textures/tex_phosphor_code_albedo_LOD0_v01.png",
+          "normal": "01_world/darkpool_dungeons/textures/tex_phosphor_code_normal_LOD0_v01.tga",
+          "roughness": "01_world/darkpool_dungeons/textures/tex_phosphor_code_roughness_LOD0_v01.exr",
+          "ao": "01_world/darkpool_dungeons/textures/tex_phosphor_code_ao_LOD0_v01.exr",
+          "height": "01_world/darkpool_dungeons/textures/tex_phosphor_code_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "wet_masonry",
+          "albedo": "01_world/darkpool_dungeons/textures/tex_wet_masonry_albedo_LOD0_v01.png",
+          "normal": "01_world/darkpool_dungeons/textures/tex_wet_masonry_normal_LOD0_v01.tga",
+          "roughness": "01_world/darkpool_dungeons/textures/tex_wet_masonry_roughness_LOD0_v01.exr",
+          "ao": "01_world/darkpool_dungeons/textures/tex_wet_masonry_ao_LOD0_v01.exr",
+          "height": "01_world/darkpool_dungeons/textures/tex_wet_masonry_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 64,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 62000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/darkpool_dungeons/metadata/world_darkpool_dungeons_final_LOD0_v01.json"
+    },
+    {
+      "id": "world_zerostate_relays_final_LOD0_v01",
+      "name": "Zero-State Relay Towers",
+      "blockout": {
+        "file": "01_world/zerostate_relays/blockout/world_zerostate_relays_blockout_LOD0_v01.gltf",
+        "metrics": {
+          "tile_size_m": 96,
+          "combat_lane_m": 4.0,
+          "vehicle_lane_m": 6.0,
+          "door_width_m": 1.1,
+          "stair_rise_m": 0.18,
+          "cover_height_m": [
+            0.65,
+            1.25
+          ]
+        },
+        "collision_proxy": "01_world/zerostate_relays/collision/world_zerostate_relays_collision_LOD0_v01.fbx"
+      },
+      "final_meshes": [
+        {
+          "name": "zerostate_relays_terrain_shell",
+          "export": "01_world/zerostate_relays/meshes/world_zerostate_relays_terrain_LOD0_v01.gltf",
+          "collision": "heightfield + simplified trimesh"
+        },
+        {
+          "name": "zerostate_relays_modular_set",
+          "export": "01_world/zerostate_relays/meshes/world_zerostate_relays_modules_LOD0_v01.fbx",
+          "collision": "per-piece UCX hulls"
+        },
+        {
+          "name": "zerostate_relays_destructible_layer",
+          "export": "01_world/zerostate_relays/meshes/world_zerostate_relays_destructibles_LOD0_v01.gltf",
+          "collision": "fracture-aware convex chunks"
+        }
+      ],
+      "texture_sets": [
+        {
+          "material": "granite_scree",
+          "albedo": "01_world/zerostate_relays/textures/tex_granite_scree_albedo_LOD0_v01.png",
+          "normal": "01_world/zerostate_relays/textures/tex_granite_scree_normal_LOD0_v01.tga",
+          "roughness": "01_world/zerostate_relays/textures/tex_granite_scree_roughness_LOD0_v01.exr",
+          "ao": "01_world/zerostate_relays/textures/tex_granite_scree_ao_LOD0_v01.exr",
+          "height": "01_world/zerostate_relays/textures/tex_granite_scree_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "painted_tower_metal",
+          "albedo": "01_world/zerostate_relays/textures/tex_painted_tower_metal_albedo_LOD0_v01.png",
+          "normal": "01_world/zerostate_relays/textures/tex_painted_tower_metal_normal_LOD0_v01.tga",
+          "roughness": "01_world/zerostate_relays/textures/tex_painted_tower_metal_roughness_LOD0_v01.exr",
+          "ao": "01_world/zerostate_relays/textures/tex_painted_tower_metal_ao_LOD0_v01.exr",
+          "height": "01_world/zerostate_relays/textures/tex_painted_tower_metal_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "cable_rubber",
+          "albedo": "01_world/zerostate_relays/textures/tex_cable_rubber_albedo_LOD0_v01.png",
+          "normal": "01_world/zerostate_relays/textures/tex_cable_rubber_normal_LOD0_v01.tga",
+          "roughness": "01_world/zerostate_relays/textures/tex_cable_rubber_roughness_LOD0_v01.exr",
+          "ao": "01_world/zerostate_relays/textures/tex_cable_rubber_ao_LOD0_v01.exr",
+          "height": "01_world/zerostate_relays/textures/tex_cable_rubber_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "storm_cloud_card",
+          "albedo": "01_world/zerostate_relays/textures/tex_storm_cloud_card_albedo_LOD0_v01.png",
+          "normal": "01_world/zerostate_relays/textures/tex_storm_cloud_card_normal_LOD0_v01.tga",
+          "roughness": "01_world/zerostate_relays/textures/tex_storm_cloud_card_roughness_LOD0_v01.exr",
+          "ao": "01_world/zerostate_relays/textures/tex_storm_cloud_card_ao_LOD0_v01.exr",
+          "height": "01_world/zerostate_relays/textures/tex_storm_cloud_card_height_LOD0_v01.exr",
+          "tiling_m": 4
+        },
+        {
+          "material": "relay_glass",
+          "albedo": "01_world/zerostate_relays/textures/tex_relay_glass_albedo_LOD0_v01.png",
+          "normal": "01_world/zerostate_relays/textures/tex_relay_glass_normal_LOD0_v01.tga",
+          "roughness": "01_world/zerostate_relays/textures/tex_relay_glass_roughness_LOD0_v01.exr",
+          "ao": "01_world/zerostate_relays/textures/tex_relay_glass_ao_LOD0_v01.exr",
+          "height": "01_world/zerostate_relays/textures/tex_relay_glass_height_LOD0_v01.exr",
+          "tiling_m": 4
+        }
+      ],
+      "lods": {
+        "LOD0": "0-30m authored meshes, full material set, collision enabled",
+        "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+        "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+      },
+      "streaming": {
+        "tile_size_m": 96,
+        "prefetch_radius_tiles": 2,
+        "resident_budget_bytes": 78000000,
+        "dependency_rule": "load material set, collision proxy and AR anchors with tile"
+      },
+      "lighting_preset": {
+        "key": "warm terracotta practical or biome sun",
+        "fill": "muted teal bounce",
+        "rim": "Cold Bone edge light",
+        "fog": "height fog with painterly cards"
+      },
+      "metadata": "01_world/zerostate_relays/metadata/world_zerostate_relays_final_LOD0_v01.json"
+    }
+  ],
+  "characters": [
+    {
+      "id": "character_cypherpunk_final_LOD0_v01",
+      "name": "Cypherpunk",
+      "type": "playable",
+      "concept": "Cypherpunk playable class with hooded decryptor coat, wallet lantern, packet crucible, compact debug blade",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/cypherpunk/character_cypherpunk_final_LOD0_v01.fbx",
+        "gltf": "03_characters/cypherpunk/character_cypherpunk_final_LOD0_v01.gltf",
+        "metadata": "03_characters/cypherpunk/metadata/character_cypherpunk_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_digitalwraith_final_LOD0_v01",
+      "name": "Digitalwraith",
+      "type": "playable",
+      "concept": "Digital Wraith playable class with semi-transparent cloak panels, glitch-mask face, silent foot rigs and spectral packet trails",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/digitalwraith/character_digitalwraith_final_LOD0_v01.fbx",
+        "gltf": "03_characters/digitalwraith/character_digitalwraith_final_LOD0_v01.gltf",
+        "metadata": "03_characters/digitalwraith/metadata/character_digitalwraith_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_gridvanguard_final_LOD0_v01",
+      "name": "Gridvanguard",
+      "type": "playable",
+      "concept": "Grid Vanguard playable class with armored relay shield, grounded boots, copper spine battery and heavy breaching rig",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/gridvanguard/character_gridvanguard_final_LOD0_v01.fbx",
+        "gltf": "03_characters/gridvanguard/character_gridvanguard_final_LOD0_v01.gltf",
+        "metadata": "03_characters/gridvanguard/metadata/character_gridvanguard_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_codeweaver_final_LOD0_v01",
+      "name": "Codeweaver",
+      "type": "playable",
+      "concept": "Code Weaver playable class with woven cable mantle, mnemonic bead rig, AR loom gauntlets and sigil compiler focus",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/codeweaver/character_codeweaver_final_LOD0_v01.fbx",
+        "gltf": "03_characters/codeweaver/character_codeweaver_final_LOD0_v01.gltf",
+        "metadata": "03_characters/codeweaver/metadata/character_codeweaver_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_ghostprocess_final_LOD0_v01",
+      "name": "Ghostprocess",
+      "type": "enemy",
+      "concept": "Ghost Process enemy with hollow humanoid silhouette, recursive face plates and broken coroutine limb offsets",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/ghostprocess/character_ghostprocess_final_LOD0_v01.fbx",
+        "gltf": "03_characters/ghostprocess/character_ghostprocess_final_LOD0_v01.gltf",
+        "metadata": "03_characters/ghostprocess/metadata/character_ghostprocess_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_sybilswarm_final_LOD0_v01",
+      "name": "Sybilswarm",
+      "type": "enemy",
+      "concept": "Sybil swarm unit family with duplicated torsos, forked identity masks and low-poly decoy silhouettes for crowds",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/sybilswarm/character_sybilswarm_final_LOD0_v01.fbx",
+        "gltf": "03_characters/sybilswarm/character_sybilswarm_final_LOD0_v01.gltf",
+        "metadata": "03_characters/sybilswarm/metadata/character_sybilswarm_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_darkpoolwarden_final_LOD0_v01",
+      "name": "Darkpoolwarden",
+      "type": "enemy",
+      "concept": "Dark Pool warden elite with basalt armor, blackwater cloth, ledger-hook polearm and mirrored faceplate",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/darkpoolwarden/character_darkpoolwarden_final_LOD0_v01.fbx",
+        "gltf": "03_characters/darkpoolwarden/character_darkpoolwarden_final_LOD0_v01.gltf",
+        "metadata": "03_characters/darkpoolwarden/metadata/character_darkpoolwarden_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_genesisentity_phase1_final_LOD0_v01",
+      "name": "Genesisentity Phase1",
+      "type": "boss",
+      "concept": "Genesis Entity Phase 1 boss: angelic server body, chandelier cables, gold weak-point Merkle nodes",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/genesisentity_phase1/character_genesisentity_phase1_final_LOD0_v01.fbx",
+        "gltf": "03_characters/genesisentity_phase1/character_genesisentity_phase1_final_LOD0_v01.gltf",
+        "metadata": "03_characters/genesisentity_phase1/metadata/character_genesisentity_phase1_final_LOD0_v01.json"
+      }
+    },
+    {
+      "id": "character_genesisentity_phase2_final_LOD0_v01",
+      "name": "Genesisentity Phase2",
+      "type": "boss",
+      "concept": "Genesis Entity Phase 2 boss: demonic mainnet hydra, inverted tower spine, exposed consensus heart",
+      "pipeline": [
+        "sculpt high-poly in neutral A-pose",
+        "retopo to deformation-friendly quads",
+        "UV into body/head/gear/weapon sets",
+        "bake normal/AO/curvature/ID",
+        "texture in Genesis palette with material wear masks"
+      ],
+      "skeleton": "64-bone humanoid/shared monster-compatible rig: root, pelvis, spine_01-04, neck, head, jaw, eyes, clavicles, arms, hands, fingers, legs, feet, toes, cloth helpers, weapon sockets",
+      "facial_blendshapes": [
+        "blink_L",
+        "blink_R",
+        "brow_up",
+        "brow_down",
+        "jaw_open",
+        "phoneme_A",
+        "phoneme_E",
+        "phoneme_O",
+        "phoneme_U",
+        "phoneme_M",
+        "fear",
+        "pain",
+        "snarl",
+        "possession_glitch"
+      ],
+      "skin_weights": "max 4 influences per vertex; shoulder/hip twist gradients; cloth helpers isolated from gameplay hit capsules",
+      "lods": {
+        "LOD0": "60k playable / 45k elite / 120k boss tris",
+        "LOD1": "30k playable / 22k elite / 60k boss tris",
+        "LOD2": "12k playable / 8k elite / 25k boss tris"
+      },
+      "exports": {
+        "fbx": "03_characters/genesisentity_phase2/character_genesisentity_phase2_final_LOD0_v01.fbx",
+        "gltf": "03_characters/genesisentity_phase2/character_genesisentity_phase2_final_LOD0_v01.gltf",
+        "metadata": "03_characters/genesisentity_phase2/metadata/character_genesisentity_phase2_final_LOD0_v01.json"
+      }
+    }
+  ],
+  "animations": {
+    "clips": [
+      "idle",
+      "walk",
+      "run",
+      "sprint",
+      "attack_light",
+      "attack_heavy",
+      "skill_cast_primary",
+      "skill_cast_secondary",
+      "damage_front",
+      "damage_back",
+      "death",
+      "ragdoll_transition",
+      "enemy_patrol",
+      "enemy_investigate",
+      "enemy_attack",
+      "boss_phase1_intro",
+      "boss_phase1_attack",
+      "boss_phase2_transform",
+      "boss_phase2_attack",
+      "boss_stagger",
+      "boss_death"
+    ],
+    "root_motion": "locomotion and breach clips export root translation; attacks are in-place except lunges; boss transforms pin root and animate sockets",
+    "blendspaces": {
+      "player_locomotion": "speed x strafe angle",
+      "aim_offset": "yaw x pitch",
+      "cast_layer": "upper-body mask over locomotion",
+      "boss_phase": "phase x aggression",
+      "ragdoll": "authored death pose to physics over 0.18s"
+    },
+    "state_machines": {
+      "player": "Idle->Locomotion->Traversal/Combat/SkillCast->HitReact->Death/Ragdoll",
+      "enemy": "Spawn->Patrol->Investigate->Chase->Attack->Stagger->Death",
+      "boss": "Intro->Phase1Loop->Stagger->Phase2Transform->Phase2Loop->Death"
+    }
+  },
+  "destructibility": {
+    "state_machine": [
+      "intact",
+      "damaged",
+      "broken",
+      "debris"
+    ],
+    "materials": {
+      "wood": {
+        "fracture_map": "04_props/destructibles/wood/fracture/prop_wood_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/wood/debris/prop_wood_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      },
+      "masonry": {
+        "fracture_map": "04_props/destructibles/masonry/fracture/prop_masonry_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/masonry/debris/prop_masonry_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      },
+      "glass": {
+        "fracture_map": "04_props/destructibles/glass/fracture/prop_glass_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/glass/debris/prop_glass_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      },
+      "metal": {
+        "fracture_map": "04_props/destructibles/metal/fracture/prop_metal_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/metal/debris/prop_metal_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      },
+      "soil": {
+        "fracture_map": "04_props/destructibles/soil/fracture/prop_soil_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/soil/debris/prop_soil_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      },
+      "foliage": {
+        "fracture_map": "04_props/destructibles/foliage/fracture/prop_foliage_fracture_LOD0_v01.exr",
+        "debris_pool_prefab": "04_props/destructibles/foliage/debris/prop_foliage_debrispool_LOD0_v01.gltf",
+        "pool_counts": {
+          "low": 16,
+          "mid": 32,
+          "high": 64
+        },
+        "particles": [
+          "impact_sparks_or_dust",
+          "break_burst",
+          "settle_motes"
+        ],
+        "physics": {
+          "solver_velocity_iterations": 4,
+          "solver_position_iterations": 2,
+          "sleep_velocity_mps": 0.05,
+          "max_lifetime_s": 8
+        }
+      }
+    },
+    "locked_doors": {
+      "lockpick": {
+        "animation": "anim_hero_lockpick_loop_v01",
+        "result": "door remains intact, stealth loot table, no NPC alarm"
+      },
+      "breach": {
+        "animation": "anim_hero_forced_breach_v01",
+        "result": "door enters broken/debris, NPC alert radius 25m, scrap-biased loot, navmesh delta"
+      }
+    }
+  },
+  "craft_tools": [
+    {
+      "id": "tool_pneumatic_needle_gun_final_LOD0_v01",
+      "name": "Pneumatic Needle Gun",
+      "model": {
+        "in_hand_gltf": "05_tools/pneumatic_needle_gun/meshes/tool_pneumatic_needle_gun_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/pneumatic_needle_gun/meshes/tool_pneumatic_needle_gun_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/pneumatic_needle_gun/meshes/tool_pneumatic_needle_gun_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_pneumatic_needle_gun_equip_v01",
+        "anim_hero_tool_pneumatic_needle_gun_use_v01",
+        "anim_hero_tool_pneumatic_needle_gun_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_pneumatic_needle_gun_trail_LOD0_v01",
+        "vfx_tool_pneumatic_needle_gun_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_pneumatic_needle_gun_equip",
+        "sfx_tool_pneumatic_needle_gun_use",
+        "sfx_tool_pneumatic_needle_gun_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_pneumatic_needle_gun.svg",
+        "png": "06_ui/icons/png/icon_tool_pneumatic_needle_gun.png"
+      },
+      "metadata": "05_tools/pneumatic_needle_gun/metadata/tool_pneumatic_needle_gun_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_typewriter_slugs_final_LOD0_v01",
+      "name": "Typewriter Slugs",
+      "model": {
+        "in_hand_gltf": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/typewriter_slugs/meshes/tool_typewriter_slugs_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_typewriter_slugs_equip_v01",
+        "anim_hero_tool_typewriter_slugs_use_v01",
+        "anim_hero_tool_typewriter_slugs_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_typewriter_slugs_trail_LOD0_v01",
+        "vfx_tool_typewriter_slugs_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_typewriter_slugs_equip",
+        "sfx_tool_typewriter_slugs_use",
+        "sfx_tool_typewriter_slugs_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_typewriter_slugs.svg",
+        "png": "06_ui/icons/png/icon_tool_typewriter_slugs.png"
+      },
+      "metadata": "05_tools/typewriter_slugs/metadata/tool_typewriter_slugs_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_ransomware_blade_final_LOD0_v01",
+      "name": "Ransomware Blade",
+      "model": {
+        "in_hand_gltf": "05_tools/ransomware_blade/meshes/tool_ransomware_blade_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/ransomware_blade/meshes/tool_ransomware_blade_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/ransomware_blade/meshes/tool_ransomware_blade_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_ransomware_blade_equip_v01",
+        "anim_hero_tool_ransomware_blade_use_v01",
+        "anim_hero_tool_ransomware_blade_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_ransomware_blade_trail_LOD0_v01",
+        "vfx_tool_ransomware_blade_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_ransomware_blade_equip",
+        "sfx_tool_ransomware_blade_use",
+        "sfx_tool_ransomware_blade_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_ransomware_blade.svg",
+        "png": "06_ui/icons/png/icon_tool_ransomware_blade.png"
+      },
+      "metadata": "05_tools/ransomware_blade/metadata/tool_ransomware_blade_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_hammer_final_LOD0_v01",
+      "name": "Hammer",
+      "model": {
+        "in_hand_gltf": "05_tools/hammer/meshes/tool_hammer_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/hammer/meshes/tool_hammer_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/hammer/meshes/tool_hammer_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_hammer_equip_v01",
+        "anim_hero_tool_hammer_use_v01",
+        "anim_hero_tool_hammer_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_hammer_trail_LOD0_v01",
+        "vfx_tool_hammer_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_hammer_equip",
+        "sfx_tool_hammer_use",
+        "sfx_tool_hammer_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_hammer.svg",
+        "png": "06_ui/icons/png/icon_tool_hammer.png"
+      },
+      "metadata": "05_tools/hammer/metadata/tool_hammer_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_pick_final_LOD0_v01",
+      "name": "Pick",
+      "model": {
+        "in_hand_gltf": "05_tools/pick/meshes/tool_pick_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/pick/meshes/tool_pick_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/pick/meshes/tool_pick_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_pick_equip_v01",
+        "anim_hero_tool_pick_use_v01",
+        "anim_hero_tool_pick_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_pick_trail_LOD0_v01",
+        "vfx_tool_pick_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_pick_equip",
+        "sfx_tool_pick_use",
+        "sfx_tool_pick_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_pick.svg",
+        "png": "06_ui/icons/png/icon_tool_pick.png"
+      },
+      "metadata": "05_tools/pick/metadata/tool_pick_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_lockpick_final_LOD0_v01",
+      "name": "Lockpick",
+      "model": {
+        "in_hand_gltf": "05_tools/lockpick/meshes/tool_lockpick_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/lockpick/meshes/tool_lockpick_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/lockpick/meshes/tool_lockpick_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_lockpick_equip_v01",
+        "anim_hero_tool_lockpick_use_v01",
+        "anim_hero_tool_lockpick_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_lockpick_trail_LOD0_v01",
+        "vfx_tool_lockpick_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_lockpick_equip",
+        "sfx_tool_lockpick_use",
+        "sfx_tool_lockpick_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_lockpick.svg",
+        "png": "06_ui/icons/png/icon_tool_lockpick.png"
+      },
+      "metadata": "05_tools/lockpick/metadata/tool_lockpick_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_saw_final_LOD0_v01",
+      "name": "Saw",
+      "model": {
+        "in_hand_gltf": "05_tools/saw/meshes/tool_saw_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/saw/meshes/tool_saw_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/saw/meshes/tool_saw_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_saw_equip_v01",
+        "anim_hero_tool_saw_use_v01",
+        "anim_hero_tool_saw_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_saw_trail_LOD0_v01",
+        "vfx_tool_saw_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_saw_equip",
+        "sfx_tool_saw_use",
+        "sfx_tool_saw_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_saw.svg",
+        "png": "06_ui/icons/png/icon_tool_saw.png"
+      },
+      "metadata": "05_tools/saw/metadata/tool_saw_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_explosives_final_LOD0_v01",
+      "name": "Explosives",
+      "model": {
+        "in_hand_gltf": "05_tools/explosives/meshes/tool_explosives_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/explosives/meshes/tool_explosives_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/explosives/meshes/tool_explosives_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_explosives_equip_v01",
+        "anim_hero_tool_explosives_use_v01",
+        "anim_hero_tool_explosives_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_explosives_trail_LOD0_v01",
+        "vfx_tool_explosives_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_explosives_equip",
+        "sfx_tool_explosives_use",
+        "sfx_tool_explosives_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_explosives.svg",
+        "png": "06_ui/icons/png/icon_tool_explosives.png"
+      },
+      "metadata": "05_tools/explosives/metadata/tool_explosives_final_LOD0_v01.json"
+    },
+    {
+      "id": "tool_scaffold_deployer_final_LOD0_v01",
+      "name": "Scaffold Deployer",
+      "model": {
+        "in_hand_gltf": "05_tools/scaffold_deployer/meshes/tool_scaffold_deployer_inhand_LOD0_v01.gltf",
+        "in_hand_fbx": "05_tools/scaffold_deployer/meshes/tool_scaffold_deployer_inhand_LOD0_v01.fbx",
+        "world_pickup_gltf": "05_tools/scaffold_deployer/meshes/tool_scaffold_deployer_pickup_LOD0_v01.gltf",
+        "collision": "single convex hull + socket grip marker"
+      },
+      "animations": [
+        "anim_hero_tool_scaffold_deployer_equip_v01",
+        "anim_hero_tool_scaffold_deployer_use_v01",
+        "anim_hero_tool_scaffold_deployer_recover_v01"
+      ],
+      "vfx": [
+        "vfx_tool_scaffold_deployer_trail_LOD0_v01",
+        "vfx_tool_scaffold_deployer_impact_LOD0_v01"
+      ],
+      "sound_cues": [
+        "sfx_tool_scaffold_deployer_equip",
+        "sfx_tool_scaffold_deployer_use",
+        "sfx_tool_scaffold_deployer_impact"
+      ],
+      "icons": {
+        "svg": "06_ui/icons/svg/icon_tool_scaffold_deployer.svg",
+        "png": "06_ui/icons/png/icon_tool_scaffold_deployer.png"
+      },
+      "metadata": "05_tools/scaffold_deployer/metadata/tool_scaffold_deployer_final_LOD0_v01.json"
+    }
+  ],
+  "ui": {
+    "screens": {
+      "hud": [
+        "health",
+        "hashrate",
+        "skill bar",
+        "tool wheel",
+        "destructible reticle"
+      ],
+      "inventory": [
+        "item grid",
+        "rarity filters",
+        "compare panel"
+      ],
+      "merkle_tree": [
+        "node graph",
+        "proof path highlight",
+        "skill unlock confirmation"
+      ],
+      "mnemonic_board": [
+        "12 seed slots",
+        "modifier sockets",
+        "checksum warning"
+      ],
+      "map": [
+        "region tiles",
+        "POIs",
+        "subsurface entrance uncertainty rings"
+      ],
+      "tooltips": [
+        "icon first",
+        "320dp max",
+        "shape coded warnings"
+      ]
+    },
+    "icons": {
+      "source_dir": "06_ui/icons/svg",
+      "png_dir": "06_ui/icons/png",
+      "atlas": "06_ui/icons/atlas/icon_atlas.json"
+    },
+    "typography": {
+      "heading": "condensed geometric sans 600/700",
+      "body": "humanist sans 400/500",
+      "minimum": "14sp body, 16sp labels, 20sp panel titles"
+    },
+    "accessibility": [
+      "4.5:1 body contrast",
+      "3:1 icon contrast",
+      "colorblind palette variants",
+      "reduced motion for pulsing AR"
+    ]
+  },
+  "package_structure": {
+    "root": "AssetPackage/",
+    "folders": [
+      "01_world/<region>/{blockout,meshes,collision,textures,metadata,readme.md}",
+      "03_characters/<character>/{sculpt,retopo,uv,bakes,textures,rig,animations,metadata,readme.md}",
+      "04_props/destructibles/<material>/{fracture,debris,metadata,readme.md}",
+      "05_tools/<tool>/{meshes,animations,vfx,audio,icons,metadata,readme.md}",
+      "06_ui/{icons,atlases,layouts,fonts,metadata}",
+      "manifest/asset_manifest.json"
+    ]
+  },
+  "manifest_entries": [
+    {
+      "id": "world_belair_blackout_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_irvine_suburbs_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_manhattan_consensus_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_alpine_coldstorage_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_mojave_groundreturn_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_darkpool_dungeons_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "world_zerostate_relays_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_cypherpunk_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_digitalwraith_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_gridvanguard_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_codeweaver_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_ghostprocess_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_sybilswarm_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_darkpoolwarden_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_genesisentity_phase1_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "character_genesisentity_phase2_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_pneumatic_needle_gun_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_typewriter_slugs_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_ransomware_blade_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_hammer_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_pick_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_lockpick_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_saw_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_explosives_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    },
+    {
+      "id": "tool_scaffold_deployer_final_LOD0_v01",
+      "formats": [
+        "FBX ASCII",
+        "GLTF 2.0",
+        "PNG",
+        "TGA",
+        "EXR",
+        "JSON"
+      ],
+      "readme_required": true
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "blockout": {
+    "collision_proxy": "01_world/darkpool_dungeons/collision/world_darkpool_dungeons_collision_LOD0_v01.fbx",
+    "file": "01_world/darkpool_dungeons/blockout/world_darkpool_dungeons_blockout_LOD0_v01.gltf",
+    "metrics": {
+      "combat_lane_m": 4.0,
+      "cover_height_m": [
+        0.65,
+        1.25
+      ],
+      "door_width_m": 1.1,
+      "stair_rise_m": 0.18,
+      "tile_size_m": 64,
+      "vehicle_lane_m": 6.0
+    }
+  },
+  "category": "world",
+  "collision_policy": "author UCX convex hulls for modules, heightfield for terrain, fracture hulls for destructible layer",
+  "exports": {
+    "embed_media": false,
+    "icons": [
+      "SVG source",
+      "512x512 PNG",
+      "PNG atlas",
+      "JSON atlas metadata"
+    ],
+    "mesh": [
+      "FBX ASCII",
+      "GLTF 2.0"
+    ],
+    "texture_maps": {
+      "albedo": "PNG 16-bit sRGB",
+      "ao": "EXR",
+      "height": "EXR 16/32-bit linear",
+      "normal": "TGA 16-bit tangent-space MikkTSpace",
+      "roughness": "EXR R channel"
+    },
+    "units": "meters",
+    "up_axis": "Y"
+  },
+  "final_meshes": [
+    {
+      "collision": "heightfield + simplified trimesh",
+      "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_terrain_LOD0_v01.gltf",
+      "name": "darkpool_dungeons_terrain_shell"
+    },
+    {
+      "collision": "per-piece UCX hulls",
+      "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_modules_LOD0_v01.fbx",
+      "name": "darkpool_dungeons_modular_set"
+    },
+    {
+      "collision": "fracture-aware convex chunks",
+      "export": "01_world/darkpool_dungeons/meshes/world_darkpool_dungeons_destructibles_LOD0_v01.gltf",
+      "name": "darkpool_dungeons_destructible_layer"
+    }
+  ],
+  "id": "world_darkpool_dungeons_final_LOD0_v01",
+  "lighting_preset": {
+    "fill": "muted teal bounce",
+    "fog": "height fog with painterly cards",
+    "key": "warm terracotta practical or biome sun",
+    "rim": "Cold Bone edge light"
+  },
+  "lods": {
+    "LOD0": "0-30m authored meshes, full material set, collision enabled",
+    "LOD1": "30-90m 50% triangles, baked secondary detail, simplified collision",
+    "LOD2": "90m+ 15% triangles or impostor/HLOD, no dynamic collision"
+  },
+  "name": "Dark Pool Dungeons",
+  "naming_convention": "category_assetname_variant_LOD_version",
+  "pbr_materials": [
+    {
+      "albedo": "01_world/darkpool_dungeons/textures/tex_blackwater_albedo_LOD0_v01.png",
+      "ao": "01_world/darkpool_dungeons/textures/tex_blackwater_ao_LOD0_v01.exr",
+      "height": "01_world/darkpool_dungeons/textures/tex_blackwater_height_LOD0_v01.exr",
+      "material": "blackwater",
+      "normal": "01_world/darkpool_dungeons/textures/tex_blackwater_normal_LOD0_v01.tga",
+      "roughness": "01_world/darkpool_dungeons/textures/tex_blackwater_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/darkpool_dungeons/textures/tex_basalt_albedo_LOD0_v01.png",
+      "ao": "01_world/darkpool_dungeons/textures/tex_basalt_ao_LOD0_v01.exr",
+      "height": "01_world/darkpool_dungeons/textures/tex_basalt_height_LOD0_v01.exr",
+      "material": "basalt",
+      "normal": "01_world/darkpool_dungeons/textures/tex_basalt_normal_LOD0_v01.tga",
+      "roughness": "01_world/darkpool_dungeons/textures/tex_basalt_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/darkpool_dungeons/textures/tex_mineral_crust_albedo_LOD0_v01.png",
+      "ao": "01_world/darkpool_dungeons/textures/tex_mineral_crust_ao_LOD0_v01.exr",
+      "height": "01_world/darkpool_dungeons/textures/tex_mineral_crust_height_LOD0_v01.exr",
+      "material": "mineral_crust",
+      "normal": "01_world/darkpool_dungeons/textures/tex_mineral_crust_normal_LOD0_v01.tga",
+      "roughness": "01_world/darkpool_dungeons/textures/tex_mineral_crust_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/darkpool_dungeons/textures/tex_phosphor_code_albedo_LOD0_v01.png",
+      "ao": "01_world/darkpool_dungeons/textures/tex_phosphor_code_ao_LOD0_v01.exr",
+      "height": "01_world/darkpool_dungeons/textures/tex_phosphor_code_height_LOD0_v01.exr",
+      "material": "phosphor_code",
+      "normal": "01_world/darkpool_dungeons/textures/tex_phosphor_code_normal_LOD0_v01.tga",
+      "roughness": "01_world/darkpool_dungeons/textures/tex_phosphor_code_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    },
+    {
+      "albedo": "01_world/darkpool_dungeons/textures/tex_wet_masonry_albedo_LOD0_v01.png",
+      "ao": "01_world/darkpool_dungeons/textures/tex_wet_masonry_ao_LOD0_v01.exr",
+      "height": "01_world/darkpool_dungeons/textures/tex_wet_masonry_height_LOD0_v01.exr",
+      "material": "wet_masonry",
+      "normal": "01_world/darkpool_dungeons/textures/tex_wet_masonry_normal_LOD0_v01.tga",
+      "roughness": "01_world/darkpool_dungeons/textures/tex_wet_masonry_roughness_LOD0_v01.exr",
+      "tiling_m": 4
+    }
+  ],
+  "readme_path": "10_final_3d_engine_package/world/darkpool_dungeons/README.md",
+  "source_spec": "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",
+  "streaming": {
+    "dependency_rule": "load material set, collision proxy and AR anchors with tile",
+    "prefetch_radius_tiles": 2,
+    "resident_budget_bytes": 62000000,
+    "tile_size_m": 64
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "aab_build_steps": [
+    "python3 tools/generate_final_3d_package.py",
+    "python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip",
+    "./gradlew bundleRelease"
+  ],
+  "android_manifest_path": "12_finished_game/android/AndroidManifest.xml",
+  "api_level": {
+    "compile_sdk": 36,
+    "min_sdk": 26,
+    "target_sdk": 36
+  },
+  "asset_compression": {
+    "audio": "Opus",
+    "meshes": "GLTF/FBX converted to runtime binary cache",
+    "textures": "ASTC by device tier"
+  },
+  "bundle_structure": [
+    "base APK: code/UI/core classes",
+    "assetpack_worlds",
+    "assetpack_audio",
+    "assetpack_highres"
+  ],
+  "gradle_path": "12_finished_game/android/build.gradle.kts",
+  "obfuscation_minification": {
+    "native_symbols": "keep separate upload",
+    "proguard_rules": [
+      "keep JNI bridge",
+      "keep Room entities",
+      "keep kotlinx serialization models"
+    ],
+    "r8": true,
+    "shrink_resources": true
+  },
+  "package_name": "com.genesisprotocol.game",
+  "play_store_upload_checklist": [
+    "create signed AAB",
+    "upload to internal track",
+    "verify asset packs",
+    "complete content rating",
+    "submit privacy form",
+    "promote through closed_alpha/open_beta/production"
+  ],
+  "release_channels": [
+    "internal",
+    "closed_alpha",
+    "open_beta",
+    "production"
+  ],
+  "required_permissions": [
+    "INTERNET",
+    "ACCESS_NETWORK_STATE"
+  ],
+  "signing_configuration": {
+    "key_alias_env": "GENESIS_KEY_ALIAS",
+    "keystore_env": "GENESIS_KEYSTORE",
+    "password_env": [
+      "GENESIS_KEYSTORE_PASSWORD",
+      "GENESIS_KEY_PASSWORD"
+    ]
+  },
+  "supported_devices": [
+    "Android API 26+",
+    "Vulkan 1.0+",
+    "arm64-v8a"
+  ]
+}
