@@ -154,7 +154,7 @@
   ],
   "export_bundle_command": "python3 tools/package_assets.py --src . --out build/genesis_asset_export.zip",
   "naming_convention": "category_assetname_variant_LOD_version",
-  "repository_manifest_asset_count": 20,
+  "repository_manifest_asset_count": 21,
   "schema_version": "1.0.0",
   "source_specs": [
     "/workspace/Bitcoin-Billionaire-s-Demonic-Haunting-/docs/assets/final_3d_engine_package_spec.json",

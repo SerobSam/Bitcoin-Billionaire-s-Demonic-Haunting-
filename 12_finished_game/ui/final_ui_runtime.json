@@ -1,0 +1,122 @@
+{
+  "accessibility": [
+    "4.5:1 body contrast",
+    "3:1 icon contrast",
+    "colorblind palette variants",
+    "reduced motion for pulsing AR"
+  ],
+  "icons": {
+    "atlas": "06_ui/icons/atlas/icon_atlas.json",
+    "png_dir": "06_ui/icons/png",
+    "source_dir": "06_ui/icons/svg"
+  },
+  "loot_colors": {
+    "copper": "#B65A3C",
+    "encrypted": "#D6B15E",
+    "genesis": "#9B5CFF",
+    "immutable": "#FFFFFF",
+    "scrap": "#6E6A61",
+    "silicon": "#3D7F7A",
+    "sovereign": "#E7DFC9"
+  },
+  "screens": {
+    "coop": [
+      "party frames",
+      "revive prompt",
+      "shared Merkle synergy"
+    ],
+    "hud": [
+      "health",
+      "hashrate",
+      "skill bar",
+      "tool wheel",
+      "destructible reticle"
+    ],
+    "inventory": [
+      "item grid",
+      "rarity filters",
+      "compare panel"
+    ],
+    "map": [
+      "region tiles",
+      "POIs",
+      "subsurface entrance uncertainty rings"
+    ],
+    "matchmaking": [
+      "mode select",
+      "role fill",
+      "latency bucket"
+    ],
+    "merkle_tree": [
+      "node graph",
+      "proof path highlight",
+      "skill unlock confirmation"
+    ],
+    "mnemonic_board": [
+      "12 seed slots",
+      "modifier sockets",
+      "checksum warning"
+    ],
+    "pvp": [
+      "scoreboard",
+      "MMR badge",
+      "objective status"
+    ],
+    "settings": [
+      "graphics",
+      "audio",
+      "controls",
+      "accessibility"
+    ],
+    "tooltips": [
+      "icon first",
+      "320dp max",
+      "shape coded warnings"
+    ]
+  },
+  "typography": {
+    "body": "humanist sans 400/500",
+    "heading": "condensed geometric sans 600/700",
+    "minimum": "14sp body, 16sp labels, 20sp panel titles"
+  },
+  "widgets": {
+    "hud": [
+      "health",
+      "hashrate",
+      "skill bar",
+      "tool wheel",
+      "destructible reticle",
+      "boss phase banner"
+    ],
+    "inventory": [
+      "loot tier color frame",
+      "craft material count",
+      "compare item"
+    ],
+    "matchmaking": [
+      "mode select",
+      "party role",
+      "latency",
+      "MMR"
+    ],
+    "merkle_tree": [
+      "leaf",
+      "branch",
+      "root"
+    ],
+    "mnemonic_board": [
+      "slot_01",
+      "slot_02",
+      "slot_03",
+      "slot_04",
+      "slot_05",
+      "slot_06",
+      "slot_07",
+      "slot_08",
+      "slot_09",
+      "slot_10",
+      "slot_11",
+      "slot_12"
+    ]
+  }
+}
