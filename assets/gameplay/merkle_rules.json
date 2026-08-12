@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "leaf_hash": "SHA256(skillId | rank | seedSalt | itemAffixes)",
+  "branch_hash": "SHA256(leftLeaf | rightLeaf | branchRule | seasonId)",
+  "root_hash": "SHA256(branchA | branchB | classRoot | characterId)",
+  "power_budget_formula": "baseClassBudget + log2(totalHashrate + 1) * 12 + immutableBonuses",
+  "node_types": ["leaf", "branch", "root"],
+  "modifier_types": ["DamageMod", "CooldownMod", "ProjectileMod", "SummonMod", "TraversalMod", "LootMod"],
+  "seed_phrase_slots": ["Origin", "Debt", "Fire", "Mirror", "Salt", "Witness", "Vault", "Static", "Ground", "Ghost", "Root", "Exit"]
+}

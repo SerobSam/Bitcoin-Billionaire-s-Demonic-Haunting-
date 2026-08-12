@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "tiers": [
+    { "id": "scrap", "name": "Scrap", "color": "#6E6A61", "affix_min": 0, "affix_max": 1, "drop_weight": 1000 },
+    { "id": "copper", "name": "Copper", "color": "#B65A3C", "affix_min": 1, "affix_max": 1, "drop_weight": 650 },
+    { "id": "silicon", "name": "Silicon", "color": "#3D7F7A", "affix_min": 2, "affix_max": 2, "drop_weight": 360 },
+    { "id": "encrypted", "name": "Encrypted", "color": "#7256A8", "affix_min": 3, "affix_max": 3, "drop_weight": 180 },
+    { "id": "sovereign", "name": "Sovereign", "color": "#D6B15E", "affix_min": 4, "affix_max": 4, "drop_weight": 70 },
+    { "id": "genesis", "name": "Genesis", "color": "#E7DFC9", "affix_min": 4, "affix_max": 5, "drop_weight": 18 },
+    { "id": "immutable", "name": "Immutable", "color": "#171A1C", "affix_min": 5, "affix_max": 5, "drop_weight": 4 }
+  ]
+}

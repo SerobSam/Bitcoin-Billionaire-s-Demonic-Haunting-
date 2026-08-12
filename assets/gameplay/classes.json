@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "classes": [
+    {
+      "id": "cypherpunk",
+      "name": "Cypherpunk",
+      "resource": "Nonce Charge",
+      "role": "Ranged precision hacker-assassin",
+      "passive_identity": "Critical hits fork projectiles into spectral afterimages.",
+      "ultimate": "Genesis Broadcast",
+      "skills": [
+        { "id": "cypherpunk_nonce_lance", "name": "Nonce Lance", "type": "projectile", "cost_hashrate": 18, "cooldown_ms": 4200, "tags": ["ranged", "proof", "pierce"] },
+        { "id": "cypherpunk_cold_wallet_trap", "name": "Cold Wallet Trap", "type": "deployable", "cost_hashrate": 24, "cooldown_ms": 12000, "tags": ["trap", "cold", "control"] },
+        { "id": "cypherpunk_social_ghost", "name": "Social Ghost", "type": "decoy", "cost_hashrate": 20, "cooldown_ms": 15000, "tags": ["decoy", "stealth", "haunt"] },
+        { "id": "cypherpunk_packet_knife", "name": "Packet Knife", "type": "melee", "cost_hashrate": 8, "cooldown_ms": 1800, "tags": ["melee", "mark", "bleed"] },
+        { "id": "cypherpunk_dust_mixer", "name": "Dust Mixer", "type": "field", "cost_hashrate": 30, "cooldown_ms": 18000, "tags": ["field", "blind", "support"] },
+        { "id": "cypherpunk_genesis_broadcast", "name": "Genesis Broadcast", "type": "ultimate", "cost_hashrate": 100, "cooldown_ms": 90000, "tags": ["ultimate", "beam", "reveal"] }
+      ],
+      "passives": ["Salted Crit", "Forked Barrel", "Darknet Discount", "Silent Breach", "Zero-Knowledge Dodge", "Nonce Refund", "Proof Chain", "Wallet Sense", "Decoy Market", "Piercing Ledger", "Cold Key", "Root Witness"]
+    },
+    {
+      "id": "digital_wraith",
+      "name": "Digital Wraith",
+      "resource": "Phase Debt",
+      "role": "Evasive phase fighter",
+      "passive_identity": "Dodges leave corrupt packets that detonate when enemies cross.",
+      "ultimate": "Null Possession",
+      "skills": [
+        { "id": "digital_wraith_phase_step", "name": "Phase Step", "type": "mobility", "cost_hashrate": 12, "cooldown_ms": 3500, "tags": ["phase", "dodge", "mobility"] },
+        { "id": "digital_wraith_wraith_claw", "name": "Wraith Claw", "type": "melee", "cost_hashrate": 10, "cooldown_ms": 1600, "tags": ["melee", "spectral", "execute"] },
+        { "id": "digital_wraith_static_veil", "name": "Static Veil", "type": "stealth", "cost_hashrate": 26, "cooldown_ms": 14000, "tags": ["stealth", "static", "defense"] },
+        { "id": "digital_wraith_reorg_dash", "name": "Reorg Dash", "type": "mobility", "cost_hashrate": 22, "cooldown_ms": 7000, "tags": ["dash", "reorg", "damage"] },
+        { "id": "digital_wraith_echo_split", "name": "Echo Split", "type": "summon", "cost_hashrate": 34, "cooldown_ms": 20000, "tags": ["echo", "summon", "confuse"] },
+        { "id": "digital_wraith_null_possession", "name": "Null Possession", "type": "ultimate", "cost_hashrate": 100, "cooldown_ms": 90000, "tags": ["ultimate", "control", "machine"] }
+      ],
+      "passives": ["Phase Interest", "Echo Tax", "Possession Drift", "Latency Cloak", "Spectral Compound", "Null Walk", "Debt Blink", "Forked Shadow", "Quiet Packet", "Reorg Refund", "Mirror Body", "Root Haunt"]
+    },
+    {
+      "id": "grid_vanguard",
+      "name": "Grid Vanguard",
+      "resource": "Ground Charge",
+      "role": "Defensive brawler and grounding specialist",
+      "passive_identity": "Perfect blocks convert damage to team shields.",
+      "ultimate": "Blackout Bastion",
+      "skills": [
+        { "id": "grid_vanguard_faraday_shield", "name": "Faraday Shield", "type": "guard", "cost_hashrate": 14, "cooldown_ms": 4000, "tags": ["shield", "ground", "block"] },
+        { "id": "grid_vanguard_breaker_maul", "name": "Breaker Maul", "type": "melee", "cost_hashrate": 16, "cooldown_ms": 3000, "tags": ["melee", "stagger", "breach"] },
+        { "id": "grid_vanguard_ground_return", "name": "Ground Return", "type": "field", "cost_hashrate": 28, "cooldown_ms": 16000, "tags": ["ground", "heal", "cleanse"] },
+        { "id": "grid_vanguard_tesla_snare", "name": "Tesla Snare", "type": "control", "cost_hashrate": 22, "cooldown_ms": 10000, "tags": ["electric", "snare", "area"] },
+        { "id": "grid_vanguard_bastion_pull", "name": "Bastion Pull", "type": "control", "cost_hashrate": 32, "cooldown_ms": 18000, "tags": ["pull", "tank", "relay"] },
+        { "id": "grid_vanguard_blackout_bastion", "name": "Blackout Bastion", "type": "ultimate", "cost_hashrate": 100, "cooldown_ms": 90000, "tags": ["ultimate", "dome", "disable"] }
+      ],
+      "passives": ["Ground Dividend", "Breaker Rhythm", "Conductive Armor", "Relay Guardian", "Debt Forgiveness", "Shield Mint", "Static Parry", "Anchor Soul", "Charge Bank", "Grid Mercy", "Breach Guard", "Root Ground"]
+    },
+    {
+      "id": "code_weaver",
+      "name": "Code Weaver",
+      "resource": "Thread Count",
+      "role": "Summoner-engineer",
+      "passive_identity": "Constructs inherit a percentage of Merkle branch modifiers.",
+      "ultimate": "Root Compiler",
+      "skills": [
+        { "id": "code_weaver_script_familiar", "name": "Script Familiar", "type": "summon", "cost_hashrate": 16, "cooldown_ms": 8000, "tags": ["summon", "drone", "support"] },
+        { "id": "code_weaver_patch_field", "name": "Patch Field", "type": "field", "cost_hashrate": 24, "cooldown_ms": 14000, "tags": ["repair", "field", "heal"] },
+        { "id": "code_weaver_recursive_turret", "name": "Recursive Turret", "type": "summon", "cost_hashrate": 34, "cooldown_ms": 22000, "tags": ["turret", "recursive", "ranged"] },
+        { "id": "code_weaver_scaffold_snare", "name": "Scaffold Snare", "type": "control", "cost_hashrate": 18, "cooldown_ms": 9000, "tags": ["scaffold", "snare", "traversal"] },
+        { "id": "code_weaver_compiler_needle", "name": "Compiler Needle", "type": "projectile", "cost_hashrate": 12, "cooldown_ms": 2500, "tags": ["projectile", "compile", "mark"] },
+        { "id": "code_weaver_root_compiler", "name": "Root Compiler", "type": "ultimate", "cost_hashrate": 100, "cooldown_ms": 90000, "tags": ["ultimate", "construct", "merkle"] }
+      ],
+      "passives": ["Thread Hoarder", "Recursive Salvage", "Drone Covenant", "Patch Bloom", "Immutable Summons", "Compiler Cache", "Scaffold Logic", "Needle Refund", "Construct Kin", "Field Weaver", "Summon Salt", "Root Thread"]
+    }
+  ]
+}
