@@ -127,11 +127,10 @@ class CombatSystem:
         reduced = max(0, amount - self.corruption_resistance)
         self.player.corruption = min(100, self.player.corruption + reduced)
 
-    def _advance_turn(self, *, skip: str | None = None) -> None:
+    def _advance_turn(self) -> None:
         self.turn += 1
-        for key, state in self.cooldowns.items():
-            if key != skip:
-                state.tick()
+        for state in self.cooldowns.values():
+            state.tick()
 
     def use(self, ability_id: str) -> int:
         self._ensure_player_turn()
@@ -145,7 +144,7 @@ class CombatSystem:
         self._apply_corruption(ability.corruption_gain)
         self.enemy.take_damage(ability.damage)
         cooldown.remaining = ability.cooldown
-        self._advance_turn(skip=ability_id)
+        self._advance_turn()
         return ability.damage
 
     def basic_attack(self, damage: int = 20) -> int:
