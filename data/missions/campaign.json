@@ -1,0 +1,37 @@
+{
+  "schema": "1.0.0",
+  "missions": [
+    {
+      "id": "bel_air_blackout",
+      "title": "Bel Air Blackout",
+      "region": "Bel Air Blackout Zone",
+      "status": "available",
+      "unlock": null,
+      "next": "irvine_consensus"
+    },
+    {
+      "id": "irvine_consensus",
+      "title": "Irvine Consensus",
+      "region": "Irvine Suburbs",
+      "status": "locked",
+      "unlock": "bel_air_blackout",
+      "next": "dark_pool_descent"
+    },
+    {
+      "id": "dark_pool_descent",
+      "title": "Dark Pool Descent",
+      "region": "Dark Pool Dungeons",
+      "status": "locked",
+      "unlock": "irvine_consensus",
+      "next": "zero_state_relay"
+    },
+    {
+      "id": "zero_state_relay",
+      "title": "Zero-State Relay",
+      "region": "Zero-State Relay Towers",
+      "status": "locked",
+      "unlock": "dark_pool_descent",
+      "next": null
+    }
+  ]
+}
