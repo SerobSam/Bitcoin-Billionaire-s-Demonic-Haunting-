@@ -83,3 +83,14 @@ def test_cannot_attack_without_combat():
     game = GameState()
     with pytest.raises(RuntimeError):
         game.attack(10)
+
+
+def test_cannot_continue_attack_after_player_defeat():
+    game = GameState(player=PlayerState(health=5))
+    game.begin_encounter(Encounter("Wraith", 20, 10, 0))
+
+    assert game.attack(1) is False
+    assert game.player_defeated
+
+    with pytest.raises(RuntimeError, match="already defeated"):
+        game.attack(1)
