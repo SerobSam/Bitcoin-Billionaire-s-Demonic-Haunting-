@@ -61,6 +61,7 @@ class CampaignProfile:
                 "max_health": self.player.max_health,
                 "hashrate": self.player.hashrate,
                 "corruption": self.player.corruption,
+                "corruption_resistance": self.player.corruption_resistance,
                 "evidence": self.player.evidence,
                 "reputation": self.player.reputation,
                 "inventory": dict(self.player.inventory),
