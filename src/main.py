@@ -4,7 +4,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from runtime import Choice, FIRST_ENCOUNTER, GameState
+from mission import BelAirBlackoutMission
+from runtime import Choice
+from loot import load_tiers, roll_drop
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -15,16 +17,20 @@ def load_entities() -> dict:
         return json.load(entity_file)
 
 
-def run_vertical_slice() -> GameState:
-    """Run the deterministic first-mission playable slice and return its state."""
-    game = GameState()
-    game.investigate()
-    game.begin_encounter(FIRST_ENCOUNTER)
-    while game.phase == "combat":
-        game.attack(20)
-    game.decode()
-    game.choose(Choice.QUARANTINE)
-    return game
+def run_vertical_slice() -> BelAirBlackoutMission:
+    """Run the deterministic first-mission objective sequence and return its state."""
+    mission = BelAirBlackoutMission()
+    mission.reach_estate()
+    mission.scan_terminal()
+    while not mission.survive_wraith(20):
+        pass
+    mission.decode_fragment()
+    mission.make_choice(Choice.QUARANTINE)
+    tiers = load_tiers(ROOT / "assets" / "gameplay" / "loot_tiers.json")
+    drop = roll_drop(tiers, seed=20260905)
+    mission.game.player.add_item(f"{drop['tier']}_cache")
+    mission.extract()
+    return mission
 
 
 def main() -> None:
@@ -33,8 +39,9 @@ def main() -> None:
     antagonist = entities["antagonist"]
     print(f"{protagonist['name']} vs. {antagonist['name']}")
     print("Genesis Protocol — Bel Air Blackout")
-    game = run_vertical_slice()
-    print(f"Mission phase: {game.phase}")
+    mission = run_vertical_slice()
+    game = mission.game
+    print(f"Mission complete: {mission.complete}")
     print(f"Health: {game.player.health}/{game.player.max_health}")
     print(f"Hashrate: {game.player.hashrate}")
     print(f"Corruption: {game.player.corruption}%")
