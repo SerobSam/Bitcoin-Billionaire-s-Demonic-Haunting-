@@ -4,8 +4,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 
-from .merkle import MerkleInvestigation, MerkleNode, NodeType
-from .runtime import Choice, Encounter, GameState
+try:
+    from .merkle import MerkleInvestigation, MerkleNode, NodeType
+    from .runtime import Choice, Encounter, GameState
+except ImportError:  # Allows `python3 src/main.py` without packaging setup.
+    from merkle import MerkleInvestigation, MerkleNode, NodeType
+    from runtime import Choice, Encounter, GameState
 
 
 class ObjectiveStatus(str, Enum):
@@ -49,12 +53,10 @@ class BelAirBlackoutMission:
         raise KeyError(f"Unknown objective: {objective_id}")
 
     def _activate(self, objective_id: str) -> None:
-        objective = self._find(objective_id)
-        objective.status = ObjectiveStatus.ACTIVE
+        self._find(objective_id).status = ObjectiveStatus.ACTIVE
 
     def _complete(self, objective_id: str, next_id: str | None = None) -> None:
-        objective = self._find(objective_id)
-        objective.status = ObjectiveStatus.COMPLETE
+        self._find(objective_id).status = ObjectiveStatus.COMPLETE
         if next_id is not None:
             self._activate(next_id)
 
@@ -109,6 +111,6 @@ class BelAirBlackoutMission:
     def extract(self) -> None:
         if self.current_objective.objective_id != "extract":
             raise RuntimeError("Extraction is not available")
-        self._complete("extract")
         if self.game.phase != "complete":
             raise RuntimeError("Mission extraction requires a completed choice")
+        self._complete("extract")
