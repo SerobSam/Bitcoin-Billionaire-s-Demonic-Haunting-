@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from src.runtime import Choice, Encounter, GameState
+from src.runtime import Choice, Encounter, GameState, PlayerState
 
 
 def test_vertical_slice_progression(tmp_path):
@@ -14,6 +14,7 @@ def test_vertical_slice_progression(tmp_path):
     game.begin_encounter(Encounter("Digital Wraith", 20, 5, 3))
     assert game.attack(10) is False
     assert game.player.health == 95
+    assert game.player.corruption == 3
     assert game.attack(10) is True
     assert game.phase == "decode"
     assert game.player.inventory["corrupted_fragment"] == 1
@@ -30,6 +31,14 @@ def test_vertical_slice_progression(tmp_path):
     assert game.player.progression.level == 2
     assert game.player.progression.xp == 100
     assert game.player.progression.upgrade_points == 1
+
+
+def test_encounter_corruption_respects_player_resistance():
+    game = GameState(player=PlayerState(corruption_resistance=2))
+    game.investigate()
+    game.begin_encounter(Encounter("Wraith", 10, 0, 5))
+    game.attack(1)
+    assert game.player.corruption == 3
 
 
 def test_exploit_increases_power_and_corruption():
@@ -50,6 +59,7 @@ def test_save_and_load_round_trip(tmp_path):
     game = GameState()
     game.player.add_item("encrypted_shard", 2)
     game.player.corruption = 17
+    game.player.corruption_resistance = 3
     game.player.choices.append("quarantine")
     game.player.earn_xp(137)
     game.save(path)
@@ -59,8 +69,14 @@ def test_save_and_load_round_trip(tmp_path):
     assert loaded.phase == game.phase
     assert loaded.player.inventory == {"encrypted_shard": 2}
     assert loaded.player.corruption == 17
+    assert loaded.player.corruption_resistance == 3
     assert loaded.player.choices == ["quarantine"]
     assert loaded.player.progression == game.player.progression
+
+
+def test_negative_corruption_resistance_is_rejected():
+    with pytest.raises(ValueError, match="non-negative"):
+        PlayerState(corruption_resistance=-1)
 
 
 def test_cannot_attack_without_combat():
