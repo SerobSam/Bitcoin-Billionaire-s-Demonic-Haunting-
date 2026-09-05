@@ -38,6 +38,31 @@ CONTENT_ADD_ONS = {
 
 
 @dataclass(frozen=True)
+class DLCMission:
+    mission_id: str
+    add_on_id: str
+    title: str
+    enemy_name: str
+    enemy_health: int
+    enemy_damage: int
+    corruption_on_hit: int
+    investigation_xp: int
+    completion_xp: int
+    evidence_reward: int
+    loot_item: str
+
+
+DLC_MISSIONS = {
+    "neon_tokyo_blackout": DLCMission("neon_tokyo_blackout", "neon_tokyo", "Neon Tokyo Blackout", "Chrome Oni", 45, 11, 6, 35, 120, 2, "neon_shard"),
+    "shibuya_wraith_hunt": DLCMission("shibuya_wraith_hunt", "neon_tokyo", "Shibuya Wraith Hunt", "Shibuya Wraith", 55, 13, 8, 40, 140, 3, "wraith_mask"),
+    "datacenter_descent": DLCMission("datacenter_descent", "hells_datacenter", "Datacenter Descent", "Firewall Revenant", 65, 15, 10, 45, 160, 3, "infernal_hash"),
+    "server_cathedral": DLCMission("server_cathedral", "hells_datacenter", "Server Cathedral", "Cathedral Process", 75, 17, 12, 50, 180, 4, "cathedral_key"),
+    "aftershock": DLCMission("aftershock", "genesis_epilogue", "Aftershock", "Genesis Echo", 85, 18, 13, 55, 200, 4, "genesis_echo"),
+    "zero_day_epilogue": DLCMission("zero_day_epilogue", "genesis_epilogue", "Zero-Day Epilogue", "Zero-Day Seraph", 95, 20, 15, 60, 240, 5, "zero_day_relic"),
+}
+
+
+@dataclass(frozen=True)
 class SeasonReward:
     tier: int
     free_item: str | None = None
@@ -113,6 +138,16 @@ class SeasonPass:
     def to_dict(self) -> dict[str, object]:
         return {"season_id": self.season_id, "xp": self.xp, "premium_unlocked": self.premium_unlocked, "claimed_free": sorted(self.claimed_free), "claimed_premium": sorted(self.claimed_premium)}
 
+    @classmethod
+    def from_dict(cls, data: dict[str, object]) -> "SeasonPass":
+        return cls(
+            season_id=str(data.get("season_id", "genesis-season-1")),
+            xp=int(data.get("xp", 0)),
+            premium_unlocked=bool(data.get("premium_unlocked", False)),
+            claimed_free={int(value) for value in data.get("claimed_free", [])},
+            claimed_premium={int(value) for value in data.get("claimed_premium", [])},
+        )
+
 
 class RotatingEventSchedule:
     """Selects the same event for every client on the same UTC date."""
@@ -165,6 +200,10 @@ class LiveOpsWallet:
         self._spend(add_on.price_credits)
         self.owned_add_ons.add(add_on_id)
         return add_on
+
+    def owns_mission(self, mission_id: str) -> bool:
+        mission = DLC_MISSIONS.get(mission_id)
+        return mission is not None and mission.add_on_id in self.owned_add_ons
 
     def available_missions(self) -> tuple[str, ...]:
         missions: list[str] = []
