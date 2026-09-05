@@ -20,7 +20,7 @@ validate-json:
 	$(PYTHON) -m json.tool assets/gameplay/classes.json >/dev/null
 	$(PYTHON) -m json.tool assets/gameplay/loot_tiers.json >/dev/null
 	$(PYTHON) -m json.tool assets/gameplay/merkle_rules.json >/dev/null
-	$(PYTHON) -m json.tool schemas/asset_manifest.schema.json >/dev/null
+	$(PYTHON) -m json.tool schemas/asset/manifest.schema.json >/dev/null
 
 validate-assets:
 	$(PYTHON) tools/validate_asset_manifest.py assets/manifest/asset_manifest.json
