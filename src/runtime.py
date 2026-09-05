@@ -41,7 +41,6 @@ class PlayerState:
         return self.health == 0
 
     def gain_corruption(self, amount: int) -> None:
-        """Apply corruption after resistance from persistent character upgrades."""
         reduced = max(0, amount - self.corruption_resistance)
         self.corruption = min(100, self.corruption + reduced)
 
@@ -53,7 +52,6 @@ class PlayerState:
             self.inventory[item] = self.inventory.get(item, 0) + count
 
     def earn_xp(self, amount: int) -> int:
-        """Award XP through the persistent progression component."""
         return self.progression.add_xp(amount)
 
 
@@ -84,7 +82,7 @@ class GameState:
         self.phase = "encounter"
 
     def begin_encounter(self, encounter: Encounter) -> None:
-        if self.phase != "encounter":
+        if self.phase not in {"investigate", "encounter"}:
             raise RuntimeError("An encounter cannot start from the current phase")
         self.encounter = encounter
         self.phase = "combat"
@@ -95,12 +93,7 @@ class GameState:
         if self.player_defeated:
             raise RuntimeError("The player is already defeated")
         remaining = self.encounter.enemy_health - max(0, damage)
-        self.encounter = Encounter(
-            self.encounter.name,
-            remaining,
-            self.encounter.enemy_damage,
-            self.encounter.corruption_on_hit,
-        )
+        self.encounter = Encounter(self.encounter.name, remaining, self.encounter.enemy_damage, self.encounter.corruption_on_hit)
         if remaining <= 0:
             self.player.add_item("corrupted_fragment")
             self.player.earn_xp(100)
@@ -146,18 +139,10 @@ class GameState:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
         player_data = dict(data["player"])
         progression_data = player_data.pop("progression", None)
-        player = PlayerState(
-            **player_data,
-            progression=PlayerProgression.from_dict(progression_data or {}),
-        )
+        player = PlayerState(**player_data, progression=PlayerProgression.from_dict(progression_data or {}))
         encounter_data = data.get("encounter")
         encounter = Encounter(**encounter_data) if encounter_data else None
         return cls(data["mission"], data["phase"], player, encounter)
 
 
-FIRST_ENCOUNTER = Encounter(
-    name="Digital Wraith",
-    enemy_health=40,
-    enemy_damage=12,
-    corruption_on_hit=7,
-)
+FIRST_ENCOUNTER = Encounter("Digital Wraith", 40, 12, 7)
