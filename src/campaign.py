@@ -61,6 +61,14 @@ class Campaign:
             raise RuntimeError(f"Mission is not complete: {mission_id}")
         return self.missions[mission_id].rewards
 
+    def grant_rewards(self, mission_id: str, loadout) -> tuple[str, ...]:
+        """Apply ability rewards to a loadout after a completed mission."""
+        rewards = self.rewards_for(mission_id)
+        for reward in rewards:
+            if reward in loadout.abilities:
+                loadout.unlock(reward)
+        return rewards
+
     def available(self) -> list[MissionDefinition]:
         return [mission for mission in self.missions.values() if self.is_unlocked(mission.mission_id)]
 
