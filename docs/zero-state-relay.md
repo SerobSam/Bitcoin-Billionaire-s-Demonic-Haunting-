@@ -8,14 +8,17 @@ Zero-State Relay is the fourth and final mission in the current campaign spine.
 2. Stabilize the collapsing genesis relay and expose its corrupted root.
 3. Fight the Genesis Entity — Phase 1.
 4. Decode the final genesis signal with the `genesis` key.
-5. Choose Cleanse, Exploit, or Quarantine.
-6. Extract before the relay resets.
+5. Trigger the Genesis Entity — Phase 2 transformation.
+6. Defeat Phase 2 and choose Cleanse, Exploit, or Quarantine.
+7. Extract before the relay resets.
 
 ## Finale mechanics
 
-The Genesis Entity uses a high-health encounter with heavy corruption pressure. The recovered relay root is represented as a corrupted Merkle node, preserving the campaign's investigation/decode loop.
+The Genesis Entity now has two distinct combat phases. Phase 1 uses an 80-health encounter with 14 damage and 9 corruption per hit. Decoding the corrupted relay root exposes the entity's second form: a 100-health encounter with 20 damage and 15 corruption per hit.
 
-Successful decoding grants an additional hashrate surge before the final moral choice. The choice uses the same consequence model established by earlier missions, so the campaign finale remains mechanically consistent while the narrative stakes escalate.
+The phase transition deliberately reuses the existing deterministic encounter engine instead of introducing a separate combat implementation. The decoded genesis signal also grants a hashrate surge before Phase 2, making the investigation loop directly feed the boss fight.
+
+After Phase 2 falls, the generic moral-choice system determines the ending direction. Extraction awards a `genesis_core` relic, providing a concrete hook for post-campaign progression.
 
 ## Campaign endpoint
 
