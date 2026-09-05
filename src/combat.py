@@ -3,11 +3,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
+from typing import TYPE_CHECKING
 
-try:
+if TYPE_CHECKING:
     from .loadout import AbilityLoadout
-except ImportError:
-    from loadout import AbilityLoadout
 
 
 class DamageType(str, Enum):
@@ -78,9 +77,12 @@ class CombatSystem:
         enemy: Combatant,
         loadout: AbilityLoadout | None = None,
     ) -> None:
+        if loadout is None:
+            from .loadout import AbilityLoadout
+            loadout = AbilityLoadout()
         self.player = player
         self.enemy = enemy
-        self.loadout = loadout or AbilityLoadout()
+        self.loadout = loadout
         self.cooldowns = {ability_id: CooldownState() for ability_id in ABILITIES}
         self.turn = 0
 
