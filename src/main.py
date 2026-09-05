@@ -7,11 +7,11 @@ from pathlib import Path
 from campaign import Campaign
 from darkpool import DarkPoolDescentMission
 from irvine import IrvineConsensusMission
-from loadout import AbilityLoadout
 from loot import load_tiers, roll_drop
 from mission import BelAirBlackoutMission
 from profile import CampaignProfile
 from runtime import Choice
+from upgrade_station import UpgradeStation
 from zerostate import ZeroStateRelayMission
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,6 +88,13 @@ def run_zero_state_relay(profile: CampaignProfile | None = None) -> ZeroStateRel
     return mission
 
 
+def spend_safe_node_upgrade(profile: CampaignProfile, upgrade_id: str) -> str:
+    """Spend one available level-up point at the persistent safe-node station."""
+    station = UpgradeStation(profile)
+    option = station.purchase(upgrade_id)
+    return option.name
+
+
 def main() -> None:
     entities = load_entities()
     protagonist = entities["playable_character"]
@@ -107,6 +114,10 @@ def main() -> None:
     print(f"Level / XP: {profile.progression.level} / {profile.progression.xp}")
     print(f"Unlocked after Bel Air: {[ability.ability_id for ability in profile.loadout.available()]}")
 
+    if profile.progression.upgrade_points:
+        upgrade_name = spend_safe_node_upgrade(profile, "corruption_resistance")
+        print(f"Safe-node upgrade: {upgrade_name} (resistance {profile.upgrades.corruption_resistance})")
+
     if campaign.next_mission("bel_air_blackout") is None:
         raise RuntimeError("Campaign failed to unlock Irvine Consensus")
     irvine = run_irvine_consensus(profile)
@@ -119,6 +130,10 @@ def main() -> None:
     print(f"Irvine choice: {irvine.game.player.choices[-1]}")
     print(f"Level / XP: {profile.progression.level} / {profile.progression.xp}")
     print(f"Unlocked after Irvine: {[ability.ability_id for ability in profile.loadout.available()]}")
+
+    if profile.progression.upgrade_points:
+        upgrade_name = spend_safe_node_upgrade(profile, "hashrate")
+        print(f"Safe-node upgrade: {upgrade_name} (hashrate bonus {profile.upgrades.hashrate_bonus})")
 
     if campaign.next_mission("irvine_consensus") is None:
         raise RuntimeError("Campaign failed to unlock Dark Pool Descent")
@@ -145,6 +160,7 @@ def main() -> None:
     print(f"Genesis Core: {finale.game.player.inventory.get('genesis_core', 0)}")
     print(f"Final level / XP: {profile.progression.level} / {profile.progression.xp}")
     print(f"Final abilities: {[ability.ability_id for ability in profile.loadout.available()]}")
+    print(f"Upgrade points remaining: {profile.progression.upgrade_points}")
     print(f"Next mission: {campaign.next_mission('zero_state_relay') or 'Campaign complete'}")
 
 
