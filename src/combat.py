@@ -117,6 +117,12 @@ class CombatSystem:
         profile.player.max_health = self.player.max_health
         profile.player.corruption = self.player.corruption
 
+    def _ensure_player_turn(self) -> None:
+        if self.defeated:
+            raise RuntimeError("The enemy has already been defeated")
+        if self.player_defeated:
+            raise RuntimeError("The player is already defeated")
+
     def _apply_corruption(self, amount: int) -> None:
         reduced = max(0, amount - self.corruption_resistance)
         self.player.corruption = min(100, self.player.corruption + reduced)
@@ -128,6 +134,7 @@ class CombatSystem:
                 state.tick()
 
     def use(self, ability_id: str) -> int:
+        self._ensure_player_turn()
         if ability_id not in ABILITIES:
             raise KeyError(f"Unknown ability: {ability_id}")
         ability = self.loadout.require(ability_id)
@@ -142,6 +149,7 @@ class CombatSystem:
         return ability.damage
 
     def basic_attack(self, damage: int = 20) -> int:
+        self._ensure_player_turn()
         self.enemy.take_damage(damage)
         self._advance_turn()
         return damage
@@ -150,7 +158,7 @@ class CombatSystem:
         """Resolve an enemy turn and apply its damage/corruption to the player."""
         if self.defeated:
             raise RuntimeError("The enemy has already been defeated")
-        if self.player.health <= 0:
+        if self.player_defeated:
             raise RuntimeError("The player is already defeated")
         self.player.take_damage(damage)
         self._apply_corruption(corruption_gain)
