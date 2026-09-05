@@ -7,7 +7,8 @@
       "region": "Bel Air Blackout Zone",
       "status": "available",
       "unlock": null,
-      "next": "irvine_consensus"
+      "next": "irvine_consensus",
+      "rewards": ["salt_circle"]
     },
     {
       "id": "irvine_consensus",
@@ -15,7 +16,8 @@
       "region": "Irvine Suburbs",
       "status": "locked",
       "unlock": "bel_air_blackout",
-      "next": "dark_pool_descent"
+      "next": "dark_pool_descent",
+      "rewards": ["cold_storage"]
     },
     {
       "id": "dark_pool_descent",
@@ -23,7 +25,8 @@
       "region": "Dark Pool Dungeons",
       "status": "locked",
       "unlock": "irvine_consensus",
-      "next": "zero_state_relay"
+      "next": "zero_state_relay",
+      "rewards": []
     },
     {
       "id": "zero_state_relay",
@@ -31,7 +34,8 @@
       "region": "Zero-State Relay Towers",
       "status": "locked",
       "unlock": "dark_pool_descent",
-      "next": null
+      "next": null,
+      "rewards": ["genesis_core"]
     }
   ]
 }
