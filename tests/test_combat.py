@@ -20,7 +20,9 @@ def test_basic_attack_ticks_cooldowns():
 
 
 def test_ability_corruption_gain_is_applied():
-    combat = CombatSystem(Combatant(100, 100, corruption=0), Combatant(100, 100))
+    loadout = AbilityLoadout()
+    loadout.unlock("salt_circle")
+    combat = CombatSystem(Combatant(100, 100, corruption=0), Combatant(100, 100), loadout)
     combat.use("salt_circle")
     assert combat.player.corruption == ABILITIES["salt_circle"].corruption_gain
 
