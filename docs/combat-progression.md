@@ -23,8 +23,18 @@ A new loadout begins with `packet_burn`. Campaign rewards unlock additional abil
 
 Locked abilities are rejected before combat damage is applied. Loadouts serialize only stable ability IDs, keeping progression compatible with a future Android/Vulkan front end.
 
+## Character upgrades
+
+Level-up points are persistent across the campaign and can be spent at an in-world `UpgradeStation` safe node. The station exposes three stable upgrade IDs:
+
+- `max_health` — **Hardened Frame**: +10 maximum health per point
+- `hashrate` — **Hotter Hash**: +5 hashrate per point
+- `corruption_resistance` — **Salted Core**: reduce corruption gained from abilities by 1 per point
+
+Purchased upgrades are applied immediately to the persistent `CampaignProfile` and survive profile save/load. Combat accepts the resulting corruption-resistance value so high-risk abilities become progressively safer without changing their damage balance.
+
 ## Design intent
 
-The system is deterministic and engine-neutral: the same inputs always produce the same damage and cooldown state. Corruption is a combat consequence for high-risk abilities, reinforcing the game's moral-economy theme without introducing random combat outcomes at this layer.
+The system is deterministic and engine-neutral: the same inputs always produce the same damage, cooldown, and corruption state. Corruption is a combat consequence for high-risk abilities, while character upgrades give players a controlled way to invest level-up points into survivability, throughput, or resistance.
 
 The data definitions in `data/gameplay/abilities.json` mirror the runtime ability IDs and balance values.
