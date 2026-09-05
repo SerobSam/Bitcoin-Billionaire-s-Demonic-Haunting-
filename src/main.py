@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from campaign import Campaign
+from darkpool import DarkPoolDescentMission
 from irvine import IrvineConsensusMission
 from loot import load_tiers, roll_drop
 from mission import BelAirBlackoutMission
@@ -48,6 +49,19 @@ def run_irvine_consensus() -> IrvineConsensusMission:
     return mission
 
 
+def run_dark_pool_descent() -> DarkPoolDescentMission:
+    """Run the deterministic third-mission objective sequence."""
+    mission = DarkPoolDescentMission()
+    mission.enter_dungeons()
+    mission.find_choir()
+    while not mission.break_warden(30):
+        pass
+    mission.decode_liturgy()
+    mission.make_choice(Choice.QUARANTINE)
+    mission.extract()
+    return mission
+
+
 def main() -> None:
     entities = load_entities()
     protagonist = entities["playable_character"]
@@ -62,18 +76,28 @@ def main() -> None:
     print(f"Bel Air complete: {bel_air.complete}")
     print(f"Bel Air choice: {bel_air.game.player.choices[-1]}")
 
-    next_mission = campaign.next_mission("bel_air_blackout")
-    if next_mission is None:
+    if campaign.next_mission("bel_air_blackout") is None:
         raise RuntimeError("Campaign failed to unlock Irvine Consensus")
     irvine = run_irvine_consensus()
     campaign.complete_mission("irvine_consensus")
-
     print(f"Irvine complete: {irvine.complete}")
     print(f"Irvine health: {irvine.game.player.health}/{irvine.game.player.max_health}")
     print(f"Irvine corruption: {irvine.game.player.corruption}%")
     print(f"Irvine evidence: {irvine.game.player.evidence}")
     print(f"Irvine choice: {irvine.game.player.choices[-1]}")
-    print(f"Next mission: {campaign.next_mission('irvine_consensus').title}")
+
+    if campaign.next_mission("irvine_consensus") is None:
+        raise RuntimeError("Campaign failed to unlock Dark Pool Descent")
+    dark_pool = run_dark_pool_descent()
+    campaign.complete_mission("dark_pool_descent")
+    print(f"Dark Pool complete: {dark_pool.complete}")
+    print(f"Dark Pool health: {dark_pool.game.player.health}/{dark_pool.game.player.max_health}")
+    print(f"Dark Pool corruption: {dark_pool.game.player.corruption}%")
+    print(f"Dark Pool evidence: {dark_pool.game.player.evidence}")
+    print(f"Dark Pool choice: {dark_pool.game.player.choices[-1]}")
+
+    next_mission = campaign.next_mission("dark_pool_descent")
+    print(f"Next mission: {next_mission.title if next_mission else 'Campaign complete'}")
 
 
 if __name__ == "__main__":
