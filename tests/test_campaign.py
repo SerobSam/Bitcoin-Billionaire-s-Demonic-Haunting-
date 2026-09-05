@@ -35,3 +35,11 @@ def test_unknown_mission_is_explicit(tmp_path):
     game = campaign(tmp_path)
     with pytest.raises(KeyError, match="Unknown mission"):
         game.complete_mission("missing")
+
+
+def test_finale_has_no_next_mission(tmp_path):
+    game = campaign(tmp_path)
+    game.complete_mission("one")
+    game.complete_mission("two")
+    game.complete_mission("three")
+    assert game.next_mission("three") is None
