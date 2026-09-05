@@ -1,11 +1,8 @@
-"""Deterministic premium-store and content-add-on systems for the vertical slice.
-
-This models purchases as an in-game economy only; payment processing is deliberately
-outside the game runtime. Premium purchases are intentionally explicit and capped.
-"""
+"""Deterministic premium, season, event, and content-add-on systems."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import date, timedelta
 
 
 @dataclass(frozen=True)
@@ -34,22 +31,102 @@ PREMIUM_OFFERS = {
 }
 
 CONTENT_ADD_ONS = {
-    "neon_tokyo": ContentAddOn(
-        "neon_tokyo", "Neon Tokyo", 900,
-        ("neon_tokyo_blackout", "shibuya_wraith_hunt"),
-        "Two cyber-occult missions beneath a citywide crypto blackout.",
-    ),
-    "hells_datacenter": ContentAddOn(
-        "hells_datacenter", "Hell's Datacenter", 1100,
-        ("datacenter_descent", "server_cathedral"),
-        "A new dungeon chain inside a possessed quantum mining facility.",
-    ),
-    "genesis_epilogue": ContentAddOn(
-        "genesis_epilogue", "Genesis: Aftermath", 650,
-        ("aftershock", "zero_day_epilogue"),
-        "A post-finale epilogue with new consequences and an alternate extraction.",
-    ),
+    "neon_tokyo": ContentAddOn("neon_tokyo", "Neon Tokyo", 900, ("neon_tokyo_blackout", "shibuya_wraith_hunt"), "Two cyber-occult missions beneath a citywide crypto blackout."),
+    "hells_datacenter": ContentAddOn("hells_datacenter", "Hell's Datacenter", 1100, ("datacenter_descent", "server_cathedral"), "A dungeon chain inside a possessed quantum mining facility."),
+    "genesis_epilogue": ContentAddOn("genesis_epilogue", "Genesis: Aftermath", 650, ("aftershock", "zero_day_epilogue"), "A post-finale epilogue with new consequences and an alternate extraction."),
 }
+
+
+@dataclass(frozen=True)
+class SeasonReward:
+    tier: int
+    free_item: str | None = None
+    premium_item: str | None = None
+
+
+@dataclass(frozen=True)
+class LiveEvent:
+    event_id: str
+    name: str
+    description: str
+    xp_multiplier: float
+    reward_item: str
+
+
+SEASON_REWARDS = tuple(
+    SeasonReward(i, free_item=f"season_cache_{i}", premium_item=f"premium_cache_{i}")
+    for i in range(1, 11)
+)
+
+ROTATING_EVENTS = (
+    LiveEvent("blood_moon", "Blood Moon Protocol", "Corruption surges through every hostile node.", 1.5, "blood_moon_cache"),
+    LiveEvent("hash_rush", "Hash Rush", "Mining anomalies amplify progression rewards.", 2.0, "hash_rush_cache"),
+    LiveEvent("ghost_signal", "Ghost Signal", "Spectral traffic reveals rare encrypted loot.", 1.25, "ghost_signal_cache"),
+)
+
+
+@dataclass
+class SeasonPass:
+    """A deterministic ten-tier free/premium reward track."""
+
+    season_id: str = "genesis-season-1"
+    xp: int = 0
+    premium_unlocked: bool = False
+    claimed_free: set[int] = field(default_factory=set)
+    claimed_premium: set[int] = field(default_factory=set)
+
+    XP_PER_TIER = 250
+
+    @property
+    def tier(self) -> int:
+        return min(len(SEASON_REWARDS), self.xp // self.XP_PER_TIER + 1)
+
+    @property
+    def maxed(self) -> bool:
+        return self.xp >= len(SEASON_REWARDS) * self.XP_PER_TIER
+
+    def add_xp(self, amount: int, multiplier: float = 1.0) -> int:
+        if amount < 0 or multiplier < 0:
+            raise ValueError("season XP and multiplier must be non-negative")
+        self.xp = min(len(SEASON_REWARDS) * self.XP_PER_TIER, self.xp + int(amount * multiplier))
+        return self.tier
+
+    def unlock_premium(self) -> None:
+        self.premium_unlocked = True
+
+    def claim(self, tier: int, premium: bool = False) -> str:
+        if tier < 1 or tier > len(SEASON_REWARDS):
+            raise ValueError("Invalid season tier")
+        if self.xp < tier * self.XP_PER_TIER:
+            raise ValueError("Season tier is not unlocked")
+        claimed = self.claimed_premium if premium else self.claimed_free
+        if tier in claimed:
+            raise ValueError("Season reward is already claimed")
+        if premium and not self.premium_unlocked:
+            raise ValueError("Premium reward track is locked")
+        reward = SEASON_REWARDS[tier - 1]
+        item = reward.premium_item if premium else reward.free_item
+        claimed.add(tier)
+        assert item is not None
+        return item
+
+    def to_dict(self) -> dict[str, object]:
+        return {"season_id": self.season_id, "xp": self.xp, "premium_unlocked": self.premium_unlocked, "claimed_free": sorted(self.claimed_free), "claimed_premium": sorted(self.claimed_premium)}
+
+
+class RotatingEventSchedule:
+    """Selects the same event for every client on the same UTC date."""
+
+    def __init__(self, anchor: date = date(2026, 1, 1)) -> None:
+        self.anchor = anchor
+
+    def event_for(self, when: date) -> LiveEvent:
+        offset = (when - self.anchor).days
+        return ROTATING_EVENTS[offset % len(ROTATING_EVENTS)]
+
+    def window(self, when: date) -> tuple[date, date]:
+        start = when - timedelta(days=when.weekday())
+        return start, start + timedelta(days=6)
 
 
 @dataclass
@@ -96,7 +173,6 @@ class LiveOpsWallet:
         return tuple(missions)
 
     def apply_premium_power(self, player: object) -> None:
-        """Apply every owned power offer to a PlayerState-like object."""
         for offer_id in sorted(self.owned_offers):
             offer = PREMIUM_OFFERS[offer_id]
             player.max_health += offer.max_health_bonus
