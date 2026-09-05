@@ -122,8 +122,9 @@ class ZeroStateRelayMission:
     def make_choice(self, choice: Choice) -> None:
         if self.current_objective.objective_id != "make_choice":
             raise RuntimeError("The final choice is not available")
-        # The generic runtime expects the choice phase after a defeated encounter.
-        self.game.decode()
+        # The genesis signal was already decoded, so transition directly to
+        # the choice phase instead of granting the decode reward twice.
+        self.game.phase = "choice"
         self.game.choose(choice)
         self._complete("make_choice", "extract")
 
