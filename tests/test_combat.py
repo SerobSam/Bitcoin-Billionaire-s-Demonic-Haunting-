@@ -103,3 +103,23 @@ def test_enemy_attack_rejects_a_defeated_enemy():
     assert combat.defeated
     with pytest.raises(RuntimeError, match="enemy"):
         combat.enemy_attack(1)
+
+
+def test_player_actions_cannot_continue_after_enemy_defeat():
+    combat = CombatSystem(Combatant(100, 100), Combatant(1, 1))
+    combat.basic_attack(1)
+    assert combat.defeated
+    with pytest.raises(RuntimeError, match="enemy"):
+        combat.basic_attack(1)
+    with pytest.raises(RuntimeError, match="enemy"):
+        combat.use("packet_burn")
+
+
+def test_player_actions_cannot_continue_after_player_defeat():
+    combat = CombatSystem(Combatant(10, 10), Combatant(100, 100))
+    combat.enemy_attack(10)
+    assert combat.player_defeated
+    with pytest.raises(RuntimeError, match="player"):
+        combat.basic_attack(1)
+    with pytest.raises(RuntimeError, match="player"):
+        combat.use("packet_burn")
