@@ -75,3 +75,31 @@ def test_unknown_ability_is_explicit():
     combat = CombatSystem(Combatant(100, 100), Combatant(100, 100))
     with pytest.raises(KeyError, match="Unknown ability"):
         combat.use("not_real")
+
+
+def test_enemy_attack_applies_damage_and_resisted_corruption():
+    combat = CombatSystem(
+        Combatant(100, 100, corruption=10),
+        Combatant(100, 100),
+        corruption_resistance=3,
+    )
+    assert combat.enemy_attack(12, corruption_gain=7) == 12
+    assert combat.player.health == 88
+    assert combat.player.corruption == 14
+    assert combat.turn == 1
+
+
+def test_enemy_attack_cannot_continue_after_player_defeat():
+    combat = CombatSystem(Combatant(10, 10), Combatant(100, 100))
+    combat.enemy_attack(20)
+    assert combat.player_defeated
+    with pytest.raises(RuntimeError, match="already defeated"):
+        combat.enemy_attack(1)
+
+
+def test_enemy_attack_rejects_a_defeated_enemy():
+    combat = CombatSystem(Combatant(100, 100), Combatant(1, 1))
+    combat.basic_attack(1)
+    assert combat.defeated
+    with pytest.raises(RuntimeError, match="enemy"):
+        combat.enemy_attack(1)
