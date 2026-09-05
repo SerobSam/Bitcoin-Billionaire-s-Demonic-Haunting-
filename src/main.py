@@ -7,6 +7,7 @@ from pathlib import Path
 from campaign import Campaign
 from darkpool import DarkPoolDescentMission
 from irvine import IrvineConsensusMission
+from loadout import AbilityLoadout
 from loot import load_tiers, roll_drop
 from mission import BelAirBlackoutMission
 from runtime import Choice
@@ -83,29 +84,36 @@ def main() -> None:
     protagonist = entities["playable_character"]
     antagonist = entities["antagonist"]
     campaign = Campaign.load(ROOT / "data" / "missions" / "campaign.json")
+    loadout = AbilityLoadout()
 
     print(f"{protagonist['name']} vs. {antagonist['name']}")
     print("Genesis Protocol — Campaign Demo")
+    print(f"Starting abilities: {[ability.ability_id for ability in loadout.available()]}")
 
     bel_air = run_vertical_slice()
     campaign.complete_mission("bel_air_blackout")
+    campaign.grant_rewards("bel_air_blackout", loadout)
     print(f"Bel Air complete: {bel_air.complete}")
     print(f"Bel Air choice: {bel_air.game.player.choices[-1]}")
+    print(f"Unlocked after Bel Air: {[ability.ability_id for ability in loadout.available()]}")
 
     if campaign.next_mission("bel_air_blackout") is None:
         raise RuntimeError("Campaign failed to unlock Irvine Consensus")
     irvine = run_irvine_consensus()
     campaign.complete_mission("irvine_consensus")
+    campaign.grant_rewards("irvine_consensus", loadout)
     print(f"Irvine complete: {irvine.complete}")
     print(f"Irvine health: {irvine.game.player.health}/{irvine.game.player.max_health}")
     print(f"Irvine corruption: {irvine.game.player.corruption}%")
     print(f"Irvine evidence: {irvine.game.player.evidence}")
     print(f"Irvine choice: {irvine.game.player.choices[-1]}")
+    print(f"Unlocked after Irvine: {[ability.ability_id for ability in loadout.available()]}")
 
     if campaign.next_mission("irvine_consensus") is None:
         raise RuntimeError("Campaign failed to unlock Dark Pool Descent")
     dark_pool = run_dark_pool_descent()
     campaign.complete_mission("dark_pool_descent")
+    campaign.grant_rewards("dark_pool_descent", loadout)
     print(f"Dark Pool complete: {dark_pool.complete}")
     print(f"Dark Pool health: {dark_pool.game.player.health}/{dark_pool.game.player.max_health}")
     print(f"Dark Pool corruption: {dark_pool.game.player.corruption}%")
@@ -116,6 +124,7 @@ def main() -> None:
         raise RuntimeError("Campaign failed to unlock Zero-State Relay")
     finale = run_zero_state_relay()
     campaign.complete_mission("zero_state_relay")
+    campaign.grant_rewards("zero_state_relay", loadout)
     print(f"Zero-State Relay complete: {finale.complete}")
     print(f"Final health: {finale.game.player.health}/{finale.game.player.max_health}")
     print(f"Final hashrate: {finale.game.player.hashrate}")
@@ -123,6 +132,7 @@ def main() -> None:
     print(f"Final evidence: {finale.game.player.evidence}")
     print(f"Final choice: {finale.game.player.choices[-1]}")
     print(f"Genesis Core: {finale.game.player.inventory.get('genesis_core', 0)}")
+    print(f"Final abilities: {[ability.ability_id for ability in loadout.available()]}")
     print(f"Next mission: {campaign.next_mission('zero_state_relay') or 'Campaign complete'}")
 
 
