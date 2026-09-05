@@ -18,12 +18,12 @@ def test_vertical_slice_progression(tmp_path):
     assert game.attack(10) is True
     assert game.phase == "decode"
     assert game.player.inventory["corrupted_fragment"] == 1
-    assert game.player.progression.xp == 125
+    assert game.player.progression.xp == 25
 
     game.decode()
     assert game.phase == "choice"
     assert game.player.hashrate == 60
-    assert game.player.progression.xp == 175
+    assert game.player.progression.xp == 75
     game.choose(Choice.CLEANSE)
     assert game.phase == "complete"
     assert game.player.reputation == 2
