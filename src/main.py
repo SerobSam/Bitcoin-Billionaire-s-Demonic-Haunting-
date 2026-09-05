@@ -10,6 +10,7 @@ from irvine import IrvineConsensusMission
 from loot import load_tiers, roll_drop
 from mission import BelAirBlackoutMission
 from runtime import Choice
+from zerostate import ZeroStateRelayMission
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -62,6 +63,19 @@ def run_dark_pool_descent() -> DarkPoolDescentMission:
     return mission
 
 
+def run_zero_state_relay() -> ZeroStateRelayMission:
+    """Run the deterministic campaign finale sequence."""
+    mission = ZeroStateRelayMission()
+    mission.reach_relay()
+    mission.stabilize_relay()
+    while not mission.break_entity(40):
+        pass
+    mission.decode_genesis()
+    mission.make_choice(Choice.QUARANTINE)
+    mission.extract()
+    return mission
+
+
 def main() -> None:
     entities = load_entities()
     protagonist = entities["playable_character"]
@@ -96,8 +110,17 @@ def main() -> None:
     print(f"Dark Pool evidence: {dark_pool.game.player.evidence}")
     print(f"Dark Pool choice: {dark_pool.game.player.choices[-1]}")
 
-    next_mission = campaign.next_mission("dark_pool_descent")
-    print(f"Next mission: {next_mission.title if next_mission else 'Campaign complete'}")
+    if campaign.next_mission("dark_pool_descent") is None:
+        raise RuntimeError("Campaign failed to unlock Zero-State Relay")
+    finale = run_zero_state_relay()
+    campaign.complete_mission("zero_state_relay")
+    print(f"Zero-State Relay complete: {finale.complete}")
+    print(f"Final health: {finale.game.player.health}/{finale.game.player.max_health}")
+    print(f"Final hashrate: {finale.game.player.hashrate}")
+    print(f"Final corruption: {finale.game.player.corruption}%")
+    print(f"Final evidence: {finale.game.player.evidence}")
+    print(f"Final choice: {finale.game.player.choices[-1]}")
+    print(f"Next mission: {campaign.next_mission('zero_state_relay') or 'Campaign complete'}")
 
 
 if __name__ == "__main__":
