@@ -3,7 +3,7 @@ from datetime import date
 import pytest
 
 from src.live_ops import LiveOpsWallet, RotatingEventSchedule
-from src.runtime import Choice, GameState
+from src.runtime import Choice, Encounter, GameState
 
 
 def test_season_pass_free_and_premium_rewards():
@@ -37,9 +37,8 @@ def test_dlc_mission_is_playable_through_runtime():
 
     game.begin_dlc_mission(wallet, "neon_tokyo_blackout")
     game.investigate()
-    game.begin_encounter(game.encounter or __import__("src.runtime", fromlist=["Encounter"]).Encounter("Chrome Oni", 45, 11, 6))
-    while not game.attack(50):
-        pass
+    game.begin_encounter(Encounter("Chrome Oni", 45, 11, 6))
+    assert game.attack(50)
     game.decode()
     game.choose(Choice.QUARANTINE)
 
