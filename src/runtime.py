@@ -3,14 +3,17 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field, asdict
 from enum import Enum
+from datetime import date
 import json
 from pathlib import Path
 from typing import Dict, List
 
 try:
     from .player_progression import PlayerProgression
+    from .live_ops import DLC_MISSIONS, LiveOpsWallet, RotatingEventSchedule, SeasonPass
 except ImportError:
     from player_progression import PlayerProgression
+    from live_ops import DLC_MISSIONS, LiveOpsWallet, RotatingEventSchedule, SeasonPass
 
 
 class Choice(str, Enum):
@@ -69,23 +72,47 @@ class GameState:
     phase: str = "investigate"
     player: PlayerState = field(default_factory=PlayerState)
     encounter: Encounter | None = None
+    dlc_mission_id: str | None = None
+    season_pass: SeasonPass = field(default_factory=SeasonPass)
 
     @property
     def player_defeated(self) -> bool:
         return self.player.health <= 0
 
+    @property
+    def active_event(self):
+        return RotatingEventSchedule().event_for(date.today())
+
     def investigate(self) -> None:
         if self.phase != "investigate":
             raise RuntimeError("Investigation is not available in the current phase")
+        xp = 25
+        if self.dlc_mission_id:
+            xp = DLC_MISSIONS[self.dlc_mission_id].investigation_xp
         self.player.evidence += 1
-        self.player.earn_xp(25)
+        self.player.earn_xp(xp)
+        self.season_pass.add_xp(xp, self.active_event.xp_multiplier)
         self.phase = "encounter"
 
     def begin_encounter(self, encounter: Encounter) -> None:
         if self.phase not in {"investigate", "encounter"}:
             raise RuntimeError("An encounter cannot start from the current phase")
         self.encounter = encounter
+        self.dlc_mission_id = None
         self.phase = "combat"
+
+    def begin_dlc_mission(self, wallet: LiveOpsWallet, mission_id: str) -> None:
+        if mission_id not in DLC_MISSIONS:
+            raise KeyError(f"Unknown DLC mission: {mission_id}")
+        if not wallet.owns_mission(mission_id):
+            raise PermissionError("DLC mission is not owned")
+        if self.phase not in {"investigate", "complete"}:
+            raise RuntimeError("A DLC mission cannot start from the current phase")
+        mission = DLC_MISSIONS[mission_id]
+        self.mission = mission_id
+        self.dlc_mission_id = mission_id
+        self.encounter = None
+        self.phase = "investigate"
 
     def attack(self, damage: int) -> bool:
         if self.phase != "combat" or self.encounter is None:
@@ -95,8 +122,16 @@ class GameState:
         remaining = self.encounter.enemy_health - max(0, damage)
         self.encounter = Encounter(self.encounter.name, remaining, self.encounter.enemy_damage, self.encounter.corruption_on_hit)
         if remaining <= 0:
-            self.player.add_item("corrupted_fragment")
-            self.player.earn_xp(100)
+            xp = 100
+            loot = "corrupted_fragment"
+            if self.dlc_mission_id:
+                mission = DLC_MISSIONS[self.dlc_mission_id]
+                xp = mission.completion_xp
+                loot = mission.loot_item
+                self.player.evidence += mission.evidence_reward
+            self.player.add_item(loot)
+            self.player.earn_xp(xp)
+            self.season_pass.add_xp(xp, self.active_event.xp_multiplier)
             self.phase = "decode"
             self.encounter = None
             return True
@@ -109,6 +144,7 @@ class GameState:
             raise RuntimeError("There is nothing to decode")
         self.player.hashrate += 10
         self.player.earn_xp(50)
+        self.season_pass.add_xp(50, self.active_event.xp_multiplier)
         self.phase = "choice"
 
     def choose(self, choice: Choice) -> None:
@@ -126,10 +162,12 @@ class GameState:
             self.player.corruption = max(0, self.player.corruption - 10)
             self.player.reputation += 1
         self.player.earn_xp(25)
+        self.season_pass.add_xp(25, self.active_event.xp_multiplier)
         self.phase = "complete"
 
     def save(self, path: str | Path) -> None:
         payload = asdict(self)
+        payload["season_pass"] = self.season_pass.to_dict()
         if self.encounter is not None:
             payload["encounter"] = asdict(self.encounter)
         Path(path).write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -142,7 +180,15 @@ class GameState:
         player = PlayerState(**player_data, progression=PlayerProgression.from_dict(progression_data or {}))
         encounter_data = data.get("encounter")
         encounter = Encounter(**encounter_data) if encounter_data else None
-        return cls(data["mission"], data["phase"], player, encounter)
+        season_data = data.get("season_pass", {})
+        return cls(
+            data["mission"],
+            data["phase"],
+            player,
+            encounter,
+            data.get("dlc_mission_id"),
+            SeasonPass.from_dict(season_data),
+        )
 
 
 FIRST_ENCOUNTER = Encounter("Digital Wraith", 40, 12, 7)
