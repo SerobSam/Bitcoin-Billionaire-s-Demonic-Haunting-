@@ -9,8 +9,8 @@ def campaign(tmp_path):
     path = tmp_path / "campaign.json"
     path.write_text(json.dumps({
         "missions": [
-            {"id": "one", "title": "One", "region": "A", "unlock": None, "next": "two"},
-            {"id": "two", "title": "Two", "region": "B", "unlock": "one", "next": "three"},
+            {"id": "one", "title": "One", "region": "A", "unlock": None, "next": "two", "rewards": ["salt_circle"]},
+            {"id": "two", "title": "Two", "region": "B", "unlock": "one", "next": "three", "rewards": ["cold_storage"]},
             {"id": "three", "title": "Three", "region": "C", "unlock": "two", "next": None},
         ]
     }), encoding="utf-8")
@@ -43,3 +43,11 @@ def test_finale_has_no_next_mission(tmp_path):
     game.complete_mission("two")
     game.complete_mission("three")
     assert game.next_mission("three") is None
+
+
+def test_rewards_are_available_only_after_completion(tmp_path):
+    game = campaign(tmp_path)
+    with pytest.raises(RuntimeError, match="not complete"):
+        game.rewards_for("one")
+    game.complete_mission("one")
+    assert game.rewards_for("one") == ("salt_circle",)
