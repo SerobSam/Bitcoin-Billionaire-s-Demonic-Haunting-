@@ -76,15 +76,23 @@ class CombatSystem:
         player: Combatant,
         enemy: Combatant,
         loadout: AbilityLoadout | None = None,
+        corruption_resistance: int = 0,
     ) -> None:
         if loadout is None:
             from .loadout import AbilityLoadout
             loadout = AbilityLoadout()
+        if corruption_resistance < 0:
+            raise ValueError("corruption_resistance must be non-negative")
         self.player = player
         self.enemy = enemy
         self.loadout = loadout
+        self.corruption_resistance = corruption_resistance
         self.cooldowns = {ability_id: CooldownState() for ability_id in ABILITIES}
         self.turn = 0
+
+    def _apply_corruption(self, amount: int) -> None:
+        reduced = max(0, amount - self.corruption_resistance)
+        self.player.corruption = min(100, self.player.corruption + reduced)
 
     def use(self, ability_id: str) -> int:
         if ability_id not in ABILITIES:
@@ -94,7 +102,7 @@ class CombatSystem:
         if not cooldown.ready:
             raise RuntimeError(f"{ability.name} is on cooldown")
 
-        self.player.corruption = min(100, self.player.corruption + ability.corruption_gain)
+        self._apply_corruption(ability.corruption_gain)
         self.enemy.take_damage(ability.damage)
         cooldown.remaining = ability.cooldown
         self.turn += 1
