@@ -121,6 +121,12 @@ class CombatSystem:
         reduced = max(0, amount - self.corruption_resistance)
         self.player.corruption = min(100, self.player.corruption + reduced)
 
+    def _advance_turn(self, *, skip: str | None = None) -> None:
+        self.turn += 1
+        for key, state in self.cooldowns.items():
+            if key != skip:
+                state.tick()
+
     def use(self, ability_id: str) -> int:
         if ability_id not in ABILITIES:
             raise KeyError(f"Unknown ability: {ability_id}")
@@ -132,19 +138,29 @@ class CombatSystem:
         self._apply_corruption(ability.corruption_gain)
         self.enemy.take_damage(ability.damage)
         cooldown.remaining = ability.cooldown
-        self.turn += 1
-        for key, state in self.cooldowns.items():
-            if key != ability_id:
-                state.tick()
+        self._advance_turn(skip=ability_id)
         return ability.damage
 
     def basic_attack(self, damage: int = 20) -> int:
         self.enemy.take_damage(damage)
-        self.turn += 1
-        for state in self.cooldowns.values():
-            state.tick()
+        self._advance_turn()
         return damage
+
+    def enemy_attack(self, damage: int, corruption_gain: int = 0) -> int:
+        """Resolve an enemy turn and apply its damage/corruption to the player."""
+        if self.defeated:
+            raise RuntimeError("The enemy has already been defeated")
+        if self.player.health <= 0:
+            raise RuntimeError("The player is already defeated")
+        self.player.take_damage(damage)
+        self._apply_corruption(corruption_gain)
+        self._advance_turn()
+        return max(0, damage)
 
     @property
     def defeated(self) -> bool:
         return self.enemy.health <= 0
+
+    @property
+    def player_defeated(self) -> bool:
+        return self.player.health <= 0
