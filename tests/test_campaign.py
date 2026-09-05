@@ -3,6 +3,7 @@ import json
 import pytest
 
 from src.campaign import Campaign
+from src.loadout import AbilityLoadout
 
 
 def campaign(tmp_path):
@@ -51,3 +52,12 @@ def test_rewards_are_available_only_after_completion(tmp_path):
         game.rewards_for("one")
     game.complete_mission("one")
     assert game.rewards_for("one") == ("salt_circle",)
+
+
+def test_ability_rewards_unlock_loadout(tmp_path):
+    game = campaign(tmp_path)
+    loadout = AbilityLoadout()
+    assert not loadout.is_unlocked("salt_circle")
+    game.complete_mission("one")
+    assert game.grant_rewards("one", loadout) == ("salt_circle",)
+    assert loadout.is_unlocked("salt_circle")
