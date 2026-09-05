@@ -8,23 +8,30 @@ def test_zero_state_finale_progression():
     digest = mission.stabilize_relay()
     assert len(digest) == 64
 
-    while not mission.break_entity(40):
+    while not mission.break_entity_phase1(40):
         pass
 
     mission.decode_genesis()
+    assert mission.current_objective.objective_id == "break_entity_phase2"
+    assert mission.game.phase == "encounter"
+
+    while not mission.break_entity_phase2(40):
+        pass
+
     mission.make_choice(Choice.QUARANTINE)
     mission.extract()
 
     assert mission.complete
     assert mission.game.mission == "zero_state_relay"
     assert mission.game.player.hashrate == 80
+    assert mission.game.player.inventory["genesis_core"] == 1
 
 
 def test_zero_state_rejects_wrong_genesis_key():
     mission = ZeroStateRelayMission()
     mission.reach_relay()
     mission.stabilize_relay()
-    while not mission.break_entity(40):
+    while not mission.break_entity_phase1(40):
         pass
 
     try:
