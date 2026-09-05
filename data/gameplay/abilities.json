@@ -1,8 +1,8 @@
 {
   "schema": "1.0.0",
   "abilities": [
-    {"id": "packet_burn", "name": "Packet Burn", "damage": 28, "damage_type": "digital", "cooldown": 2, "corruption_cost": 0},
-    {"id": "salt_circle", "name": "Salt Circle", "damage": 18, "damage_type": "occult", "cooldown": 3, "corruption_cost": 5},
-    {"id": "cold_storage", "name": "Cold Storage", "damage": 12, "damage_type": "void", "cooldown": 4, "corruption_cost": 8}
+    {"id": "packet_burn", "name": "Packet Burn", "damage": 28, "damage_type": "digital", "cooldown": 2, "corruption_gain": 0},
+    {"id": "salt_circle", "name": "Salt Circle", "damage": 18, "damage_type": "occult", "cooldown": 3, "corruption_gain": 5},
+    {"id": "cold_storage", "name": "Cold Storage", "damage": 12, "damage_type": "void", "cooldown": 4, "corruption_gain": 8}
   ]
 }
