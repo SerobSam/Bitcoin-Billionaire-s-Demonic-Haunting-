@@ -6,11 +6,13 @@ import json
 from pathlib import Path
 
 try:
+    from .combat import ABILITIES
     from .loadout import AbilityLoadout
     from .player_progression import PlayerProgression
     from .runtime import PlayerState
     from .upgrades import PlayerUpgrades
 except ImportError:
+    from combat import ABILITIES
     from loadout import AbilityLoadout
     from player_progression import PlayerProgression
     from runtime import PlayerState
@@ -48,7 +50,7 @@ class CampaignProfile:
         """Grant completed-mission rewards to persistent inventory/loadout."""
         rewards = campaign.grant_rewards(mission_id, self.loadout)
         for reward in rewards:
-            if reward in ("salt_circle", "cold_storage", "genesis_core"):
+            if reward not in ABILITIES and reward not in self.player.inventory:
                 self.player.add_item(reward)
         return rewards
 
