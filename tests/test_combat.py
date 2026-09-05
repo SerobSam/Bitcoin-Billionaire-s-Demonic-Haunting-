@@ -25,6 +25,37 @@ def test_ability_corruption_gain_is_applied():
     assert combat.player.corruption == ABILITIES["salt_circle"].corruption_gain
 
 
+def test_corruption_resistance_reduces_ability_gain():
+    loadout = AbilityLoadout()
+    loadout.unlock("salt_circle")
+    combat = CombatSystem(
+        Combatant(100, 100, corruption=0),
+        Combatant(100, 100),
+        loadout,
+        corruption_resistance=2,
+    )
+    combat.use("salt_circle")
+    assert combat.player.corruption == 3
+
+
+def test_corruption_resistance_can_fully_block_gain():
+    loadout = AbilityLoadout()
+    loadout.unlock("cold_storage")
+    combat = CombatSystem(
+        Combatant(100, 100, corruption=0),
+        Combatant(100, 100),
+        loadout,
+        corruption_resistance=10,
+    )
+    combat.use("cold_storage")
+    assert combat.player.corruption == 0
+
+
+def test_negative_corruption_resistance_is_rejected():
+    with pytest.raises(ValueError, match="non-negative"):
+        CombatSystem(Combatant(100, 100), Combatant(100, 100), corruption_resistance=-1)
+
+
 def test_locked_ability_cannot_be_used():
     loadout = AbilityLoadout()
     combat = CombatSystem(Combatant(100, 100), Combatant(100, 100), loadout)
