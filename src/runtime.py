@@ -72,6 +72,10 @@ class GameState:
     player: PlayerState = field(default_factory=PlayerState)
     encounter: Encounter | None = None
 
+    @property
+    def player_defeated(self) -> bool:
+        return self.player.health <= 0
+
     def investigate(self) -> None:
         if self.phase != "investigate":
             raise RuntimeError("Investigation is not available in the current phase")
@@ -88,7 +92,7 @@ class GameState:
     def attack(self, damage: int) -> bool:
         if self.phase != "combat" or self.encounter is None:
             raise RuntimeError("No active encounter")
-        if self.player.health <= 0:
+        if self.player_defeated:
             raise RuntimeError("The player is already defeated")
         remaining = self.encounter.enemy_health - max(0, damage)
         self.encounter = Encounter(
@@ -140,7 +144,7 @@ class GameState:
     @classmethod
     def load(cls, path: str | Path) -> "GameState":
         data = json.loads(Path(path).read_text(encoding="utf-8"))
-        player_data = data["player"]
+        player_data = dict(data["player"])
         progression_data = player_data.pop("progression", None)
         player = PlayerState(
             **player_data,
