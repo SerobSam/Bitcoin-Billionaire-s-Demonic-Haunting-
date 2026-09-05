@@ -43,7 +43,7 @@ class MerkleInvestigation:
         node = self.scan(node_id)
         expected = hashlib.sha256(f"{node.payload}:{key}".encode("utf-8")).hexdigest()[:8]
         if node.corrupted and key != "genesis":
-            raise ValueError("Corrupted node rejected the supplied key")
+            raise ValueError("corrupted node rejected the supplied key")
         self.decoded.add(node_id)
         return expected
 
