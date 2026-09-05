@@ -13,10 +13,11 @@ class MissionDefinition:
     region: str
     unlock: str | None
     next_mission: str | None
+    rewards: tuple[str, ...] = ()
 
 
 class Campaign:
-    """Tracks completed missions and exposes the next playable objective."""
+    """Tracks completed missions and exposes progression rewards."""
 
     def __init__(self, missions: list[MissionDefinition]):
         if not missions:
@@ -34,6 +35,7 @@ class Campaign:
                 region=item["region"],
                 unlock=item.get("unlock"),
                 next_mission=item.get("next"),
+                rewards=tuple(item.get("rewards", [])),
             )
             for item in data["missions"]
         ]
@@ -51,6 +53,13 @@ class Campaign:
         if mission_id not in self.completed:
             self.completed.append(mission_id)
         return self.missions[mission_id]
+
+    def rewards_for(self, mission_id: str) -> tuple[str, ...]:
+        if mission_id not in self.missions:
+            raise KeyError(f"Unknown mission: {mission_id}")
+        if mission_id not in self.completed:
+            raise RuntimeError(f"Mission is not complete: {mission_id}")
+        return self.missions[mission_id].rewards
 
     def available(self) -> list[MissionDefinition]:
         return [mission for mission in self.missions.values() if self.is_unlocked(mission.mission_id)]
