@@ -7,6 +7,11 @@ import json
 from pathlib import Path
 from typing import Dict, List
 
+try:
+    from .player_progression import PlayerProgression
+except ImportError:
+    from player_progression import PlayerProgression
+
 
 class Choice(str, Enum):
     CLEANSE = "cleanse"
@@ -24,6 +29,7 @@ class PlayerState:
     reputation: int = 0
     inventory: Dict[str, int] = field(default_factory=dict)
     choices: List[str] = field(default_factory=list)
+    progression: PlayerProgression = field(default_factory=PlayerProgression)
 
     def damage(self, amount: int) -> bool:
         self.health = max(0, self.health - max(0, amount))
@@ -35,6 +41,10 @@ class PlayerState:
     def add_item(self, item: str, count: int = 1) -> None:
         if count > 0:
             self.inventory[item] = self.inventory.get(item, 0) + count
+
+    def earn_xp(self, amount: int) -> int:
+        """Award XP through the persistent progression component."""
+        return self.progression.add_xp(amount)
 
 
 @dataclass(frozen=True)
@@ -56,6 +66,7 @@ class GameState:
         if self.phase != "investigate":
             raise RuntimeError("Investigation is not available in the current phase")
         self.player.evidence += 1
+        self.player.earn_xp(25)
         self.phase = "encounter"
 
     def begin_encounter(self, encounter: Encounter) -> None:
@@ -76,6 +87,7 @@ class GameState:
         )
         if remaining <= 0:
             self.player.add_item("corrupted_fragment")
+            self.player.earn_xp(100)
             self.phase = "decode"
             self.encounter = None
             return True
@@ -87,6 +99,7 @@ class GameState:
         if self.phase != "decode":
             raise RuntimeError("There is nothing to decode")
         self.player.hashrate += 10
+        self.player.earn_xp(50)
         self.phase = "choice"
 
     def choose(self, choice: Choice) -> None:
@@ -103,6 +116,7 @@ class GameState:
         else:
             self.player.corruption = max(0, self.player.corruption - 10)
             self.player.reputation += 1
+        self.player.earn_xp(25)
         self.phase = "complete"
 
     def save(self, path: str | Path) -> None:
@@ -114,7 +128,12 @@ class GameState:
     @classmethod
     def load(cls, path: str | Path) -> "GameState":
         data = json.loads(Path(path).read_text(encoding="utf-8"))
-        player = PlayerState(**data["player"])
+        player_data = data["player"]
+        progression_data = player_data.pop("progression", None)
+        player = PlayerState(
+            **player_data,
+            progression=PlayerProgression.from_dict(progression_data or {}),
+        )
         encounter_data = data.get("encounter")
         encounter = Encounter(**encounter_data) if encounter_data else None
         return cls(data["mission"], data["phase"], player, encounter)
