@@ -68,9 +68,11 @@ def run_zero_state_relay() -> ZeroStateRelayMission:
     mission = ZeroStateRelayMission()
     mission.reach_relay()
     mission.stabilize_relay()
-    while not mission.break_entity(40):
+    while not mission.break_entity_phase1(40):
         pass
     mission.decode_genesis()
+    while not mission.break_entity_phase2(40):
+        pass
     mission.make_choice(Choice.QUARANTINE)
     mission.extract()
     return mission
@@ -120,6 +122,7 @@ def main() -> None:
     print(f"Final corruption: {finale.game.player.corruption}%")
     print(f"Final evidence: {finale.game.player.evidence}")
     print(f"Final choice: {finale.game.player.choices[-1]}")
+    print(f"Genesis Core: {finale.game.player.inventory.get('genesis_core', 0)}")
     print(f"Next mission: {campaign.next_mission('zero_state_relay') or 'Campaign complete'}")
 
 
