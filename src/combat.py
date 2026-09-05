@@ -4,6 +4,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
+try:
+    from .loadout import AbilityLoadout
+except ImportError:
+    from loadout import AbilityLoadout
+
 
 class DamageType(str, Enum):
     PHYSICAL = "physical"
@@ -19,7 +24,7 @@ class Ability:
     damage: int
     damage_type: DamageType
     cooldown: int
-    corruption_cost: int = 0
+    corruption_gain: int = 0
     description: str = ""
 
 
@@ -53,37 +58,41 @@ ABILITIES = {
     ),
     "salt_circle": Ability(
         "salt_circle", "Salt Circle", 18, DamageType.OCCULT, 3,
-        corruption_cost=5,
-        description="A warding strike that trades a little corruption for reliable occult damage.",
+        corruption_gain=5,
+        description="A warding strike that trades a little sanity for reliable occult damage.",
     ),
     "cold_storage": Ability(
         "cold_storage", "Cold Storage", 12, DamageType.VOID, 4,
-        corruption_cost=8,
+        corruption_gain=8,
         description="Freeze a hostile process inside a dead wallet state.",
     ),
 }
 
 
 class CombatSystem:
-    """Resolves abilities without randomness so encounters remain reproducible."""
+    """Resolves unlocked abilities without randomness so encounters remain reproducible."""
 
-    def __init__(self, player: Combatant, enemy: Combatant) -> None:
+    def __init__(
+        self,
+        player: Combatant,
+        enemy: Combatant,
+        loadout: AbilityLoadout | None = None,
+    ) -> None:
         self.player = player
         self.enemy = enemy
+        self.loadout = loadout or AbilityLoadout()
         self.cooldowns = {ability_id: CooldownState() for ability_id in ABILITIES}
         self.turn = 0
 
     def use(self, ability_id: str) -> int:
         if ability_id not in ABILITIES:
             raise KeyError(f"Unknown ability: {ability_id}")
-        ability = ABILITIES[ability_id]
+        ability = self.loadout.require(ability_id)
         cooldown = self.cooldowns[ability_id]
         if not cooldown.ready:
             raise RuntimeError(f"{ability.name} is on cooldown")
-        if self.player.corruption < ability.corruption_cost:
-            raise RuntimeError(f"Insufficient corruption for {ability.name}")
 
-        self.player.corruption = min(100, self.player.corruption + ability.corruption_cost)
+        self.player.corruption = min(100, self.player.corruption + ability.corruption_gain)
         self.enemy.take_damage(ability.damage)
         cooldown.remaining = ability.cooldown
         self.turn += 1
