@@ -1,6 +1,6 @@
 # Campaign Progression
 
-Genesis Protocol now has a data-driven campaign spine connecting the first playable mission to the larger world map and combat progression.
+Genesis Protocol now has a data-driven campaign spine connecting the first playable mission to the larger world map, combat progression, and a persistent player profile.
 
 ## Mission chain
 
@@ -24,10 +24,31 @@ Genesis Protocol now has a data-driven campaign spine connecting the first playa
 
 `src/loadout.py` consumes ability IDs from the combat registry and provides a stable progression boundary: new campaigns begin with `packet_burn`, while mission rewards can unlock additional combat abilities.
 
+## Persistent player profile
+
+`src/profile.py` provides `CampaignProfile`, the long-lived player state shared across missions. It carries:
+
+- `PlayerProgression` level, XP, and unspent upgrade points
+- `PlayerUpgrades` purchased health, hashrate, and corruption-resistance bonuses
+- `AbilityLoadout` combat abilities earned through campaign rewards
+- mission-earned health, hashrate, corruption, evidence, reputation, choices, and inventory
+
+`CampaignProfile.save()` and `CampaignProfile.load()` provide JSON persistence so the same character can leave one mission and resume the next without resetting progression or unlocked abilities.
+
+Before each mission, `mission_player()` refreshes upgrade bonuses and returns the shared `PlayerState`. Campaign rewards are then applied to the same profile, keeping combat unlocks and inventory available for subsequent missions.
+
 ## Player XP
 
-`src/progression.py` adds persistent level progression independently of the renderer. Players begin at level 1; each level requires `100 × current level` XP, and every level gained awards one upgrade point. XP rolls over after a level-up, while negative XP is ignored.
+`PlayerProgression` keeps persistent level progression independently of the renderer. Players begin at level 1 with a 100-XP first threshold. Each subsequent threshold increases by 50 XP. XP rolls over after a level-up, and every level gained awards one upgrade point. Negative XP is rejected.
 
-This keeps mission rewards, combat unlocks, and long-term character progression separate: the campaign decides *what* is earned, the loadout decides *what can be equipped*, and `PlayerProgression` tracks *how the character grows over time*.
+## Character upgrades
 
-The progression layers are intentionally renderer- and engine-neutral so they can later drive Android/Vulkan UI, world streaming, or another front end without rewriting mission rules.
+`PlayerUpgrades` converts earned upgrade points into persistent bonuses:
+
+- `max_health` → +10 maximum health per point
+- `hashrate` → +5 hashrate per point
+- `corruption_resistance` → persistent resistance rating for future combat integration
+
+Upgrades are serialized with the profile and re-applied whenever a mission begins.
+
+These layers remain renderer- and engine-neutral so they can later drive Android/Vulkan UI, world streaming, save slots, or another front end without rewriting mission rules.
