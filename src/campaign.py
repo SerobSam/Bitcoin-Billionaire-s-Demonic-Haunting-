@@ -62,10 +62,14 @@ class Campaign:
         return self.missions[mission_id].rewards
 
     def grant_rewards(self, mission_id: str, loadout) -> tuple[str, ...]:
-        """Apply ability rewards to a loadout after a completed mission."""
+        """Apply ability rewards to a loadout; non-ability rewards remain inventory rewards."""
+        try:
+            from .combat import ABILITIES
+        except ImportError:
+            from combat import ABILITIES
         rewards = self.rewards_for(mission_id)
         for reward in rewards:
-            if reward in loadout.abilities:
+            if reward in ABILITIES:
                 loadout.unlock(reward)
         return rewards
 
