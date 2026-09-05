@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .loadout import AbilityLoadout
+    from .profile import CampaignProfile
 
 
 class DamageType(str, Enum):
@@ -89,6 +90,32 @@ class CombatSystem:
         self.corruption_resistance = corruption_resistance
         self.cooldowns = {ability_id: CooldownState() for ability_id in ABILITIES}
         self.turn = 0
+
+    @classmethod
+    def from_profile(
+        cls,
+        profile: CampaignProfile,
+        enemy: Combatant,
+    ) -> "CombatSystem":
+        """Build combat from persistent profile stats and unlocked abilities."""
+        profile.apply_upgrades()
+        player = Combatant(
+            health=profile.player.health,
+            max_health=profile.player.max_health,
+            corruption=profile.player.corruption,
+        )
+        return cls(
+            player=player,
+            enemy=enemy,
+            loadout=profile.loadout,
+            corruption_resistance=profile.player.corruption_resistance,
+        )
+
+    def sync_player_to_profile(self, profile: CampaignProfile) -> None:
+        """Persist combat health/corruption back into the campaign profile."""
+        profile.player.health = self.player.health
+        profile.player.max_health = self.player.max_health
+        profile.player.corruption = self.player.corruption
 
     def _apply_corruption(self, amount: int) -> None:
         reduced = max(0, amount - self.corruption_resistance)
