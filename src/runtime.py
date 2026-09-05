@@ -88,7 +88,7 @@ class GameState:
     def attack(self, damage: int) -> bool:
         if self.phase != "combat" or self.encounter is None:
             raise RuntimeError("No active encounter")
-        if self.player_defeated:
+        if self.player.health <= 0:
             raise RuntimeError("The player is already defeated")
         remaining = self.encounter.enemy_health - max(0, damage)
         self.encounter = Encounter(
@@ -106,10 +106,6 @@ class GameState:
         self.player.damage(self.encounter.enemy_damage)
         self.player.gain_corruption(self.encounter.corruption_on_hit)
         return False
-
-    @property
-    def player_defeated(self) -> bool:
-        return self.player.health <= 0
 
     def decode(self) -> None:
         if self.phase != "decode":
