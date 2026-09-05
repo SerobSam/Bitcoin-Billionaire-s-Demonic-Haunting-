@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from runtime import Choice, FIRST_ENCOUNTER, GameState
+from loot import load_tiers, roll_drop
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +25,9 @@ def run_vertical_slice() -> GameState:
         game.attack(20)
     game.decode()
     game.choose(Choice.QUARANTINE)
+    tiers = load_tiers(ROOT / "assets" / "gameplay" / "loot_tiers.json")
+    drop = roll_drop(tiers, seed=20260905)
+    game.player.add_item(f"{drop['tier']}_cache")
     return game
 
 
