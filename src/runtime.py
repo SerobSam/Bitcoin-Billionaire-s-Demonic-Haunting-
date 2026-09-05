@@ -25,15 +25,25 @@ class PlayerState:
     max_health: int = 100
     hashrate: int = 50
     corruption: int = 0
+    corruption_resistance: int = 0
     evidence: int = 0
     reputation: int = 0
     inventory: Dict[str, int] = field(default_factory=dict)
     choices: List[str] = field(default_factory=list)
     progression: PlayerProgression = field(default_factory=PlayerProgression)
 
+    def __post_init__(self) -> None:
+        if self.corruption_resistance < 0:
+            raise ValueError("corruption_resistance must be non-negative")
+
     def damage(self, amount: int) -> bool:
         self.health = max(0, self.health - max(0, amount))
         return self.health == 0
+
+    def gain_corruption(self, amount: int) -> None:
+        """Apply corruption after resistance from persistent character upgrades."""
+        reduced = max(0, amount - self.corruption_resistance)
+        self.corruption = min(100, self.corruption + reduced)
 
     def heal(self, amount: int) -> None:
         self.health = min(self.max_health, self.health + max(0, amount))
@@ -92,7 +102,7 @@ class GameState:
             self.encounter = None
             return True
         self.player.damage(self.encounter.enemy_damage)
-        self.player.corruption = min(100, self.player.corruption + self.encounter.corruption_on_hit)
+        self.player.gain_corruption(self.encounter.corruption_on_hit)
         return False
 
     def decode(self) -> None:
