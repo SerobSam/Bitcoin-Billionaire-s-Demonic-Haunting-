@@ -1,0 +1,27 @@
+{
+  "world_id": "genesis_protocol_full_world",
+  "map_type": "connected_story_world",
+  "scale": "regional_open_world",
+  "streaming": "additive_addressables_regions",
+  "regions": [
+    {"id":"wastelands_hub","scene":"Hub_Wastelands","role":"safe_hub","story":"Bel Air Blackout"},
+    {"id":"bel_air_blackout","scene":"Region_BelAir_Blackout","role":"main_story","mission":"bel_air_blackout"},
+    {"id":"irvine_consensus","scene":"Region_Irvine_Consensus","role":"main_story","mission":"irvine_consensus"},
+    {"id":"dark_pool_dungeons","scene":"Region_Dark_Pool","role":"main_story","mission":"dark_pool_descent"},
+    {"id":"zero_state_relay","scene":"Region_Zero_State_Relay","role":"endgame","mission":"zero_state_relay"},
+    {"id":"neon_tokyo","scene":"DLC_Neon_Tokyo","role":"dlc","missions":["neon_tokyo_blackout","shibuya_wraith_hunt"]},
+    {"id":"hells_datacenter","scene":"DLC_Hells_Datacenter","role":"dlc","missions":["datacenter_descent","server_cathedral"]},
+    {"id":"genesis_epilogue","scene":"DLC_Genesis_Epilogue","role":"dlc","missions":["aftershock","zero_day_epilogue"]}
+  ],
+  "world_routes": [
+    ["wastelands_hub","bel_air_blackout"],
+    ["wastelands_hub","irvine_consensus"],
+    ["wastelands_hub","dark_pool_dungeons"],
+    ["wastelands_hub","zero_state_relay"],
+    ["wastelands_hub","neon_tokyo"],
+    ["wastelands_hub","hells_datacenter"],
+    ["wastelands_hub","genesis_epilogue"]
+  ],
+  "production_layers": ["terrain","architecture","props","materials","lighting","navigation","encounters","cinematics","streaming"],
+  "playable_target": "hub_to_campaign_to_endgame_with_optional_dlc"
+}
